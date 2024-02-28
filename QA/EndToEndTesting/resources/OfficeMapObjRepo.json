@@ -1,0 +1,260 @@
+{
+    "officeMapObjRepo": {
+        "pageLabel": [
+            "xpath",
+            "//ul[@class='ps-page-title'][contains(.,'FAST Office Map')]"
+        ],
+        "officeMapLink": [
+            "xpath",
+            "//li[@class='ps-selectable-item'][contains(.,'Office Map')]"
+        ],
+        "addOfficeMap": [
+            "xpath",
+            "//button[@ng-click='addNewFASTOfficeMap()']"
+        ],
+        "addOfficeMapLabel": [
+            "xpath",
+            "//h3[contains(.,'Add New FAST Office Map')]"
+        ],
+        "addDescription": [
+            "xpath",
+            "//input[@ng-model='voffice.entity.FASTOfficeMapDesc']"
+        ],
+        "addProviderId": [
+            "xpath",
+            "//select[@ng-model='voffice.entity.Provider']"
+        ],
+        "addCustomerId": [
+            "xpath",
+            "//select[@ng-model='voffice.entity.CustomerId']"
+        ],
+        "addLocationId": [
+            "xpath",
+            "//select[@ng-model='voffice.entity.locationId']"
+        ],
+        "addContactId": [
+            "xpath",
+            "//select[contains(@ng-model,'voffice.entity.Contactid')]"
+        ],
+        "addState": [
+            "xpath",
+            "//select[@ng-model='voffice.State']"
+        ],
+        "addCounty": [
+            "xpath",
+            "//select[@ng-model='voffice.county']"
+        ],
+        "addStateCountyButton": [
+            "xpath",
+            "//button[@ng-click='voffice.AddCondition()']"
+        ],
+        "addStateCountyLabel": [
+            "xpath",
+            "//button[@ng-click='voffice.Remove(Condition)']"
+        ],
+        "addTitleRegionId": [
+            "xpath",
+            "//select[@ng-model='voffice.entity.RegionId']"
+        ],
+        "addTitleOfficeId": [
+            "xpath",
+            "//select[@ng-model='voffice.TitleOfficeId']"
+        ],
+        "addTitleOfficer": [
+            "xpath",
+            "//select[@ng-model='voffice.entity.TitleOfficerCode']"
+        ],
+        "addEscrowRegionId": [
+            "xpath",
+            "//select[@ng-model='voffice.entity.EscrowRegionId']"
+        ],
+        "addEscrowOfficeId": [
+            "xpath",
+            "//select[@ng-model='voffice.EscrowOfficeId']"
+        ],
+        "addEscrowOfficer": [
+            "xpath",
+            "//select[@ng-model='voffice.entity.EscrowOfficerCode']"
+        ],
+        "addEscrowAssistant": [
+            "xpath",
+            "//select[@ng-model='voffice.entity.EscrowAssistantCode']"
+        ],
+        "addAutToken": [
+            "xpath",
+            "//select[@ng-model='voffice.entity.TokenTypeCodeId']"
+        ],
+        "addSaveButton": [
+            "xpath",
+            "//button[@class='btn btn-success']"
+        ],
+        "addCancelButton": [
+            "xpath",
+            "//button[@class='btn btn-primary'][contains(.,'Cancel')]"
+        ],
+        "addOfficeMapSuccess": [
+            "xpath",
+            "//div[@class='growl-message ng-binding']"
+        ],
+        "updateOfficeMapeSuccess": [
+            "xpath",
+            "//div[contains(@class,'growl-message ng-binding')]"
+        ],
+        "filterProviderId": [
+            "xpath",
+            "(//input[@type='text'])[1]"
+        ],
+        "filterExternalId": [
+            "xpath",
+            "(//input[@type='text'])[2]"
+        ],
+        "filterRegionId": [
+            "xpath",
+            "(//input[@type='text'])[3]"
+        ],
+        "filterTitleOfficeId": [
+            "xpath",
+            "(//input[@type='text'])[4]"
+        ],
+        "filterEscrowOfficeId": [
+            "xpath",
+            "(//input[@type='text'])[5]"
+        ],
+        "filterTitleOfficer": [
+            "xpath",
+            "(//input[@type='text'])[6]"
+        ],
+        "filterEscrowOfficer": [
+            "xpath",
+            "(//input[@type='text'])[7]"
+        ],
+        "filterLocationId": [
+            "xpath",
+            "(//input[@type='text'])[8]"
+        ],
+        "filterDescription": [
+            "xpath",
+            "(//input[@type='text'])[9]"
+        ],
+        "filterTenant": [
+            "xpath",
+            "(//input[@type='text'])[10]"
+        ],
+        "delProviderId": [
+            "xpath",
+            "(//i[@aria-label='Remove Filter'])[1]"
+        ],
+        "delExternalId": [
+            "xpath",
+            "(//i[@aria-label='Remove Filter'])[2]"
+        ],
+        "delRegionId": [
+            "xpath",
+            "(//i[@aria-label='Remove Filter'])[3]"
+        ],
+        "delTitleOfficeId": [
+            "xpath",
+            "(//i[@aria-label='Remove Filter'])[4]"
+        ],
+        "delEscrowOfficeId": [
+            "xpath",
+            "(//i[@aria-label='Remove Filter'])[5]"
+        ],
+        "delTitleOfficer": [
+            "xpath",
+            "(//i[@aria-label='Remove Filter'])[6]"
+        ],
+        "delEscrowOfficer": [
+            "xpath",
+            "(//i[@aria-label='Remove Filter'])[7]"
+        ],
+        "delLocationId": [
+            "xpath",
+            "(//i[@aria-label='Remove Filter'])[8]"
+        ],
+        "delDescription": [
+            "xpath",
+            "(//i[@aria-label='Remove Filter'])[9]"
+        ],
+        "delTenant": [
+            "xpath",
+            "(//i[@aria-label='Remove Filter'])[10]"
+        ],
+        "row_ProviderId": [
+            "xpath",
+            "(//div[@class='ui-grid-cell-contents ng-binding ng-scope'])[1]"
+        ],
+        "row_ExternalId": [
+            "xpath",
+            "(//div[@class='ui-grid-cell-contents ng-binding ng-scope'])[2]"
+        ],
+        "row_RegionId": [
+            "xpath",
+            "(//div[@class='ui-grid-cell-contents ng-binding ng-scope'])[3]"
+        ],
+        "row_TitleOfficeId": [
+            "xpath",
+            "(//div[@class='ui-grid-cell-contents ng-binding ng-scope'])[4]"
+        ],
+        "row_EscrowOfficeId": [
+            "xpath",
+            "(//div[@class='ui-grid-cell-contents ng-binding ng-scope'])[5]"
+        ],
+        "row_TitleOfficer": [
+            "xpath",
+            "(//div[@class='ui-grid-cell-contents ng-binding ng-scope'])[6]"
+        ],
+        "row_EscrowOfficer": [
+            "xpath",
+            "(//div[@class='ui-grid-cell-contents ng-binding ng-scope'])[7]"
+        ],
+        "row_LocationId": [
+            "xpath",
+            "(//div[@class='ui-grid-cell-contents ng-binding ng-scope'])[8]"
+        ],
+        "row_Description": [
+            "xpath",
+            "(//div[@class='ui-grid-cell-contents ng-binding ng-scope'])[9]"
+        ],
+        "row_Tenant": [
+            "xpath",
+            "(//div[@class='ui-grid-cell-contents ng-binding ng-scope'])[10]"
+        ],
+        "editPopUpLabel": [
+            "xpath",
+            "//h3[contains(.,'Edit FAST Office Map')]"
+        ],
+        "deleteButton": [
+            "xpath",
+            "//button[@class='btn btn-danger']"
+        ],
+        "confirmMessage": [
+            "xpath",
+            "//h2[contains(.,'Confirm Delete')]"
+        ],
+        "confirmYes": [
+            "xpath",
+            "//button[@class='btn btn-success ng-binding']"
+        ],
+        "confirmNo": [
+            "xpath",
+            "//button[@ng-click='cancel()']"
+        ],
+        "filterState": [
+            "xpath",
+            "//select[@ng-model='voffice.entity.StateFipsId']"
+        ],
+        "filterCounty": [
+            "xpath",
+            "//select[@ng-model='voffice.entity.CountyFipsId']"
+        ],
+        "filterSearch": [
+            "xpath",
+            "//i[@ng-click='voffice.searchDetails()']"
+        ],
+        "filterReset": [
+            "xpath",
+            "//button[@ng-click='voffice.RefreshSearch()']"
+        ]
+    }
+}

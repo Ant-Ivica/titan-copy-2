@@ -1,0 +1,146 @@
+{
+  "ProvidersObjRepo": {
+    "externalId": ["xpath", "//input[@name='externalofficeid']"],
+    "internalId": ["xpath", "//input[@name='internalofficeid']"],
+    "internalAppDropDown": [
+      "xpath",
+      "//select[@ng-model='vofficemap.entity.InternalApplicationID']"
+    ],
+    "ServiceProviderID":["xpath","//input[contains(@name,'ServiceProviderId')]"],
+    "internalIdDropDown": [
+      "xpath",
+      "//select[@ng-model='vofficemap.entity.InternalApplicationID']"
+    ],
+    "internalIdDropDownLVIS": [
+      "xpath",
+      "//select[@ng-model='vofficemap.entity.InternalApplicationID']//option[contains(.,'LVIS')]"
+    ],
+    "externalAppDropDown": [
+      "xpath",
+      "//select[@ng-model='vofficemap.entity.ExternalApplicationID']"
+    ],
+    "externalAppDropDownLenderSimulator": [
+      "xpath",
+      "//select[@ng-model='vofficemap.entity.ExternalApplicationID']//option[contains(.,'LenderSimulator')]"
+    ],
+    "externalAppDropDownTitlePort": [
+      "xpath",
+      "//select[@ng-model='vofficemap.entity.ExternalApplicationID']//option[contains(.,'TitlePort')]"
+    ],
+    "tenantDropDown": [
+      "xpath",
+      "//select[@ng-model='vofficemap.entity.TenantId']"
+    ],
+    "tenantDropDownAgency": [
+      "xpath",
+      "//select[@ng-model='vofficemap.entity.TenantId']//option[contains(.,'Agency')]"
+    ],
+    "saveButton": ["xpath", "//button[contains(.,'Save')]"],
+    "deleteButton": ["xpath", "//button[contains(.,'Delete')]"],
+    "deleteConfirmationButton": ["xpath", "//button[contains(.,'Yes')]"],
+    "addNewFASTOfficeMapBtn": ["xpath", "//button[@class='btn btn-sm']"],
+    "providerPage": [
+      "xpath",
+      "//div[@class='ps-noselect ng-binding'][contains(.,'Provider')]"
+    ],
+
+    "testIDResult": [
+      "xpath",
+      "//div[@class='ui-grid-cell-contents ng-binding ng-scope'][contains(.,'TestIDProvider')]"
+    ],
+    "testIDResultSelected": [
+      "xpath",
+      "//div[@class='ui-grid-cell-contents ng-binding ng-scope ui-grid-cell-focus'][contains(.,'TestID')]"
+    ],
+    "providerIDSearch": [
+      "xpath",
+      "//span[@class ='ui-grid-header-cell-label ng-binding'][contains(.,'Provider ID')]//following::input[1]"
+    ],
+    "providerIDSearchResult": [
+      "xpath",
+      "//div[@class ='ui-grid-cell-contents ng-binding ng-scope'][contains(.,'4333')]"
+    ],
+    "providerIDSearchResultCancelBtn": [
+      "xpath",
+      "//span[@class ='ui-grid-header-cell-label ng-binding'][contains(.,'Provider ID')]//following::i[@class ='ui-grid-icon-cancel'][1]"
+    ],
+
+    "providerNameSearch": [
+      "xpath",
+      "//span[@class ='ui-grid-header-cell-label ng-binding'][contains(.,'Provider Name')]//following::input[1]"
+    ],
+    "providerNameSearchResult": [
+      "xpath",
+      "//div[@class ='ui-grid-cell-contents ng-binding ng-scope'][contains(.,'test')]"
+    ],
+    "providerNameSearchResultCancelBtn": [
+      "xpath",
+      "//span[@class ='ui-grid-header-cell-label ng-binding'][contains(.,'Provider Name')]//following::i[@class ='ui-grid-icon-cancel'][1]"
+    ],
+    "externalIDSearch": [
+      "xpath",
+      "//span[@class ='ui-grid-header-cell-label ng-binding'][contains(.,'External ID')]//following::input[1]"
+    ],
+    "externalIDSearchResult": [
+      "xpath",
+      "//div[@class ='ui-grid-cell-contents ng-binding ng-scope'][contains(.,'test')]"
+    ],
+    "externalIDSearchResultCancelBtn": [
+      "xpath",
+      "//span[@class ='ui-grid-header-cell-label ng-binding'][contains(.,'External ID')]//following::i[@class ='ui-grid-icon-cancel'][1]"
+    ],
+    "internalAppSearch": [
+      "xpath",
+      "//span[@class ='ui-grid-header-cell-label ng-binding'][contains(.,'Internal Application')]//following::input[1]"
+    ],
+    "internalAppSearchResult": [
+      "xpath",
+      "//div[@class ='ui-grid-cell-contents ng-binding ng-scope'][contains(.,'FAST')]"
+    ],
+    "internalAppSearchResultCancelBtn": [
+      "xpath",
+      "//span[@class ='ui-grid-header-cell-label ng-binding'][contains(.,'Internal Application')]//following::i[@class ='ui-grid-icon-cancel'][1]"
+    ],
+    "externalAppSearch": [
+      "xpath",
+      "//span[@class ='ui-grid-header-cell-label ng-binding'][contains(.,'External Application')]//following::input[1]"
+    ],
+    "externalAppSearchResult": [
+      "xpath",
+      "//div[@class ='ui-grid-cell-contents ng-binding ng-scope'][contains(.,'FastWeb')]"
+    ],
+    "externalAppSearchResultCancelBtn": [
+      "xpath",
+      "//span[@class ='ui-grid-header-cell-label ng-binding'][contains(.,'External Application')]//following::i[@class ='ui-grid-icon-cancel'][1]"
+    ],
+
+    "tenantSearch": [
+      "xpath",
+      "//span[@class ='ui-grid-header-cell-label ng-binding'][contains(.,'Tenant')]//following::input[1]"
+    ],
+    "tenantSearchResult": [
+      "xpath",
+      "//div[@class ='ui-grid-cell-contents ng-binding ng-scope'][contains(.,'Air')]"
+    ],
+    "tenantSearchResultCancelBtn": [
+      "xpath",
+      "//span[@class ='ui-grid-header-cell-label ng-binding'][contains(.,'Tenant')]//following::i[@class ='ui-grid-icon-cancel'][1]"
+    ],
+
+    "FASTofficeMapLink": ["xpath", "//a[@uib-tooltip='FAST Office Map']"],
+    "addNewProviderBtn": [
+      "xpath",
+      "//button[@ng-click='addOfficeRow()'][@class='btn btn-sm']"
+    ],
+    "addNewProviderBtnHidden": [
+      "xpath",
+      "//button[@ng-click='addOfficeRow()'][@class='btn btn-sm ng-hide']"
+    ],
+
+    "mappingTableTab": ["xpath", "//i[@class='fa fa-cogs ps-menu-icon']"],
+    "addNewFASTOfficemapBtn": [
+      "xpath",
+      "//button[contains(.,' Add New FAST Office Map')]"
+    ]
+  }
+}

@@ -1,0 +1,144 @@
+{
+    "AuditingObjRepo": {
+        "auditingmenu":[
+            "xppath"
+            ,"//ps-menu-item[@class='ng-scope ng-isolate-scope'][contains(.,'Auditing')]"]
+            ,
+        "auditingheader": [
+            "xpath",
+            "(//li[contains(.,'Auditing Summary')])[3]"
+        ],
+        "startDate": [
+            "xpath",
+            "//input[@ng-model='vmAudit.Fromdate']"
+        ],
+        "endDate": [
+            "xpath",
+            "//input[@ng-model='vmAudit.ThroughDate']"
+        ],
+        "dateFilter": [
+            "xpath",
+            "//select[@ng-change='vmAudit.changeSelect(vmAudit.FilterSection)']"
+        ],
+        "search": [
+            "xpath",
+            "//i[@ng-click='vmAudit.search()']"
+        ],
+        "userName": [
+            "xpath",
+            "(//input[@type='text'])[1]"
+        ],
+        "date": [
+            "xpath",
+            "(//input[@type='text'])[2]"
+        ],
+        "acitivtyType": [
+            "xpath",
+            "(//input[@type='text'])[3]"
+        ],
+        "section": [
+            "xpath",
+            "(//input[@type='text'])[4]"
+        ],
+        "record": [
+            "xpath",
+            "(//input[@type='text'])[5]"
+        ],
+        "property": [
+            "xpath",
+            "(//input[@type='text'])[6]"
+        ],
+        "orignalValue": [
+            "xpath",
+            "(//input[@type='text'])[7]"
+        ],
+        "newValue": [
+            "xpath",
+            "(//input[@type='text'])[8]"
+        ],
+        "rowDataUser": [
+            "xpath",
+            "(//div[@class='ui-grid-cell-contents ng-binding ng-scope'])[1]"
+        ],
+        "rowDataDate": [
+            "xpath",
+            "(//div[@class='ui-grid-cell-contents ng-binding ng-scope'])[2]"
+        ],
+        "rowDataActivityType": [
+            "xpath",
+            "(//div[@class='ui-grid-cell-contents ng-binding ng-scope'])[3]"
+        ],
+        "rowDataSection": [
+            "xpath",
+            "(//div[@class='ui-grid-cell-contents ng-binding ng-scope'])[4]"
+        ],
+        "rowDataRecord": [
+            "xpath",
+            "(//div[@class='ui-grid-cell-contents ng-binding ng-scope'])[5]"
+        ],
+        "rowDataProperty": [
+            "xpath",
+            "(//div[@class='ui-grid-cell-contents ng-binding ng-scope'])[6]"
+        ],
+        "rowDataOrignalValue": [
+            "xpath",
+            "(//div[@class='ui-grid-cell-contents ng-binding ng-scope'])[7]"
+        ],
+        "rowDataNewValue": [
+            "xpath",
+            "(//div[@class='ui-grid-cell-contents ng-binding ng-scope'])[8]"
+        ],
+        "btnUser": [
+            "xpath",
+            "(//i[@class='ui-grid-icon-cancel'])[1]"
+        ],
+        "btnDate": [
+            "xpath",
+            "(//i[@class='ui-grid-icon-cancel'])[2]"
+        ],
+        "btnActivityType": [
+            "xpath",
+            "(//i[@class='ui-grid-icon-cancel'])[3]"
+        ],
+        "btnSection": [
+            "xpath",
+            "(//i[@class='ui-grid-icon-cancel'])[4]"
+        ],
+        "btnRecord": [
+            "xpath",
+            "(//i[@class='ui-grid-icon-cancel'])[5]"
+        ],
+        "btnProperty": [
+            "xpath",
+            "(//i[@class='ui-grid-icon-cancel'])[6]"
+        ],
+        "btnOriginal": [
+            "xpath",
+            "(//i[@class='ui-grid-icon-cancel'])[7]"
+        ],
+        "btnNew": [
+            "xpath",
+            "(//i[@class='ui-grid-icon-cancel'])[8]"
+        ],
+        "popupHeader": [
+            "xpath",
+            "//h3[contains(.,'Audit Details')]"
+        ],
+        "FirstEntry": [
+            "xpath",
+            "(//div[@class='ui-grid-cell-contents ng-binding ng-scope'])"
+        ],
+        "popupUserName": [
+            "xpath",
+            "//input[@ng-model='vmAudit.entity.UserName']"
+        ],
+        "popupCloseButton": [
+            "xpath",
+            "//i[@class='fa fa-times']"
+        ],
+        "popupActivityType": [
+            "xpath",
+            "//input[@ng-model='vmAudit.entity.EventType']"
+        ]
+    }
+}

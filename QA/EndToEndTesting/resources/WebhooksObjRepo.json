@@ -1,0 +1,39 @@
+{
+  "webhooksObjRepo": {
+    "addWebhook": [ "xpath", "//button[@class='btn btn-sm'][contains(.,'Add Webhook')]"],
+    "addWebhookDomain": [ "xpath", "//button[@class='btn btn-sm'][contains(.,'Add/Edit Webhook Domains')]"],
+    "addWebhookNewDomain": [ "xpath", "//button[@class='btn btn-sm'][contains(.,'Add Webhook Domain')]"],
+    "addDomainText":["xpath","//input[contains(@name,'domain')]"],
+    "webhookURL": ["xpath","//input[contains(@name,'webhookURL')]"],
+    "secret": [ "xpath", "//input[@ng-model='webhook.entity.Secret']"],
+    "xAPIKey":["xpath","//input[@ng-model='webhook.entity.X_API_ID']"],
+    "actionType": [ "xpath", "//select[@ng-model='webhook.entity.ActionType']"],
+    "maxAttempts" : ["xpath","//select[@ng-model='webhook.entity.MaxAttempts']"],
+    "cancel": [ "xpath", "//button[@class='btn btn-primary'][contains(.,'Cancel')]" ],
+    "delete": [ "xpath", "//button[@class='btn btn-danger'][contains(.,'Delete')]" ],
+    "isActive" : ["xpath","//input[@ng-model='webhook.IsActive']"],
+    "successMsgNewWebhook": [ "xpath", "//div[@class='growl-message ng-binding'][contains(.,'Webhook record was added successfully')]" ],
+    "msgOfSuccessEdit": [ "xpath", "//div[@class='growl-message ng-binding'][contains(.,'Webhook record was edited successfully')]" ],
+    "testWebhookAutomationURLEntry": [ "xpath", "//div[@class='ui-grid-cell-contents ng-binding ng-scope']"],
+    "testWebhookDomainAutomationURLEntry": [ "xpath", "//div[@class='ui-grid-cell-contents ng-binding ng-scope']"],
+    "webHookTiles":["xpath","//div[contains(@class,'ui-grid-cell-contents ng-binding')]"]    ,
+    "openApiTitle":["xpath","//div[@class='info_title']"],
+    "openApiWebRequest" : ["xpath","/html/body/div[3]/div[2]/ul/li[2]/ul/li[3]/ul/li/div[2]/form/table/tbody/tr[2]/td[2]/textarea"],
+    "postRequestAuthorizationKey" :["xpath","/html/body/div[3]/div[2]/ul/li[2]/ul/li[3]/ul/li/div[2]/form/table/tbody/tr[1]/td[2]/input"],
+    "postButton" :["xpath","//*[@id='Webhooks_Webhooks_Post_content']/form/div[2]/input"],
+    "openApiMessageForRetryCount":["xpath","//span[text()='\"Please provide a valid count for retryCount(1-5)!\"'] "] ,
+    "openApiMessageWithoutRetryCount":["xpath","//span[text()='\"Please provide a valid count for retryCount(1-5)!\"'] "] ,
+    "secretText": [ "xpath", "(//input[contains(@type,'text')])[2]" ],
+    "searchURL": [ "xpath", "(//input[contains(@type,'text')])[1]" ],
+    "searchXAPIKey":["xpath", "(//input[contains(@type,'text')])[6]"]
+
+  },
+  "helperVariables": {
+    "webhookApiCustomerforTesting":"offerPad",
+    "webhookCustomerForTesting":"TestCustomerGopi",
+    "webhookAddNewEntryURI" :"https://www.testdomain1.com",
+    "webhookURIForEdit":"https://dev-helix.devofferpad1.com/webhook/v1/FirstAmerican"
+  }
+}
+
+

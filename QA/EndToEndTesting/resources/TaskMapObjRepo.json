@@ -1,0 +1,214 @@
+{
+  "TaskMapObjRepo": {
+    "fastDropDown": [
+      "xpath",
+      "//li[@class ='dropdown ng-binding dropdown-toggle'][contains(.,'FAST')]"
+    ],
+    "taskMapDropDown": [
+      "xpath",
+      "//div[@class ='ps-noselect ng-binding'][contains(.,'Task Map')]"
+    ],
+    "addNewTaskMapBtn": ["xpath", "//button[@class ='btn btn-sm']"],
+    "taskDescriptionSearch": [
+      "xpath",
+      "//span[@class ='ui-grid-header-cell-label ng-binding'][contains(.,'Task Description')]//following::input[1]"
+    ],
+    "TaskDescSearchResult": [
+      "xpath",
+      "//div[@class ='ui-grid-cell-contents ng-binding ng-scope'][contains(.,'Cur')]"
+    ],
+    "TaskDescSearchResultCancelBtn": [
+      "xpath",
+      "//span[@class ='ui-grid-header-cell-label ng-binding'][contains(.,'Task Description')]//following::i[@class ='ui-grid-icon-cancel'][1]"
+    ],
+
+    "taskStatusSearch": [
+      "xpath",
+      "//span[@class ='ui-grid-header-cell-label ng-binding'][contains(.,'Task Status')]//following::input[1]"
+    ],
+    "taskStatusSearchResult": [
+      "xpath",
+      "//div[@class ='ui-grid-cell-contents ng-binding ng-scope'][contains(.,'Started')]"
+    ],
+    "taskStatusSearchResultCancelBtn": [
+      "xpath",
+      "//span[@class ='ui-grid-header-cell-label ng-binding'][contains(.,'Task Status')]//following::i[@class ='ui-grid-icon-cancel'][1]"
+    ],
+    "regionIDSearch": [
+      "xpath",
+      "//span[@class ='ui-grid-header-cell-label ng-binding'][contains(.,'Region ID')]//following::input[1]"
+    ],
+    "regionIDSearchResult": [
+      "xpath",
+      "//div[@class ='ui-grid-cell-contents ng-binding ng-scope'][contains(.,'Mortgage')]"
+    ],
+
+    "regionIDSearchResultCancelBtn": [
+      "xpath",
+      "//span[@class ='ui-grid-header-cell-label ng-binding'][contains(.,'Region ID')]//following::i[@class ='ui-grid-icon-cancel'][1]"
+    ],
+
+    "messageTypeSearch": [
+      "xpath",
+      "//span[@class ='ui-grid-header-cell-label ng-binding'][contains(.,'Message Type')]//following::input[1]"
+    ],
+    "messageTypeSearchResult": [
+      "xpath",
+      "//div[@class ='ui-grid-cell-contents ng-binding ng-scope'][contains(.,'Comment')]"
+    ],
+    "messageTypeSearchResultCancelBtn": [
+      "xpath",
+      "//span[@class ='ui-grid-header-cell-label ng-binding'][contains(.,'Message Type')]//following::i[@class ='ui-grid-icon-cancel'][1]"
+    ],
+    "serviceSearch": [
+      "xpath",
+      "//span[@class ='ui-grid-header-cell-label ng-binding'][contains(.,'Service')]//following::input[1]"
+    ],
+
+    "serviceSearchResult": [
+      "xpath",
+      "//div[@class ='ui-grid-cell-contents ng-binding ng-scope'][contains(.,'Escrow')]"
+    ],
+
+    "serviceSearchResultCancelBtn": [
+      "xpath",
+      "//span[@class ='ui-grid-header-cell-label ng-binding'][contains(.,'Service')]//following::i[@class ='ui-grid-icon-cancel'][1]"
+    ],
+
+    "externalApplicationSearch": [
+      "xpath",
+      "//span[@class ='ui-grid-header-cell-label ng-binding'][contains(.,'Application')]//following::input[1]"
+    ],
+
+    "externalApplicationSearchResult": [
+      "xpath",
+      "//div[@class ='ui-grid-cell-contents ng-binding ng-scope'][contains(.,'TitlePort')]"
+    ],
+
+    "externalApplicationSearchResultCancelBtn": [
+      "xpath",
+      "//span[@class ='ui-grid-header-cell-label ng-binding'][contains(.,'Application')]//following::i[@class ='ui-grid-icon-cancel'][1]"
+    ],
+    "customerNameSearch": [
+      "xpath",
+      "//span[@class ='ui-grid-header-cell-label ng-binding'][contains(.,'Customer Name')]//following::input[1]"
+    ],
+
+    "customerNameSearchResult": [
+      "xpath",
+      "//div[@class ='ui-grid-cell-contents ng-binding ng-scope'][contains(.,'Bank')]"
+    ],
+
+    "customerNameSearchResultCancelBtn": [
+      "xpath",
+      "//span[@class ='ui-grid-header-cell-label ng-binding'][contains(.,'Customer Name')]//following::i[@class ='ui-grid-icon-cancel'][1]"
+    ],
+    "tenantSearch": [
+      "xpath",
+      "//span[@class ='ui-grid-header-cell-label ng-binding'][contains(.,'Tenant')]//following::input[1]"
+    ],
+    "tenantSearchResult": [
+      "xpath",
+      "//div[@class ='ui-grid-cell-contents ng-binding ng-scope'][contains(.,'Air')]"
+    ],
+    "tenantSearchResultCancelBtn": [
+      "xpath",
+      "//span[@class ='ui-grid-header-cell-label ng-binding'][contains(.,'Tenant')]//following::i[@class ='ui-grid-icon-cancel'][1]"
+    ],
+
+    "taskDescriptionField": [
+      "xpath",
+      "//label[contains(.,'Task Description')]//following::input[1]"
+    ],
+    "taskDescriptionFieldSearchResultCancelBtn": [
+      "xpath",
+      "//span[@class ='ui-grid-header-cell-label ng-binding'][contains(.,'Task Description')]//following::i[@class ='ui-grid-icon-cancel'][1]"
+    ],
+    "taskStatusDropDown": [
+      "xpath",
+      "//label[contains(.,'Task Status')]//following::option[1]"
+    ],
+    "taskStatusDropDownStarted": [
+      "xpath",
+      "//label[contains(.,'Task Status')]//following::option[contains(.,'Started')]"
+    ],
+    "taskStatusDropDownWaived": [
+      "xpath",
+      "//label[contains(.,'Task Status')]//following::option[contains(.,'Waived')]"
+    ],
+    "regionIdDropdown": [
+      "xpath",
+      "//label[contains(.,'Region ID')]//following::option[1]"
+    ],
+    "regionIdDropdownAffiliated": [
+      "xpath",
+      "//label[contains(.,'Region ID')]//following::option[contains(.,'Affiliated')]"
+    ],
+    "MessageTypeDropDown": [
+      "xpath",
+      "//label[contains(.,'Message Type')]//following::option[1]"
+    ],
+    "MessageTypeDropDownAdditionalInfo": [
+      "xpath",
+      "//label[contains(.,'Message Type')]//following::option[contains(.,'AdditionalInfo')]"
+    ],
+    "serviceDropDown": [
+      "xpath",
+      "//label[contains(.,'Service')]//following::option[1]"
+    ],
+    "serviceDropDownEscrow": [
+      "xpath",
+      "//label[contains(.,'Service')]//following::option[contains(.,'Escrow')]"
+    ],
+    "saveNewTaskMapbtn": ["xpath", "//button[contains(.,'Save')]"],
+    "saveNewTaskMapbtnDisabled": [
+      "xpath",
+      "//button[contains(.,'Save')][@disabled='disabled']"
+    ],
+
+    "cancelNewTaskMapbtn": ["xpath", "//button[contains(.,'Cancel')]"],
+    "deleteTaskMapbtn": ["xpath", "//button[contains(.,'Delete')]"],
+
+    "testc827": [
+      "xpath",
+      "//div[@class='ui-grid-cell-contents ng-binding ng-scope'][contains(.,'Test C 827')]"
+    ],
+    "testTaskAutomation": [
+      "xpath",
+      "//div[@class='ui-grid-cell-contents ng-binding ng-scope'][contains(.,'TestTaskAutomation')]"
+    ],
+    "testTaskAutomationFocused": [
+      "xpath",
+      "//div[@class='ui-grid-cell-contents ng-binding ng-scope ui-grid-cell-focus'][contains(.,'TestTaskAutomation')]"
+    ],
+
+    "mappingTableTab": ["xpath", "//i[@class='fa fa-cogs ps-menu-icon']"],
+    "addTaskmapSuccessMsg": [
+      "xpath",
+      "//div[@class='growl-message ng-binding'][contains(.,'FAST Task Map info record was added successfully')]"
+    ],
+    "editTaskmapSuccessMsg": [
+      "xpath",
+      "//div[@class='growl-message ng-binding'][contains(.,'FAST Task Map info was updated successfully')]"
+    ],
+    "deleteTaskmapSuccessMsg": [
+      "xpath",
+      "//button[contains(.,'Delete')][@disabled='disabled']"
+    ],
+
+    "deleteTaskMapbtnDisabled": [
+      "xpath",
+      "//div[@class='growl-message ng-binding'][contains(.,'FAST Task Map Info record was deleted successfully')]"
+    ],
+    
+
+    "successMsgCloseButton": [
+      "xpath",
+      "//button[@class='close'][contains(.,'×')]"
+    ],
+    "deleteConfirmationBtn": [
+      "xpath",
+      "//button[@class='btn btn-success ng-binding'][contains(.,'Yes')]"
+    ]
+  }
+}

@@ -1,0 +1,96 @@
+steps:
+  - task: PublishSymbols@1
+    displayName: 'Publish symbols path: '
+    inputs:
+      SearchPattern: '$(Build.ArtifactStagingDirectory)\*.pdb'
+    continueOnError: true
+  
+  
+    
+#  - task: CopyFiles@2
+#    displayName: 'Copy Files to: $(Build.ArtifactStagingDirectory)\AT_Tower\Deployment\'
+#    inputs:
+#      SourceFolder: '$(build.sourcesDirectory)\Deployment\'
+#      TargetFolder: '$(Build.ArtifactStagingDirectory)\Tower\Deployment\'
+  
+  - task: CopyFiles@2
+    displayName: 'Copy Files to: $(Build.ArtifactStagingDirectory) '
+    inputs:
+      SourceFolder: '$(build.sourcesDirectory)/DEV/Tower/'
+      Contents: |
+       **\Config\**
+       **\Setup\**
+      TargetFolder: '$(build.sourcesDirectory)\Tower'
+  
+  - task: CopyFiles@2
+    displayName: 'Copy Files to: $(Build.ArtifactStagingDirectory)  '
+    inputs:
+      SourceFolder: '$(build.sourcesDirectory)/DEV/DBScripts'
+      TargetFolder: '$(build.sourcesDirectory)/DBScripts'
+  
+#  - task: CmdLine@1
+#    displayName: 'Run xcopy'
+#    inputs:
+#      filename: xcopy
+#      arguments: '\\corp.firstam.com\Apps\SCM\Repo\DevOps\Utility\PowerShell $(build.sourcesdirectory)\TFSScript /E /Y /i'
+  
+  #Task group has not been exported, task groups are not supported yet
+  
+  #- task: PowerShell@1
+  #  displayName: 'Powershell script Get DeploymentFramework from TFVC'
+  #  inputs:
+  #    scriptName: '$(build.sourcesdirectory)\TFSScript\GetLatestFromTFVC.ps1'
+  #    arguments: '-buildServer $(AGENT.MACHINENAME) -localPath $(Build.ArtifactStagingDirectory)\AT_DevOps\Automation\PowerShell\Valid\DeploymentFramework -serverPath $/AT_DevOps/Automation/PowerShell/Valid/DeploymentFramework'
+  
+  #- task: PowerShell@1
+  #  displayName: 'PowerShell Script Get AT_DevOps Modules from TFVC'
+  #  inputs:
+  #    scriptName: '$(build.sourcesdirectory)\TFSScript\GetLatestFromTFVC.ps1'
+  #    arguments: '-buildServer $(AGENT.MACHINENAME) -localPath $(Build.ArtifactStagingDirectory)\AT_DevOps\Automation\PowerShell\Valid\Modules -serverPath $/AT_DevOps/Automation/PowerShell/Valid/Modules'
+
+  #- task: PowerShell@1
+  #  displayName: 'PowerShell Script Get AT_DevOps Scripts from TFVC '
+  #  inputs:
+  #    scriptName: '$(build.sourcesdirectory)\TFSScript\GetLatestFromTFVC.ps1'
+  #    arguments: '-buildServer $(AGENT.MACHINENAME) -localPath $(Build.ArtifactStagingDirectory)\AT_DevOps\Automation\PowerShell\Valid\Scripts -serverPath $/AT_DevOps/Automation/PowerShell/Valid/Scripts'
+  
+  #- task: CopyFiles@2
+  #  displayName: 'Copy Files to: $(Build.ArtifactStagingDirectory)\AT_DevOps'
+  #  inputs:
+  #    SourceFolder: '$(Build.ArtifactStagingDirectory)\AT_DevOps'
+  #    TargetFolder: '$(build.sourcesdirectory)\AT_DevOps'
+
+  - powershell: |
+     Write-Host "Cloning PSDeploymentFramework from ReleasePlatformAutomation..."
+   
+     git clone https://$(GitCloneUserName):$(GitClonePassword)@dev.azure.com/FirstAmCorp/ReleasePlatformAutomation/_git/PSDeploymentFramework
+     cd $(Build.Repository.LocalPath)
+     Remove-Item .\.git -Recurse -Force -Confirm:$false
+  
+  - task: CopyFiles@2
+    displayName: 'Copy Files to: PowerShell FrameWork'
+    inputs:
+      SourceFolder: '$(Build.SourcesDirectory)\'
+      Contents: |
+       **\PSDeploymentFramework\**
+       !**\$tf\**
+      TargetFolder: '$(Build.ArtifactStagingDirectory)'
+
+  - task: CopyFiles@2
+    displayName: 'Copy Deployment/EnvironmentInformation'
+    inputs:
+      SourceFolder: Deployment/EnvironmentInformation
+      TargetFolder: '$(Build.ArtifactStagingDirectory)\Tower\Deployment\EnvironmentInformation'
+
+  - task: PowerShell@1
+    displayName: 'PowerShell Script'
+    inputs:
+      scriptName: '$(build.sourcesDirectory)/Deployment/EnvironmentInformation/PostBuildScript_vNext.ps1'
+ 
+  
+  - task: PublishBuildArtifacts@1
+    displayName: 'Publish Artifact: $(Build.BuildNumber)'
+    inputs:
+      ArtifactName: '$(Build.BuildNumber)'
+      publishLocation: FilePath
+      TargetPath: '\\corp.firstam.com\Apps\SCM\Repo\AT_Tower\Master'

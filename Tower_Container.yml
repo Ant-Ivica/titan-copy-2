@@ -1,0 +1,120 @@
+# Application build for AT_Tower
+---
+name: $(TeamProject)_$(SourceBranchName)_$(Date:dd)-$(Date:MM)-$(Date:yyyy)_$(Rev:r)
+trigger:
+  batch: true
+  branches:
+    include:
+      - master
+
+variables:
+  - template: Templates_CI/vars.yml
+
+stages:
+  - stage: Build
+  
+    jobs:
+    - job: Build
+      timeoutInMinutes: 360
+      displayName: Build
+      pool:
+        name: FA-ContainersPool-Prod
+
+      container:
+        image: ssppaps1arpscr1.azurecr.io/wincore19-vs17ent-arps-buildimage1:latest
+        endpoint: DevOps-ACR-PROD
+
+      steps:
+      
+        - task: PowerShell@2
+          inputs:
+            targetType: 'inline'
+            script: '
+            Write-Host "Cloning PSDeploymentFramework from ReleasePlatformAutomation..."
+
+            git clone git@ssh.dev.azure.com:v3/FirstAmCorp/ReleasePlatformAutomation/PSDeploymentFramework
+            
+            Remove-Item $(Build.SourcesDirectory)\.git -Recurse -Force -Confirm:$false
+            
+            '      
+        - template: Templates_CI/CI_Steps/Nuget_Restore_Step.yml
+            
+        - template: Templates_CI/CI_Steps/VS_Build_Step.yml
+
+        - task: VSTest@2
+          displayName: 'Test Assemblies **\$(BuildConfiguration)\*test*.dll;-:**\obj\**'
+          inputs:
+            testAssembly: '**\$(BuildConfiguration)\*test*.dll;-:**\obj\**'
+            codeCoverageEnabled: false
+            platform: '$(BuildPlatform)'
+            configuration: '$(BuildConfiguration)'
+
+        - task: PublishSymbols@1
+          displayName: 'Publish symbols path: '
+          inputs:
+            SearchPattern: '$(Build.ArtifactStagingDirectory)\*.pdb'
+          continueOnError: true
+        - task: CopyFiles@2
+          displayName: 'Copy Files to: $(Build.ArtifactStagingDirectory) '
+          inputs:
+            SourceFolder: '$(build.sourcesDirectory)/DEV/Tower/'
+            Contents: |
+              **\Config\**
+              **\Setup\**
+            TargetFolder: '$(build.sourcesDirectory)\Tower'
+        
+        - task: CopyFiles@2
+          displayName: 'Copy Files to: $(Build.ArtifactStagingDirectory)  '
+          inputs:
+            SourceFolder: '$(build.sourcesDirectory)/DEV/DBScripts'
+            TargetFolder: '$(build.sourcesDirectory)/DBScripts'
+
+        - task: CopyFiles@2
+          displayName: 'Copy Files to: PowerShell FrameWork'
+          inputs:
+            SourceFolder: '$(Build.SourcesDirectory)\'
+            Contents: |
+              **\PSDeploymentFramework\**
+              !**\$tf\**
+            TargetFolder: '$(Build.ArtifactStagingDirectory)'
+
+        - task: CopyFiles@2
+          displayName: 'Copy Deployment/EnvironmentInformation'
+          inputs:
+            SourceFolder: Deployment/EnvironmentInformation
+            TargetFolder: '$(Build.ArtifactStagingDirectory)\Tower\Deployment\EnvironmentInformation'
+
+        - task: PowerShell@2
+          displayName: 'PowerShell Script'
+          inputs:
+            filePath: '$(build.sourcesDirectory)/Deployment/EnvironmentInformation/PostBuildScript_vNext.ps1'
+
+        - task: ArchiveFiles@2
+          inputs:
+            rootFolderOrFile: '$(Build.ArtifactStagingDirectory)'
+            includeRootFolder: false
+            archiveType: 'zip'
+            archiveFile: '$(Build.ArtifactStagingDirectory)/Zip/$(Build.BuildNumber).zip'
+            replaceExistingArchive: true
+
+        - task: PublishPipelineArtifact@1
+          inputs:
+            targetPath: '$(Build.ArtifactStagingDirectory)\Zip'
+            artifact: '$(Build.BuildNumber)'
+            publishLocation: 'filepath'
+            fileSharePath: '\\corp.firstam.com\Apps\SCM\Repo\AT_Tower\Container'
+            parallel: true
+ 
+        # - task: First-American-Nexus-Upload-Download@0
+        #   inputs:
+        #     CommandType: 'Upload'
+        #     ServiceConnection: 'Nexus'
+        #     SourceFilePath: '$(Build.ArtifactStagingDirectory)'
+        #     RepositoryName: 'Tower'
+
+        # - task: DeleteFiles@1
+        #   inputs:
+        #     SourceFolder: '$(Agent.BuildDirectory)'
+        #     Contents: '**/*'
+        #     RemoveSourceFolder: false
+        #     target: Host

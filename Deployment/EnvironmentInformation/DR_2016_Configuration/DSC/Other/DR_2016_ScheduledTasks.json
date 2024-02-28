@@ -1,0 +1,51 @@
+{
+  "BEQ Nightly Resubmit": {
+    "Executable": "FA.LVIS.Tower.BEQResubmitProcess.exe",
+    "ScheduleType": "Weekly",
+    "DaysOfWeek": [ "Monday", "Tuesday", "Wednesday", "Thursday", "Friday" ],
+    "PATH": "<BEQResubmitProcess>",
+    "StartTime": "10:00 PM",
+    "ExecuteAsCredential": "LVISCred",
+    "RepeatInterval": "1",
+    "Enable": "false"
+  },
+  "FastDataSync Nightly": {
+    "Executable": "FA.LVIS.Tower.FastDataSync.exe",
+    "ScheduleType": "Weekly",
+    "DaysOfWeek": [ "Monday", "Tuesday", "Wednesday", "Thursday", "Friday" ],
+    "PATH": "<FASTDataSync>",
+    "StartTime": "01:00 AM",
+    "ExecuteAsCredential": "LVISCred",
+    "RepeatInterval": "1",
+    "Enable": "false"
+  },
+  "TEQ Hourly Resubmit": {
+    "Executable": "FA.LVIS.Tower.ResubmitProcess.exe",
+    "ScheduleType": "Daily",
+    "PATH": "<ResubmitProcess>",
+    "StartTime": "06:00 PM",
+    "ExecuteAsCredential": "LVISCred",
+    "RepeatInterval": "1",
+    "Enable": "false"
+  },
+  "BEQRejectProcess": {
+    "Executable": "FA.LVIS.Tower.BEQRejectProcess.exe",
+    "ScheduleType": "Weekly",
+    "DaysOfWeek": [ "Monday", "Tuesday", "Wednesday", "Thursday", "Friday" ],
+    "PATH": "<BEQRejectProcess>",
+    "StartTime": "02:30 AM",
+    "ExecuteAsCredential": "LVISCred",
+    "RepeatInterval": "1",
+    "Enable": "false"
+  },
+  "RetryResubmitProcess": {
+    "Executable": "FA.LVIS.Tower.RetryResubmitProcess.exe",
+    "ScheduleType": "Minutes",
+    "PATH": "<RetryResubmitProcess>",
+    "StartTime": "06:00 AM",
+    "ExecuteAsCredential": "LVISCred",
+    "RepeatInterval": "00:01:00",
+    "Enable": "true",
+    "RepetitionDuration": "21:00:00"
+  }
+}

@@ -1,0 +1,38 @@
+﻿
+    <div ng-controller="psSecurityController as vm" ng-init="vm.getCurrentUser()" class="ps-dashboard-header">
+        <ul class="breadcrumb">
+            <li class="subbreadcrumb">
+                <ps-sub-menu>
+                    <ps-sub-menu-item label="Security Profiles" activetab="Security Profiles" route="security">Security Profiles</ps-sub-menu-item>
+                </ps-sub-menu>
+            </li>
+        </ul>
+        <div class="wrapper">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-10">    
+                <ul class="ps-page-title">
+                    <li>Security Profiles</li>
+                </ul> 
+                <div growl inline="true"></div>
+                <button class="btn btn-sm" style="cursor:pointer" ng-show="hasModifyAccess" ng-click="addRow()"><i class="fa fa-user-plus"></i> Add New User</button>
+         
+                   <div id="serviceGrid" ui-grid="vm.serviceGrid"
+                        ui-grid-grouping
+                         ui-grid-move-columns
+                         ui-grid-cellnav
+                         ui-grid-selection
+                         ui-grid-resize-columns
+                         ui-grid-pinning
+                         ui-grid-auto-resize
+                         ui-grid-edit
+                         ui-grid-pagination
+                         ui-grid-custom-cell-select 
+                        class="ui-grid-selectable">
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-1"> </div>
+    </div>
+
+
+

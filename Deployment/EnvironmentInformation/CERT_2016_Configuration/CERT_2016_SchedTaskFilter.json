@@ -1,0 +1,11 @@
+{
+  "BEQResubmitProcess": [
+    "BEQ Nightly Resubmit"
+  ],
+  "FASTDataSync": [
+    "FastDataSync Nightly"
+  ],
+   "ResubmitProcess": [
+		"TEQ Hourly Resubmit"
+	]
+}

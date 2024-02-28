@@ -1,0 +1,108 @@
+{
+    "utilitesObj": {
+        "xpath_header": [
+            "xpath",
+            "(//li[contains(.,'Manage Service Request')])[3]"
+        ],
+        "xpath_servicerequestID": [
+            "xpath",
+            "//input[contains(@ng-model,'vmUtilities.ServiceRequestId')]"
+        ],
+        "xpath_Search": [
+            "xpath",
+            "//i[contains(@ng-click,'invalid && vmUtilities.Search()')]"
+        ],
+        "xpath_externalRefNum": [
+            "xpath",
+            "//input[contains(@ng-model,'vmUtilities.ExternalRefNum')]"
+        ],
+        "xpath_serviceStatus": [
+            "xpath",
+            "//select[contains(@ng-model,'vmUtilities.Status')]"
+        ],
+        "xpath_updte": [
+            "xpath",
+            "//button[contains(@class,'btn btn-success')]"
+        ],
+        "xpath_successmessage": [
+            "xpath",
+            "//div[contains(@class,'growl-message ng-binding')]"
+        ],
+        "xpath_reset": [
+            "xpath",
+            "//button[contains(@ng-click,'vmUtilities.RefreshSearch()')]"
+        ],
+        "xpath_confirmSRMenu": [
+            "xpath",
+            "//div[@class='ps-noselect ng-binding'][contains(.,'Confirm Service Request')]"
+        ],
+        "xpath_confirmServiceReqHeader": [
+            "xpath",
+            "(//li[contains(.,'Confirm Service Request')])[3]"
+        ],
+        "xpath_conServiceRequestId": [
+            "xpath",
+            "//input[@ng-model='vmUtilitiesConfirm.ServiceRequestId']"
+        ],
+        "xpath_conSerarch": [
+            "xpath",
+            "//i[@class='fa fa-search']"
+        ],
+        "xpath_confExternalRefNum": [
+            "xpath",
+            "//input[@ng-model='vmUtilitiesConfirm.ExternalRefNum']"
+        ],
+        "xpath_confirmSRClick": [
+            "xpath",
+            "//button[@class='btn btn-success'][contains(.,'ConfirmService')]"
+        ],
+        "xpath_confirmSRSuccessMessage": [
+            "xpath",
+            "//div[contains(@ng-bind-html,'message.text')]"
+        ],
+        "xpath_confirmReset": [
+            "xpath",
+            "//button[@ng-click='vmUtilitiesConfirm.RefreshSearch()']"
+        ],
+        "xpath_password": [
+            "xpath",
+            "//input[contains(@type,'password')]"
+        ],
+        "xpath_userName": [
+            "xpath",
+            "//input[@ng-model='vmUtilitiesEndPoint.UserName']"
+        ],
+        "xpath_applicationList": [
+            "xpath",
+            "//select[contains(@ng-model,'vmUtilitiesEndPoint.Application')]"
+        ],
+        "xpath_CredentialSaveButton": [
+            "xpath",
+            "//button[contains(@ng-click,'vmUtilitiesEndPoint.save()')]"
+        ],
+        "xpath_EndpointaccessMenu": [
+            "xpath",
+            "//div[@class='ps-noselect ng-binding'][contains(.,'EndPoint Access')]"
+        ],
+        "xpath_EndPointAccessHeader": [
+            "xpath",
+            "(//li[contains(.,'EndPoint Access')])[3]"
+        ],
+        "xpath_EndpointGrowlMessage": [
+            "xpath",
+            "//div[@class='growl-message ng-binding'][contains(.,'Credentials for Application was updated successfully')]"
+        ],
+        "xpath_updateInFast": [
+            "xpath",
+            "//button[contains(@ng-click,'vmUtilities.UpdateInFastExternalRefNum()')]"
+        ],
+        "xpath_checkBoxUniqueID": [
+            "xpath",
+            "//input[contains(@id,'chkUniqueID')]"
+        ],
+        "xpath_extRefNum": [
+            "xpath",
+            "//input[contains(@id,'chkExternalRefNum')]"
+        ]
+    }
+}

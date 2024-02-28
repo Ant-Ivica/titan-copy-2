@@ -1,0 +1,34 @@
+{ 
+    "locationsObjRepo":
+    {
+        "addNewLocation":["xpath","(//button[@class='btn btn-sm'][contains(.,'Add New Location')])"],
+        "externalID": ["xpath", "//input[@name = 'ExternalLocationID']"],
+        "locationName": ["xpath", "//input[@name = 'LocationName']"],
+        "servicePreference": ["xpath", "//button[@ng-disabled='disable-button']"],
+        "servicePreferenceOption": ["xpath", "//button[@ng-bind-html='lang.selectAll']"],
+        "successMsgNewLocation":["xpath", "(//div[@class='growl-message ng-binding'][contains(.,'A new record for External Location ID: ')])"],
+        "defaultFastFileNotes" : ["xpath", "//textarea[contains(@ng-model,'vbranchmap.entity.Notes')]"],
+        "FASTGABMap":["xpath","(//a[contains(@uib-tooltip,'FAST GAB Map')])"],
+        "FASTGABMappings" : ["xpath", "//li[contains(.,'FAST GAB Mappings')]"],
+        "fASTGABMapIcon" : ["xpath", "(//a[@uib-tooltip='FAST GAB Map'])[1]"],
+        "save" : ["xpath", "//button[@class='btn btn-success'][contains(.,'Save')]"],
+        "contacts":["xpath","//a[@uib-tooltip='Contacts']"],
+        "filterByCustomerName" : ["xpath", "(//input[@type='text'])[1]"],
+        "filterByExternalID" : ["xpath", "(//input[@type='text'])[2]"],
+        "filterByLocationName": ["xpath", "(//input[@type='text'])[3]"],
+        "filterByTenant": ["xpath", "(//input[@type='text'])[4]"],
+        "customerNameCancel":["xpath", "(//i[contains(@class,'ui-grid-icon-cancel')])[1]"],
+        "externalIDCancel":["xpath", "(//i[contains(@class,'ui-grid-icon-cancel')])[2]"],
+        "locationNameCancel":["xpath", "(//i[contains(@class,'ui-grid-icon-cancel')])[3]"],
+        "tenantCancel":["xpath", "(//i[contains(@class,'ui-grid-icon-cancel')])[4]"],
+        "resultRowCustName": ["xpath", "(//div[@class='ui-grid-cell-contents ng-binding ng-scope'])[1]"], 
+        "resultRowExtID" : ["xpath", "(//div[@class='ui-grid-cell-contents ng-binding ng-scope'])[2]"],
+        "resultRowLocationName" : ["xpath", "(//div[@class='ui-grid-cell-contents ng-binding ng-scope'])[3]"],
+        "resultRowTenant" : ["xpath", "(//div[@class='ui-grid-cell-contents ng-binding ng-scope'])[4]"],
+        "deleteLoc" : ["xpath", "//button[@class='btn btn-danger']"],
+        "editLocationHeader" : ["xpath", "//div[@class='widget-header'][contains(.,'Edit Location')]"],
+        "cannotDeletePopup" : ["xpath", "//div[@class='widget-header ng-scope'][contains(.,'Cannot Delete')]"],
+        "ok" : ["xpath", "//button[@class='btn btn-default ng-binding'][contains(.,'OK')]"],
+        "editLocationSuccess" : ["xpath", "//div[@class='growl-message ng-binding']"]
+    }
+}

@@ -1,0 +1,216 @@
+{
+  "searchPage": {
+    "faiLogo": [
+      "xpath",
+      "//img[@class='ps-icon']"
+    ],
+    "orderSummary": [
+      "xpath",
+      "//li[@class='ng-binding'][contains(.,'Orders Summary')]"
+    ],
+    "searchInput": [
+      "name",
+      "q"
+    ],
+    "searchDate": [
+      "xpath",
+      "(//i[contains(@class,'fa fa-search')])[1]"
+    ],
+    "searchButton": [
+      "xpath",
+      "//i[@ng-click='vmReport.searchbyReferenceNo()']"
+    ],
+    "result": [
+      "xpath",
+      "//div[@class='r']/a/h3"
+    ],
+    "Toggle": [
+      "xpath",
+      "//i[@title='Search By Reference Number']"
+    ],
+    "TogglebyDate": [
+      "xpath",
+      "//i[contains(@title,'Search By Date Range')]"
+    ],
+    "FirstEntry": [
+      "xpath",
+      "//div[contains(@class,'i-grid-cell ng-scope ui-grid-coluiGrid')]"
+    ],
+    "orderAtFirstRow": [
+      "xpath",
+      "//div[contains(@class,'ui-grid-cell-contents ng-binding ng-scope ui-grid-cell-focus')]"
+    ],
+    "Servicerequest": [
+      "xpath",
+      "//label[contains(.,'Service Request Id:')]"
+    ],
+    "closeButton": [
+      "xpath",
+      "//button[@data-dismiss='modal']"
+    ],
+    "ExternalRefNum": [
+      "xpath",
+      "//input[@ng-model='vmReport.ReferenceNo']"
+    ],
+    "extRefNumTextBox": [
+      "xpath",
+      "(//input[contains(@type,'text')])[5]"
+    ],
+    "Dropdown": [
+      "xpath",
+      "//select[@ng-model='vmReport.FilterReferenceNoSection']"
+    ],
+    "DropdownDate": [
+      "xpath",
+      "//select[@ng-model='vmReport.FilterSection']"
+    ],
+    "DivMessage": [
+      "xpath",
+      "//div[contains(@class,'col-md-4 ng-binding')]"
+    ],
+    "DivMessageFastfile": [
+      "xpath",
+      "//div[contains(@class,'col-md-3 ng-binding')]"
+    ],
+    "TenantColumn": [
+      "xpath",
+      "//span[@class='ui-grid-header-cell-label ng-binding'][contains(.,'Tenant')]"
+    ],
+    "TenantDet": [
+      "xpath",
+      "//div[contains(@class,'ui-grid-cell ng-scope ui-grid-coluiGrid-000I')]"
+    ],
+    "TextSearch": [
+      "xpath",
+      "//input[@ng-model='vmReport.ReferenceNo']"
+    ],
+    "RFOrdersummary": [
+      "xpath",
+      "//div[@class='ps-noselect ng-binding'][contains(.,'RF Orders Summary')]"
+    ],
+    "Reportingtab": [
+      "xpath",
+      "//div[@class='ps-noselect ng-binding'][contains(.,'Reporting')]"
+    ],
+    "Spinner": [
+      "xpath",
+      "(//i[contains(@class,'fa fa-spinner')])"
+    ],
+    "Attachments": [
+      "xpath",
+      "(//li[@ng-show='!false']//a[contains(@data-toggle,'modal')])"
+    ],
+    "popupcontent": [
+      "xpath",
+      "//div[contains(@class,'widget-header ng-scope')]"
+    ],
+    "attachContent": [
+      "xpath",
+      "//div[contains(@class,'row alt')]"
+    ],
+    "More": [
+      "xpath",
+      "(//li[@ng-show='!false']//a[contains(.,'+ More')])"
+    ],
+    "txtServiceReq": [
+      "xpath",
+      "(//input[contains(@class,'ui-grid-filter-input ui-grid-filter-input-0')])[1]"
+    ],
+    "txtCustomerName": [
+      "xpath",
+      "(//input[contains(@class,'ui-grid-filter-input ui-grid-filter-input-0')])[2]"
+    ],
+    "txtExternalApp": [
+      "xpath",
+      "(//input[contains(@type,'text')])[4]"
+    ],
+    "txtExternalRef": [
+      "xpath",
+      "(//input[contains(@class,'ui-grid-filter-input ui-grid-filter-input-0')])[4]"
+    ],
+    "txtOrderDate": [
+      "xpath",
+      "(//input[contains(@class,'ui-grid-filter-input ui-grid-filter-input-0')])[5]"
+    ],
+    "txtInternalRefNum": [
+      "xpath",
+      "(//input[contains(@class,'ui-grid-filter-input ui-grid-filter-input-0')])[6]"
+    ],
+    "txtServiceType": [
+      "xpath",
+      "(//input[contains(@class,'ui-grid-filter-input ui-grid-filter-input-0')])[7]"
+    ],
+    "txtStatus": [
+      "xpath",
+      "(//input[contains(@type,'text')])[9]"
+    ],
+    "Status_Rejected": [
+      "xpath",
+      "(//div[@title='Rejected'])[1]"
+    ],
+    "Status_Open": [
+      "xpath",
+      "(//div[@title='Open'])[1]"
+    ],
+    "txtTenant": [
+      "xpath",
+      "(//input[contains(@class,'ui-grid-filter-input ui-grid-filter-input-0')])[9]"
+    ],
+    "resultrow_ServiceReqId": [
+      "xpath",
+      "(//div[contains(@class,'ui-grid-cell-contents ng-binding ng-scope')])[1]"
+    ],
+    "resultrow_CustomerName": [
+      "xpath",
+      "(//div[contains(@class,'ui-grid-cell-contents ng-binding ng-scope')])[2]"
+    ],
+    "resultrow_ExternalApp": [
+      "xpath",
+      "(//div[contains(@class,'ui-grid-cell-contents ng-binding ng-scope')])[3]"
+    ],
+    "resultrow_ExternalRef": [
+      "xpath",
+      "(//div[contains(@class,'ui-grid-cell-contents ng-binding ng-scope')])[4]"
+    ],
+    "resultrow_OrderDate": [
+      "xpath",
+      "(//div[contains(@class,'ui-grid-cell-contents ng-binding ng-scope')])[5]"
+    ],
+    "resultrow_InternalRef": [
+      "xpath",
+      "(//div[contains(@class,'ui-grid-cell-contents ng-binding ng-scope')])[6]"
+    ],
+    "internalRefID": [
+      "xpath",
+      "//label[contains(.,'Internal Reference Id:')]"
+    ],
+    "internalRefNum_OrderActivity": [
+      "xpath",
+      "//label[contains(.,'Internal Reference Id:')]"
+    ],
+    "OrderActivityPage": [
+      "xpath",
+      "//h3[contains(.,'Order Activity')]"
+    ],
+    "resultrow_ServiceType": [
+      "xpath",
+      "(//div[contains(@class,'ui-grid-cell-contents ng-binding ng-scope')])[7]"
+    ],
+    "resultrow_Status": [
+      "xpath",
+      "(//div[contains(@class,'ui-grid-cell-contents ng-binding ng-scope')])[8]"
+    ],
+    "resultrow_Tenant": [
+      "xpath",
+      "(//div[contains(@class,'ui-grid-cell-contents ng-binding ng-scope')])[9]"
+    ],
+    "externalApp": [
+      "xpath",
+      "(//input[contains(@type,'text')])[6]"
+    ],
+    "externalApplication": [
+      "xpath",
+      "(//input[contains(@type,'text')])[4]"
+    ]
+  }
+}

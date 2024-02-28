@@ -1,0 +1,177 @@
+{
+    "accessRequestObj": {
+        "accessRequestMenu": [ "xpath", "//div[contains(@class,'ps-noselect ng-binding')][contains(.,'Access')]" ],
+        "accessRequestLabel": [
+            "xpath",
+            "(//li[contains(.,'Access Request')])[5]"
+        ],
+        "addAccessRequest": [
+            "xpath",
+            "//button[contains(@ng-click,'addNewRequest()')]"
+        ],
+        "firstName": [
+            "xpath",
+            "(//input[contains(@type,'text')])[1]"
+        ],
+        "lastName": [
+            "xpath",
+            "(//input[contains(@type,'text')])[2]"
+        ],
+        "emailId": [
+            "xpath",
+            "(//input[contains(@type,'text')])[3]"
+        ],
+        "phone": [
+            "xpath",
+            "(//input[contains(@type,'text')])[4]"
+        ],
+        "companyName": [
+            "xpath",
+            "(//input[contains(@type,'text')])[5]"
+        ],
+        "projectName": [
+            "xpath",
+            "(//input[contains(@type,'text')])[6]"
+        ],
+        "status": [
+            "xpath",
+            "(//input[contains(@type,'text')])[7]"
+        ],
+        "delfirstName": [
+            "xpath",
+            "(//i[contains(@aria-label,'Remove Filter')])[1]"
+        ],
+        "dellastName": [
+            "xpath",
+            "(//i[contains(@aria-label,'Remove Filter')])[2]"
+        ],
+        "delemailId": [
+            "xpath",
+            "(//i[contains(@aria-label,'Remove Filter')])[3]"
+        ],
+        "delphone": [
+            "xpath",
+            "(//i[contains(@aria-label,'Remove Filter')])[4]"
+        ],
+        "delcompanyName": [
+            "xpath",
+            "(//i[contains(@aria-label,'Remove Filter')])[5]"
+        ],
+        "delprojectName": [
+            "xpath",
+            "(//i[contains(@aria-label,'Remove Filter')])[6]"
+        ],
+        "delstatus": [
+            "xpath",
+            "(//i[contains(@aria-label,'Remove Filter')])[7]"
+        ],
+        "row_firstName": [
+            "xpath",
+            "(//div[@class='ui-grid-cell-contents ng-binding ng-scope'])[1]"
+        ],
+        "row_lastName": [
+            "xpath",
+            "(//div[@class='ui-grid-cell-contents ng-binding ng-scope'])[2]"
+        ],
+        "row_Email": [
+            "xpath",
+            "(//div[@class='ui-grid-cell-contents ng-binding ng-scope'])[3]"
+        ],
+        "row_Phone": [
+            "xpath",
+            "(//div[@class='ui-grid-cell-contents ng-binding ng-scope'])[4]"
+        ],
+        "row_CompanyName": [
+            "xpath",
+            "(//div[@class='ui-grid-cell-contents ng-binding ng-scope'])[5]"
+        ],
+        "row_ProjectName": [
+            "xpath",
+            "(//div[@class='ui-grid-cell-contents ng-binding ng-scope'])[6]"
+        ],
+        "row_Status": [
+            "xpath",
+            "(//div[@class='ui-grid-cell-contents ng-binding ng-scope'])[7]"
+        ],
+        "addAccessRequestLabel": [
+            "xpath",
+            "//h3[contains(.,'Add New Request')]"
+        ],
+        "addfirstName": [
+            "xpath",
+            "//input[contains(@name,'FirstName')]"
+        ],
+        "addlastName": [
+            "xpath",
+            "//input[contains(@name,'LastName')]"
+        ],
+        "addEmail": [
+            "xpath",
+            "//input[contains(@name,'Email')]"
+        ],
+        "addPhone": [
+            "xpath",
+            "//input[contains(@name,'Phone')]"
+        ],
+        "addCompanyName": [
+            "xpath",
+            "//input[contains(@name,'Company')]"
+        ],
+        "addProjectName": [
+            "xpath",
+            "//input[contains(@name,'Project')]"
+        ],
+        "addTitleSettlementchk": [
+            "xpath",
+            "//input[@ng-model='AccessReq.entity.TitleAndSettlement']"
+        ],
+        "addchkInteractiveOfficechk": [
+            "xpath",
+            "//input[@ng-model='AccessReq.entity.IneractiveOfficeDirectory']"
+        ],
+        "addOtherchk": [
+            "xpath",
+            "//input[@ng-change='AccessReq.ChangeOther()']"
+        ],
+        "addOther": [
+            "xpath",
+            "//input[@name='OtherRequirement']"
+        ],
+        "addComments": [
+            "xpath",
+            "//textarea[@ng-model='AccessReq.entity.Comments']"
+        ],
+        "addActiveButton": [
+            "xpath",
+            "//button[contains(@ng-click,'AccessReq.Active()')]"
+        ],
+        "addApproveButton": [
+            "xpath",
+            "//button[contains(@ng-click,'AccessReq.Accept()')]"
+        ],
+        "addDeclineButton": [
+            "xpath",
+            "//button[contains(@ng-click,'AccessReq.Decline()')]"
+        ],
+        "addDeactivateButton": [
+            "xpath",
+            "//button[contains(@ng-click,'AccessReq.Deactivate()')]"
+        ],
+        "addSaveButton": [
+            "xpath",
+            "//button[contains(@ng-click,'AccessReq.save()')]"
+        ],
+        "addCancelButton": [
+            "xpath",
+            "//button[contains(@class,'btn btn-primary')]"
+        ],
+        "addSuccessmessage": [
+            "xpath",
+            "//div[@class='growl-message ng-binding']"
+        ],
+        "modifyAccessRequestlbl": [
+            "xpath",
+            "//h3[contains(.,'Modify Request')]"
+        ]
+    }
+}

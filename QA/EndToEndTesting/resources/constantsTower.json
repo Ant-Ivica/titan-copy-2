@@ -1,0 +1,71 @@
+{
+  "HomePageConstants": {
+    "beqConstants" : ["No Good Match", "Mismatch Office ID","Mismatch Lender","Duplicate Order Source","Piggyback Order",
+      "Unhandled Transaction Type","Unbound Order","Duplicate Service Requested","Multiple Match Found",
+      "Potential Match Found","New Service Received","Unhandled Service Type","Unhandled","Updated Unbound Order",
+      "Invalid Order Data","LoanExceeds 50000 Threshold"
+    ],
+
+    "teqConstants" : ["EndPoint Service Handler", "FAST Receive","FAST Send",
+      "RealEC Receive",
+      "RealEC Send",
+      "ELS Receive",
+      "ELS Queue Handler",
+      "Winscape Receive",
+      "Winscape Send",
+      "Convoy",
+      "BizTalk Send",
+      "Elite Send",
+      "FASTWeb Send",
+      "Elite Receive",
+      "FASTWeb Receive",
+      "Settlement Service Receive",
+      "Settlement Service Send",
+      "EliteEndPoint Receive",
+      "Calculator Send",
+      "Simplifile Receive",
+      "Simplifile Send",
+      "Unhandled",
+      "Keystone Send",
+      "Keystone Receive",
+      "LendingQB Receive",
+      "LendingQB Send",
+      "ValuTrust Send",
+      "ValuTrust Recieve",
+      "LTX Send",
+      "LTX Receive",
+      "FASTGABMap not found",
+      "Unhandled Service Type",
+      "TitleProcess Send",
+      "TitleProcess Receive",
+      "TitleVision Receive",
+      "TitleVision Send",
+      "TitlePort Recieve",
+      "TitlePort Send",
+      "SigningProcess Send",
+      "SigningProcess Receive",
+      "PropertyTaxProcess Send",
+      "PropertyTaxProcess Receive",
+      "EventsQueue Send",
+      "SafeEscrow Send",
+      "SafeEscrow Recieve",
+      "OpenAPI Recieve",
+      "Retry",
+      "OpenAPIQueueHandler" ],
+
+      "securityEditUser" : ["Air Traffic Control", "Agency", "LVIS", "MortgageSolutions", "QA", "RF", "RLA"
+      ]
+    
+  },
+  "keywords": {
+    "keyword1": "Chandrashekar C",
+    "keyword2": "hello world"
+  },
+  "results": {
+    "result1": "https://whatis.techtarget.com/definition/Hello-World"
+  },
+  "filePref":{
+    "appList" : ["CALCULATOR","SettlementServices"]
+  }
+  
+}

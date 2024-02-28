@@ -1,0 +1,5 @@
+variables:
+    AppRepo: \\corp.firstam.com\Apps\SCM\Repo
+    DevOpsValidServerPath: $/AT_DevOps/Automation/PowerShell/Valid
+    buildConfiguration: Release
+    buildPlatform: "Any CPU"

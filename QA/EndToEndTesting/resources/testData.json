@@ -1,0 +1,25 @@
+{
+  "search": {
+    "googleUrl": "https://www.google.com/",
+    "homeUrl": "https://qa.lvis.firstam.net/tower/index.html",
+    "mappingTablesUrl": "https://staging.terminal.firstam.net/tower/index.html#/Customermappings",
+    "baseUrl1": "https://staging.terminal.firstam.net/tower/index.html#/reporting",
+    "towerReporting": "https://staging.terminal.firstam.net/tower/#/reporting",
+    "Customermappings": "https://staging.terminal.firstam.net/tower/index.html#/Customermappings",
+    "businessException": "https://staging.terminal.firstam.net/tower/#/businessexception",
+    "technicalExceptions": "https://staging.terminal.firstam.net/tower/#/Exceptions/",
+    "terminalloginformation": "https://staging.terminal.firstam.net/tower/#/terminalloginformation",
+    "fasttaskmapping": "https://staging.terminal.firstam.net/tower/index.html#/FastTaskMappings",
+    "providersmapping": "https://staging.terminal.firstam.net/tower/index.html#/providermappings",
+    "FASTOfficeMappingURL": "firstam.net/tower/#/fastofficemappings/"
+
+  },
+  "User": {
+    "Tenant": "LVIS",
+    "Role": "SuperAdmin",
+    "UserName":""
+  },
+  "results": {
+    "result1": "https://whatis.techtarget.com/definition/Hello-World"
+  }
+}

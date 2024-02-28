@@ -1,0 +1,344 @@
+{
+  "BEQObjRepo": {
+    "ExceptionHeader": [
+      "xpath",
+      "(//div[contains(.,'Exceptions')])[5]"
+    ],
+    "BusinessExceptionQueues": [
+      "xpath",
+      "(//div[contains(.,'Business Exception Queues')])[6]"
+    ],
+    "GridAvail": [
+      "xpath",
+      "(//div[@class='ui-grid-cell-contents ng-binding ng-scope'])[1]"
+    ],
+    "statusFilter": [
+      "xpath",
+      "//select[@ng-model='colFilter.term']"
+    ],
+    "dateFilter": [
+      "xpath",
+      "//select[@ng-model='vmBEQException.FilterSection']"
+    ],
+    "fromDate": [
+      "xpath",
+      "(//input[@date-format='MM/dd/yyyy'])[1]"
+    ],
+    "toDate": [
+      "xpath",
+      "(//input[@date-format='MM/dd/yyyy'])[2]"
+    ],
+    "exceptionType": [
+      "xpath",
+      "(//input[contains(@type,'text')])[5]"
+    ],
+    "ExternalRef": [
+      "xpath",
+      "(//input[@aria-label='Filter for column'])[1]"
+    ],
+    "StatusCol": [
+      "xpath",
+      "//select[contains(@ng-model,'colFilter.term')]"
+    ],
+    "includeResolvedCheckBox": [
+      "xpath",
+      "//input[@type='checkbox']"
+    ],
+    "searchIcon": [
+      "xpath",
+      "(//i[@class='fa fa-search'])[1]"
+    ],
+    "searchGrid": [
+      "xpath",
+      "//div[@class='ui-grid-tree-base-row-header-buttons ng-scope ui-grid-tree-base-header']]"
+    ],
+    "resultRow": [
+      "xpath",
+      "(//div[@title='Potential_Match_Found'])[1]"
+    ],
+    "result": [
+      "xpath",
+      "(//div[@title='Multiple_Match_Found'])[6]"
+    ],
+    "bindButton": [
+      "xpath",
+      "(//button[@type='button'])[2]"
+    ],
+    "bind": [
+      "xpath",
+      "(//button[@type='button'])[2]"
+    ],
+    "addNotes_lbl": [
+      "xpath",
+      "//label[contains(.,'Add Note(s)')]"
+    ],
+    "addNotes_Text": [
+      "xpath",
+      "//textarea[@ng-model='vmBEQException.FileNotes']"
+    ],
+    "bindAction": [
+      "xpath",
+      "(//button[@class='btn btn-primary'])[1]"
+    ],
+    "bind_confMessage": [
+      "xpath",
+      "//div[@ng-bind-html='message.text']"
+    ],
+    "beqGridhome": [
+      "xpath",
+      "(//div[@class='dashboard-widget-content'])[1]"
+    ],
+    "homeTab": [
+      "xpath",
+      "//div[@class='ps-noselect ng-binding ps-menu-active-indicator'][contains(.,'Home')]"
+    ],
+    "firstRow": [
+      "xpath",
+      "(//div[@title='No_Good_Match'])[1]"
+    ],
+    "firstRowGrid": [
+      "xpath",
+      "(//i[contains(@class,'ui-grid-icon-plus-squared')])[1]"
+    ],
+    "secondRow": [
+      "xpath",
+      "//span[contains(.,'Mismatch Office ID')]"
+    ],
+    "thirdRow": [
+      "xpath",
+      "//span[contains(.,'Mismatch Lender')]"
+    ],
+    "fourthRow": [
+      "xpath",
+      "(//div[contains(@class,'ui-grid-cell-contents ng-binding ng-scope')])[4]"
+    ],
+    "firstRowVerify": [
+      "xpath",
+      "(//div[@title='No_Good_Match'])[1]"
+    ],
+    "tenantColumn": [
+      "xpath",
+      "(//input[contains(@type,'text')])[12]"
+    ],
+    "extApplicationColumn": [
+      "xpath",
+      "(//input[contains(@type,'text')])[6]"
+    ],
+    "secondRowVerify": [
+      "xpath",
+      "(//div[contains(@title,'Mismatch_Office_ID')])[1]"
+    ],
+    "thirdRowVerify": [
+      "xpath",
+      "//div[@title='Mismatch_Lender']"
+    ],
+    "unhandledRow": [
+      "xpath",
+      "//span[contains(.,'Unhandled Transaction Type')]"
+    ],
+    "unhandledVerify": [
+      "xpath",
+      "(//div[@title='Unhandled_Transaction_Type'])[1]"
+    ],
+    "homeButton": [
+      "xpath",
+      "(//div[contains(.,'Home')])[5]"
+    ],
+    "pageExceptionDetailsHeader": [
+      "xpath",
+      "//h3[contains(.,'Exception Details')]"
+    ],
+    "unboundRow": [
+      "xpath",
+      "(//span[contains(.,'Unbound Order')])[1]"
+    ],
+    "unboundVerify": [
+      "xpath",
+      "//div[@title='Unbound_Order']"
+    ],
+    "multiplematchRow": [
+      "xpath",
+      "//span[contains(.,'Multiple Match Found')]"
+    ],
+    "multiplematchVerify": [
+      "xpath",
+      "(//div[@title='Multiple_Match_Found'])[1]"
+    ],
+    "firstRow_DuplicateOrderSource": [
+      "xpath",
+      "(//div[@title='Duplicate_Order_Source'])[1]"
+    ],
+    "potentialRow": [
+      "xpath",
+      "//span[contains(.,'Potential Match Found')]"
+    ],
+    "fourthRowVerify": [
+      "xapth",
+      "(//div[@title='Duplicate_Order_Source'])[1]"
+    ],
+    "potentialVerify": [
+      "xpath",
+      "(//div[@title='Potential_Match_Found'])[1]"
+    ],
+    "newserviceRow": [
+      "xpath",
+      "//span[contains(.,'New Service Received')]"
+    ],
+    "newserviceVerify": [
+      "xpath",
+      "(//div[contains(@title,'New_Service_Received')])[1]"
+    ],
+    "loanexceedsRow": [
+      "xpath",
+      "//span[contains(.,'LoanExceeds 50000 Threshold')]"
+    ],
+    "loanexceedsVerify": [
+      "xpath",
+      "(//div[@title='LoanExceeds_50000_Threshold'])[1]"
+    ],
+    "unbind": [
+      "xpath",
+      "//button[@type='button'][contains(.,'UNBIND')]"
+    ],
+    "unbindMatch": [
+      "xpath",
+      "//button[@ng-click='vmBEQException.UNBind(Match)']"
+    ],
+    "OKButton": [
+      "xpath",
+      "//button[@ng-click='ok()']"
+    ],
+    "PopUp_Delete": [
+      "xpath",
+      "//button[@ng-click='vmBEQException.DeleteOrder()']"
+    ],
+    "searchBtn": [
+      "xpath",
+      "//button[@class='btn btn-primary'][contains(.,'Search')]"
+    ],
+    "searchHeader": [
+      "xpath",
+      "(//b[contains(.,'Search')])[1]"
+    ],
+    "fastFileIDTextBox": [
+      "xpath",
+      "//input[contains(@ng-model,'vmBEQException.entity.FastFileID')]"
+    ],
+    "fastFiletxtbox": [
+      "xpath",
+      "//input[@ng-model='vmBEQException.entity.FastFile']"
+    ],
+    "regionID": [
+      "xpath",
+      "//input[@placeholder='Search for a Region']"
+    ],
+    "regionbutton": [
+      "xpath",
+      "//a[@tabindex='-1']"
+    ],
+    "email": [
+      "xpath",
+      "//button[contains(.,'EMAIL')]"
+    ],
+    "resultRow1": [
+      "xpath",
+      "(//div[@title='Unhandled_Transaction_Type'])[1]"
+    ],
+    "rejectButton": [
+      "xpath",
+      "//button[contains(.,'REJECT')]"
+    ],
+    "addNotes_lbl1": [
+      "xpath",
+      "(//label[@class='label-lg'])[1]"
+    ],
+    "addNotes_Text1": [
+      "xpath",
+      "//textarea[@ng-model='vmBEQException.entity.RejectNotes']"
+    ],
+    "reject": [
+      "xpath",
+      "//button[@class='btn btn-primary'][contains(.,'Reject')]"
+    ],
+    "confMsg": [
+      "xpath",
+      "//div[@ng-bind-html='message.text']"
+    ],
+    "validateMsg": [
+      "xpath",
+      "(//div[@class='growl-message ng-binding']"
+    ],
+    "externalRefNum": [
+      "xpath",
+      "//input[@ng-model='vmBEQException.entity.ExternalRefNum']"
+    ],
+    "bindInternalRefNum": [
+      "xpath",
+      "(//td[contains(@class,'ng-binding')])[1]"
+    ],
+    "bindRegionId": [
+      "xpath",
+      "(//td[contains(@class,'ng-binding')])[2]"
+    ],
+    "btn_NewOrder": [
+      "xpath",
+      "//button[@ng-click='vmBEQException.NewOrder()']"
+    ],
+    "btn_Resubmit": [
+      "xpath",
+      "//button[@ng-click='vmBEQException.resubmit()']"
+    ],
+    "btn_NewOrder1": [
+      "xpath",
+      "//button[@ng-click='vmBEQException.CreateOrder()']"
+    ],
+    "btn_Delete": [
+      "xpath",
+      "//button[contains(.,'DELETE')]"
+    ],
+    "btn_Cancel": [
+      "xpath",
+      "//button[contains(.,'Cancel')]"
+    ],
+    "addNotes_NewOrderText": [
+      "xpath",
+      "//textarea[@ng-model='vmBEQException.NewOrderNotes']"
+    ],
+    "externalApp": [
+      "xpath",
+      "(//input[contains(@type,'text')])[6]"
+    ],
+    "updateFastInfoTitle": [
+      "xpath",
+      "//h3[contains(.,'Update FAST Info')]"
+    ],
+    "updateFastInfo": [
+      "xpath",
+      "//button[contains(.,'Update FAST Info')]"
+    ],
+    "updateFastInfo_ExternalRefNum": [
+      "xpath",
+      "//input[contains(@ng-model,'vmBEQException.ExternalRefNum')]"
+    ],
+    "updateFastInfo_InternalRefNum": [
+      "xpath",
+      "//input[contains(@ng-model,'vmBEQException.entity.update.FileNumber')]"
+    ],
+    "updateFastInfo_RegionId": [
+      "xpath",
+      "//input[]"
+    ],
+    "updateFastInfo_Cancel": [
+      "xpath",
+      "(//button[@class='btn btn-primary'][contains(.,'Cancel')])[1]"
+    ],
+    "updateFastInfo_Update": [
+      "xpath",
+      "(//button[@class='btn btn-success'][contains(.,'Update')])[1]"
+    ],
+    "updateFastInfo_UpdateReject": [
+      "xpath",
+      "(//button[@class='btn btn-success'][contains(.,'Update and Reject')])[1]"
+    ]
+  }
+}

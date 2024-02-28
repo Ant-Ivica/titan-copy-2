@@ -1,0 +1,51 @@
+# TQA build for AT_Tower
+---
+name: $(TeamProject)_$(SourceBranchName)_TQA_$(Date:dd)-$(Date:MM)-$(Date:yyyy)_$(Rev:r)
+trigger: none
+
+variables:
+  - template: Templates_CI/vars.yml
+
+stages:
+  - stage: Build
+  
+    jobs:
+    - job: Workspace_TQA_Execution
+      dependsOn: []
+      pool: FA_BuildPool-Prod            
+      steps:
+        - template: Templates_CI/CI_Steps/Nuget_Restore_Step.yml
+            
+        - template: Templates_CI/CI_Steps/VS_Build_Step.yml
+
+        - template: Templates_CI/CI_Steps/VS_Test_Step.yml
+
+        - template: Templates_CI/CI_Steps/FA_Zip_Step.yml
+
+        - task: FAVeracodeAPI@1
+          displayName: 'First American Veracode Upload API'
+          inputs:
+            ScanOption: SB
+            VeracodeAppName: 'Lender Vendor Integration Services (LVIS)'
+            VeracodeAppID: 243990
+            VeracodeSandBoxID: 318396
+            EmailRecipients: 'lvis@firstam.com'
+        
+        - task: FASonarQube@2
+          displayName: 'First American SonarQube Analysis'
+          inputs:
+            SQPropertyFilePath: '$(build.sourcesDirectory)'
+            SQHostServer: snavnappsqub001
+            SQKey: Tower
+            SQProject: Tower
+            SQVersion: '$(Build.BuildNumber)'
+            SonarQubeURI: 'http://snavnappsqub001:9000/api/resources?resource=Tower'
+        
+        - task: TQAProcess@0
+          displayName: 'First American TQA Process'
+          inputs:
+            VeracodeAppID: 243990
+            SonarQubeURI: 'http://snavnappsqub001:9000/api/resources?resource=Tower'
+            EmailRecipients: 'lvis@firstam.com'
+                            
+        - template: Templates_CI/CI_Steps/Clean_Directories_Step.yml

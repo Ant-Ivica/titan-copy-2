@@ -1,0 +1,46 @@
+{
+  "BEQReportingObjRepo": {
+    "dateFilterDropDown": [
+      "xpath",
+      "//label[contains(.,'Date Filter: ')]//following::select[1]"
+    ],
+    "includeResolveCheckBox": [
+      "xpath",
+      "//label[contains(.,'Date Filter: ')]//following::input[1]"
+    ],
+    "dateFilterLast30Days": [
+      "xpath",
+      "//label[contains(.,'Date Filter: ')]//following::option[contains(.,'Last 30 Days')]"
+    ],
+    "searchButton": [
+      "xpath",
+      "//i[@class ='fa fa-search' and @ng-click='vmBEQException.search()']"
+    ],
+    "exceptionsTab": [
+      "xpath",
+      "//i[@class='fa fa-exclamation-triangle ps-menu-icon']"
+    ],
+    "messageLogBtnVisible": [
+      "xpath",
+      "//div[contains(@class,'ui-grid-tree-base-row-header-buttons ng-scope ui-grid-tree-base-header')]//following::button[@class='btn btn-info btn-xs' and contains(.,'Message Log')]"
+    ],
+    "messageLogBtnFirstIndex": [
+      "xpath",
+      "//div[contains(@class,'ui-grid-tree-base-row-header-buttons ng-scope ui-grid-tree-base-header')]//following::button[@class='btn btn-info btn-xs' and contains(.,'Message Log')][1]"
+    ],
+    "incomingMsgLogLink": [
+      "xpath",
+      "//a[@class='ng-binding' and contains(.,'Incoming from')]"
+    ],
+    "orderSummaryPopUp": ["xpath", "//h3[contains(.,'Order Activity')]"],
+    "orderSummaryCloseBtn": ["xpath", "//button[@class='close']"],
+
+    "gridRowCollapsed": ["xpath", "//i[@class='ui-grid-icon-plus-squared'][1]"],
+    "gridRowExpanded": ["xpath", "//i[@class='ui-grid-icon-minus-squared']"],
+    "expandedMsgLogBtn": ["//"],
+    "resultGridHeader": [
+      "xpath",
+      "//div[@class='ui-grid-tree-base-row-header-buttons ng-scope ui-grid-tree-base-header']"
+    ]
+  }
+}

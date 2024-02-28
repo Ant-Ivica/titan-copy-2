@@ -1,0 +1,27 @@
+# BlackDuck build for AT_Tower
+---
+name: $(TeamProject)_$(SourceBranchName)_SCA_$(Date:dd)-$(Date:MM)-$(Date:yyyy)_$(Rev:r)
+trigger: none
+
+variables:
+  - template: Templates_CI/vars.yml
+
+stages:
+  - stage: Build
+  
+    jobs:
+    - job: Workspace_BlackDuck_Execution
+      dependsOn: []
+      pool: FA_BuildPool-Prod            
+      steps:
+        - template: Templates_CI/CI_Steps/Nuget_Restore_Step.yml
+            
+        - powershell: |
+            $Env:SRCCLR_API_TOKEN="eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTY3MDg5LCJleHAiOjE1OTYxMDMxNTYsImF1dGhvcml0aWVzIjoiQUdFTlQiLCJqdGkiOiJhM2UxMTU5Mi0wYzZhLTQwYWItOGYyNi03NTYyZjIwNGFiOGQiLCJjbGllbnRfaWQiOiIiLCJzY29wZSI6W119.tXIruSC3-fBioSu2gCfkAVlS5UzJEzJi9p0dOCTIV-K3fbMbV-XjhyeVnLj8wq20ULKkYfXTVwpeTHZBNHUENVJlh64UwJ5U5I6lPpx70aMNh9zRJEwMSG0ytiIXMLZUS14X6_dPbsPL7Rzf4eJr3ASwpEhnZ9njy3iD-MFx3ws"
+            $Env:JAVA_OPTS="-Xmx6G"
+            Set-ExecutionPolicy AllSigned -Scope Process -Force
+            iex ((New-Object System.Net.WebClient).DownloadString('https://download.srcclr.com/ci.ps1'))
+            srcclr scan --recursive $(build.sourcesDirectory)/DEV/
+          displayName: 'PowerShell Script'
+
+        - template: Templates_CI/CI_Steps/Clean_Directories_Step.yml

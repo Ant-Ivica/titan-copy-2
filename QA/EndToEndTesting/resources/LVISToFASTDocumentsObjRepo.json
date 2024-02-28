@@ -1,0 +1,37 @@
+{
+    "fastToLvisDocObjRepo":{
+        "pageLabel": [ "xpath", "//ul[@class='ps-page-title'][contains(.,'LVIS To FAST Document Mapping')]" ],
+        "lvisToFastLink": ["xpath","//li[@class='ps-selectable-item'][contains(.,'LVIS To FAST')]"],
+        "addNewDocLink":["xpath","//button[@class='btn btn-sm']"],
+        "addNewDocinPopup" : ["xpath","//div[@class='widget-header'][contains(.,'Add New LVIS To FAST Document')]"],
+        "editDocinPopup" : ["xpath","//div[@class='widget-header'][contains(.,'Edit LVIS To FAST Document')]"],
+        "docDescriptioninPopup" : ["xpath","//div[@class='form-group'][contains(.,'LVIS Document Description')]/input"],
+        "lvisDocTypeinPopup": ["xpath","//div[@class='form-group required'][contains(.,'LVIS Document Type')]/select"],
+        "serviceinPopup" : ["xpath","//select[@ng-model='vLVISdocmap.entity.Service']"],
+        "fastDocTypeinPopup": ["xpath","//div[@class='form-group required'][contains(.,'FAST Document Type')]/select"],
+        "saveButtoninPopup" : ["xpath","//button[@class='btn btn-success']"],
+        "successMessage":["xpath","//div[@class='growl-message ng-binding']"],
+        "lvisDocType_result":["xpath","(//div[contains(@class,'ui-grid-cell-contents ng-binding ng-scope')])[1]"],
+        "lvisDocDes_result":["xpath","(//div[contains(@class,'ui-grid-cell-contents ng-binding ng-scope')])[2]"],
+        "service_result":["xpath","(//div[contains(@class,'ui-grid-cell-contents ng-binding ng-scope')])[3]"],
+        "fastDocType_result":["xpath","(//div[contains(@class,'ui-grid-cell-contents ng-binding ng-scope')])[4]"],
+        "tenant_result":["xpath","(//div[contains(@class,'ui-grid-cell-contents ng-binding ng-scope')])[5]"],
+        "lvisDocType_txt":["xpath","(//input[contains(@type,'text')])[1]"],
+        "lvisDocDes_txt":["xpath","(//input[contains(@type,'text')])[2]"],
+        "service_txt":["xpath","(//input[contains(@type,'text')])[3]"],
+        "fastDocType_txt":["xpath","(//input[contains(@type,'text')])[4]"],
+        "tenant_txt":["xpath","(//input[contains(@type,'text')])[5]"],
+        "result_File": ["xpath","//div[@class='ui-grid-cell-contents ng-binding ng-scope']"],
+        "deleteButtoninPopup":["xpath","//button[@class='btn btn-danger']"],
+        "yesinPopup":["xpath","//button[@class='btn btn-success ng-binding']"],
+        "lvisDocType_close":["xpath", "(//i[@class='ui-grid-icon-cancel'])[1]"],
+        "lvisDocDes_close":["xpath", "(//i[@class='ui-grid-icon-cancel'])[2]"],
+        "service_close":["xpath", "(//i[@class='ui-grid-icon-cancel'])[3]"],
+        "fastDocType_close":["xpath", "(//i[@class='ui-grid-icon-cancel'])[4]"],
+        "tenant_close":["xpath","(//i[@class='ui-grid-icon-cancel'])[5]"],
+        "cancelButtoninPopup":["xpath","//button[@class='btn btn-primary']"]
+        
+
+
+    }
+}

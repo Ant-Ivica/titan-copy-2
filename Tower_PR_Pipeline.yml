@@ -1,0 +1,21 @@
+# Application build for AT_Tower
+---
+name: $(TeamProject)_$(SourceBranchName)_$(Date:dd)-$(Date:MM)-$(Date:yyyy)_$(Rev:r)
+trigger: none
+
+variables:
+  - template: Templates_CI/vars.yml
+
+stages:
+  - stage: Build
+  
+    jobs:
+    - job: Workspace_UTExecution
+      dependsOn: []
+      pool: FA_BuildPool-Prod            
+      steps:
+        - template: Templates_CI/CI_Steps/Nuget_Restore_Step.yml
+            
+        - template: Templates_CI/CI_Steps/VS_Build_Step.yml
+
+        - template: Templates_CI/CI_Steps/Clean_Directories_Step.yml

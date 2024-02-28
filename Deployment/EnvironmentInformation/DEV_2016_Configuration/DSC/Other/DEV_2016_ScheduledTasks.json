@@ -1,0 +1,29 @@
+{
+	"BEQ Nightly Resubmit": {		
+		"Executable": "FA.LVIS.Tower.BEQResubmitProcess.exe",
+		"ScheduleType": "Daily",	
+		"PATH" : "<BEQResubmitProcess>",		
+		"StartTime" : "12:00 PM",
+		"ExecuteAsCredential": "LVISCred",
+    "RepeatInterval": "1",
+    "Enable": "true"
+	},
+	"FastDataSync Nightly": {		
+		"Executable": "FA.LVIS.Tower.FastDataSync.exe",
+		"ScheduleType": "Daily",	
+		"PATH" : "<FASTDataSync>",		
+		"StartTime" : "12:00 PM",
+		"ExecuteAsCredential": "LVISCred",
+    "RepeatInterval": "1",
+    "Enable": "true"
+	},
+	"TEQ Hourly Resubmit": {		
+		"Executable": "FA.LVIS.Tower.ResubmitProcess.exe",
+		"ScheduleType": "Daily",	
+		"PATH" : "<ResubmitProcess>",		
+		"StartTime" : "12:00 PM",
+		"ExecuteAsCredential": "LVISCred",
+    "RepeatInterval": "1",
+    "Enable": "true"
+	}
+}

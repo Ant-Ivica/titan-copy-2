@@ -1,0 +1,3 @@
+steps:
+  - task: PostBuildCleanup@3
+    displayName: 'Clean Agent Directories'  

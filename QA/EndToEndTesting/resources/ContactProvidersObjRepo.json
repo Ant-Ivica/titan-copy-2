@@ -1,0 +1,33 @@
+{
+    "contactProvidersObjRepo" :
+    {
+        "addNewContactProvider" : ["xpath", "//button[@class='btn btn-sm'][contains(.,'Add New Contact Provider')]"],
+        "tenant" : ["xpath", "//input[contains(@name,'Tenant')]"],
+        "customerName" : ["xpath", "//input[contains(@name,'CustomerName')]"],
+        "locationName" : ["xpath", "//select[@ng-model='vcontactprovidermap.entity.LocationId']"],
+        "contactId" : ["xpath", "//select[contains(@ng-model,'vcontactprovidermap.entity.ContactId')]"],
+        "providerName" : ["xpath", "//select[contains(@ng-model, 'vcontactprovidermap.entity.ProviderID')]"],
+        "save" : ["xpath", "//button[@class='btn btn-success'][contains(.,'Save')]"],
+        "successMsgNewContactProvider" : ["xpath", "//div[@class='growl-message ng-binding']"],
+        "filterByProviderID" : ["xpath", "(//input[@type='text'])[1]"],
+        "filterByCustomerName"  : ["xpath", "(//input[@type='text'])[2]"],
+        "filterByLocationName" : ["xpath", "(//input[@type='text'])[3]"],
+        "filterByContactID" : ["xpath", "(//input[@type='text'])[4]"],
+        "filterByTenant" : ["xpath", "(//input[@type='text'])[5]"],
+        "resultRowProviderID"  : ["xpath", "(//div[@class='ui-grid-cell-contents ng-binding ng-scope'])[1]"],
+        "resultRowCustomerName" : ["xpath", "(//div[@class='ui-grid-cell-contents ng-binding ng-scope'])[2]"],
+        "resultRowLocationName" : ["xpath", "(//div[@class='ui-grid-cell-contents ng-binding ng-scope'])[3]"],
+        "resultRowContactID" : ["xpath", "(//div[@class='ui-grid-cell-contents ng-binding ng-scope'])[4]"],
+        "resultRowTenant" : ["xpath", "(//div[@class='ui-grid-cell-contents ng-binding ng-scope'])[5]"],
+        "providerIDCancel" : ["xpath", "(//i[@class='ui-grid-icon-cancel'])[1]"],
+        "customerNameCancel" : ["xpath", "(//i[@class='ui-grid-icon-cancel'])[2]"],
+        "locationNameCancel" : ["xpath", "(//i[@class='ui-grid-icon-cancel'])[3]"],
+        "contactIDCancel" : ["xpath", "(//i[@class='ui-grid-icon-cancel'])[4]"],
+        "tenantCancel" : ["xpath", "(//i[@class='ui-grid-icon-cancel'])[5]"],
+        "resultRow" : ["xpath", "(//div[@class='ui-grid-cell-contents ng-binding ng-scope'][contains(.,'abc@abc.com')])[1]"],
+        "editContactProvider" : ["xpath", "//h3[contains(.,'Edit Contact Provider')]"],
+        "updateSuccessMsg" : ["xpath", "//div[@class='growl-message ng-binding']"]
+    
+    
+    }
+}

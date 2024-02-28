@@ -1,0 +1,144 @@
+{
+    "fastToLvisObjRepo": {
+        "fastToLvisDoc": [
+            "xpath",
+            "//div[@class='ps-noselect ng-binding'][contains(.,'FAST To LVIS Documents')]"
+        ],
+        "pageLabel": [
+            "xpath",
+            "//li[contains(.,'FAST To LVIS Document Mapping')]"
+        ],
+        "addNewFastToLVIS": [
+            "xpath",
+            "//button[@ng-click='addNewInDocument()']"
+        ],
+        "fastDocType": [
+            "xpath",
+            "(//input[contains(@type,'text')])[1]"
+        ],
+        "fastDocDesc": [
+            "xpath",
+            "(//input[contains(@type,'text')])[2]"
+        ],
+        "service": [
+            "xpath",
+            "(//input[contains(@type,'text')])[3]"
+        ],
+        "lvisDocType": [
+            "xpath",
+            "(//input[contains(@type,'text')])[4]"
+        ],
+        "tenant": [
+            "xpath",
+            "(//input[contains(@type,'text')])[5]"
+        ],
+        "delfastDocType": [
+            "xpath",
+            "(//i[@ui-grid-one-bind-aria-label='aria.removeFilter'])[1]"
+        ],
+        "delfastDocDesc": [
+            "xpath",
+            "(//i[@ui-grid-one-bind-aria-label='aria.removeFilter'])[2]"
+        ],
+        "delService": [
+            "xpath",
+            "(//i[@ui-grid-one-bind-aria-label='aria.removeFilter'])[3]"
+        ],
+        "dellvisDocType": [
+            "xpath",
+            "(//i[@ui-grid-one-bind-aria-label='aria.removeFilter'])[4]"
+        ],
+        "delTenant": [
+            "xpath",
+            "(//i[@ui-grid-one-bind-aria-label='aria.removeFilter'])[5]"
+        ],
+        "row_fastDocType": [
+            "xpath",
+            "(//div[@class='ui-grid-cell-contents ng-binding ng-scope'])[1]"
+        ],
+        "row_fastDocDesc": [
+            "xpath",
+            "(//div[@class='ui-grid-cell-contents ng-binding ng-scope'])[2]"
+        ],
+        "row_Service": [
+            "xpath",
+            "(//div[@class='ui-grid-cell-contents ng-binding ng-scope'])[3]"
+        ],
+        "row_lvisDocType": [
+            "xpath",
+            "(//div[@class='ui-grid-cell-contents ng-binding ng-scope'])[4]"
+        ],
+        "row_Tenant": [
+            "xpath",
+            "(//div[@class='ui-grid-cell-contents ng-binding ng-scope'])[5]"
+        ],
+        "addHeaderFastToLvis": [
+            "xpath",
+            "//h3[contains(.,'Add New FAST To LVIS Document')]"
+        ],
+        "addFastDocType": [
+            "xpath",
+            "//select[@ng-model='vFastdocmap.entity.ExternalDocumentType']"
+        ],
+        "addFastDocDesc": [
+            "xpath",
+            "//input[@ng-model='vFastdocmap.entity.ExternalDocumentDescription']"
+        ],
+        "addService": [
+            "xpath",
+            "//select[contains(@ng-model,'vFastdocmap.entity.Service')]"
+        ],
+        "addLvisDocType": [
+            "xpath",
+            "//select[@ng-model='vFastdocmap.entity.InternalDocumentType']"
+        ],
+        "addSave": [
+            "xpath",
+            "//button[@ng-click='vFastdocmap.save()']"
+        ],
+        "addCancel": [
+            "xpath",
+            "//button[@class='btn btn-primary'][contains(.,'Cancel')]"
+        ],
+        "successAddFASTToLVIS": [
+            "xpath",
+            "//div[@class='growl-message ng-binding']"
+        ],
+        "FirstRow": [
+            "xpath",
+            "//div[@class='ui-grid-cell-contents ng-binding ng-scope']"
+        ],
+        "deleteButton": [
+            "xpath",
+            "//button[@ng-click='vFastdocmap.remove()']"
+        ],
+        "editFastToLVISLabel": [
+            "xpath",
+            "//h3[contains(.,'Edit FAST To LVIS Document')]"
+        ],
+        "confirmDeleteMsg": [
+            "xpath",
+            "//h2[contains(.,'Confirm Delete')]"
+        ],
+        "confirmDeleteYes": [
+            "xpath",
+            "//button[contains(@ng-click,'ok()')]"
+        ],
+        "confirmDeleteNo": [
+            "xpath",
+            "//button[contains(@ng-click,'cancel()')]"
+        ],
+        "deleteFastToLVISSuccess": [
+            "xpath",
+            "//div[contains(@ng-bind-html,'message.text')]"
+        ],
+        "updateFastToLVIS": [
+            "xpath",
+            "//button[contains(@ng-click,'vFastdocmap.save()')]"
+        ],
+        "updateFastToLVISSucess": [
+            "xpath",
+            "//div[contains(@ng-bind-html,'message.text')]"
+        ]
+    }
+}

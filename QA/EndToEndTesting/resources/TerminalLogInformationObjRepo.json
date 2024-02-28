@@ -1,0 +1,32 @@
+{
+    "terminalLogInfoObjRepo":
+    {
+        "terminalLogTab": ["xpath", "//div[@class=('ps-noselect ng-binding ps-submenu-active-indicator')][contains(.,'Terminal Log Information')]"],
+        "terminalLogHeader": ["xpath", "(//li[contains(.,'Terminal Log Information')])[3]"],
+        "startTime": ["xpath", "//select[@ng-model='vmTILogs.StartdatetFilter']"],
+        "endTime": ["xpath", "//select[@ng-model='vmTILogs.EnddatetFilter']"],
+        "search" : ["xpath", "//i[@ng-click='vmTILogs.search()']"],
+        "spinner" : ["xpath", "//i[@class='fa fa-spinner fa-spin']"],
+        "logIdFilter": ["xpath", "(//input[@aria-label='Filter for column'])[1]"], 
+        "dateFilter": ["xpath", "(//input[@aria-label='Filter for column'])[2]"],
+        "levelFilter":["xpath", "(//input[@aria-label='Filter for column'])[3]"],
+        "loggerFilter": ["xpath", "(//input[@aria-label='Filter for column'])[4]"],
+        "messageFilter": ["xpath", "(//input[@aria-label='Filter for column'])[5]"],
+        "hostNameFilter": ["xpath", "(//input[@aria-label='Filter for column'])[6]"], 
+        "logIdClear" : ["xpath", "(//i[@class='ui-grid-icon-cancel'])[1]"],
+        "dateClear" : ["xpath", "(//i[@class='ui-grid-icon-cancel'])[2]"],
+        "levelClear" : ["xpath", "(//i[@class='ui-grid-icon-cancel'])[3]"],
+        "loggerClear" : ["xpath", "(//i[@class='ui-grid-icon-cancel'])[4]"],
+        "messageClear" : ["xpath", "(//i[@class='ui-grid-icon-cancel'])[5]"],
+        "hostNameClear" : ["xpath", "(//i[@class='ui-grid-icon-cancel'])[6]"],
+        "firstRow" : ["xpath", "(//div[contains(@ng-repeat,'index')])[1]"],
+        "resultrow_LogID": ["xpath","(//div[@class='ui-grid-cell-contents ng-binding ng-scope'])[1]"],
+        "resultrow_Date": ["xpath","(//div[@class='ui-grid-cell-contents ng-binding ng-scope'])[2]"],
+        "resultrow_Level": ["xpath","(//div[@class='ui-grid-cell-contents ng-binding ng-scope'])[3]"],
+        "resultrow_Logger": ["xpath","(//div[@class='ui-grid-cell-contents ng-binding ng-scope'])[4]"],
+        "resultrow_Message": ["xpath","(//div[@class='ui-grid-cell-contents ng-binding ng-scope'])[5]"],
+        "resultrow_HostName": ["xpath","(//div[@class='ui-grid-cell-contents ng-binding ng-scope'])[6]"],
+        "date" : ["xpath", "//input[@ng-model='vmTILogs.Fromdate']"]
+
+    }
+}

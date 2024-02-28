@@ -1,0 +1,29 @@
+{
+  "homeObjRepo": {
+    "beqSection": [ "xpath", "//div[@class='widget-header'][contains(.,'Business Exception Queue')]" ],
+    "bExceptions": [ "xpath", "//div[@class='widget-header'][contains(.,'Business Exceptions')]" ],
+    "exceptionsMenu": [ "xpath", "//div[contains(@class,'ps-noselect ng-binding')][contains(.,'Exceptions')]" ],
+    "faiLogo": [ "xpath", "//img[@class='ps-icon']" ],
+    "helpMenu": [ "xpath", "//div[contains(@class,'ps-noselect ng-binding')][contains(.,'Help')]"],
+    "mappingTablesMenu": [ "xpath", "//div[contains(@class,'ps-noselect ng-binding')][contains(.,'Tables')]"],
+    "accessRequestMenu": [ "xpath", "//div[contains(@class,'ps-noselect ng-binding')][contains(.,'Access')]" ],
+    "auditingMenu": [ "xpath", "//div[contains(@class,'ps-noselect ng-binding')][contains(.,'Auditing')]" ],
+    "menuList": [ "xpath", "//div[@ng-class=\"{'ps-menu-active-indicator': isActive()}\"]"],
+    "reportingMenu": [ "xpath", "//div[contains(@class,'ps-noselect ng-binding')][contains(.,'Reporting')]" ],
+    "securityMenu": [ "xpath", "//div[contains(@class,'ps-noselect ng-binding')][contains(.,'Security')]" ],
+    "teqSection": [ "xpath", "//div[@class='widget-header'][contains(.,'Technical Exception Queue')]" ],
+    "tExceptions": [ "xpath", "//div[@class='widget-header'][contains(.,'Technical Exceptions')]" ],
+    "userAccountName": [ "xpath", "//p[@class='ps-user-title ng-binding']" ],
+    "utilitiesMenu": [ "xpath", "//div[contains(@class,'ps-noselect ng-binding')][contains(.,'Utilities')]" ],
+    "userTitle":["xpath","//p[@class='ps-user-title ng-binding'][contains(.,'LVIS')]"],
+    "statusMenu": ["id","button-template-url"],
+    "lastTileUnderTEQ": ["xpath","//a[contains(@href,'#/Exceptions')][contains(.,'Convoy')]"],    
+    "Spinner": ["xpath","(//i[contains(@class,'fa fa-spinner')])"],
+    "Home":["xpath","//div[@class='ps-noselect ng-binding'][contains(.,'Home')]"],
+    "auditingMenu_hidden": [ "xpath", "//div[contains(@class,'ps-noselect ng-binding')][contains(.,'Auditing')]/../.." ],
+    "securityMenu_hidden": [ "xpath", "//div[contains(@class,'ps-noselect ng-binding')][contains(.,'Security')]/../.." ],
+    "utilitiesMenu_hidden": [ "xpath", "//div[contains(@class,'ps-noselect ng-binding')][contains(.,'Utilities')]/../.." ],
+    "Alert_ok" : ["xpath", "//button[@class='btn btn-default ng-binding'][contains(.,'OK')]"] 
+  
+  }
+}

@@ -1,0 +1,30 @@
+{
+    "contactsObjRepo":
+    
+    {
+        "contactID" :["xpath", "//span[contains(.,'Contact ID')]"],
+        "addNewContact" : ["xpath", "//button[@class='btn btn-sm']"],
+        "newContactID" : ["xpath", "//input[contains(@name,'ContactId')]"],
+        "servicePreference" : ["xpath", "//button[@class='ng-binding']"],
+        "selectAllServicePreference" : ["xpath", "//button[@type='button'][contains(.,'✓  Select All')]"],
+        "locationID" :["xpath", "//input[contains(@name,'LocationId')]"],
+        "save" : ["xpath", "//button[contains(.,'Save')]"],
+        "successMsgNewContact" : ["xpath", "//div[@class='growl-message ng-binding'][contains(.,'created successfully')]"],
+        "filterByLocationID" : ["xpath", "(//input[@type='text'])[1]"],
+        "filterByLocationName" : ["xpath", "(//input[@type='text'])[2]"],
+        "filterByContactID" : ["xpath", "(//input[@type='text'])[3]"],
+        "filterByActive" : ["xpath", "(//input[@type='text'])[4]"],
+        "resultRowLocationID" : ["xpath", "(//div[contains(@class,'ui-grid-cell-contents ng-binding ng-scope')])[1]"],
+        "resultRowLocationName" : ["xpath", "(//div[contains(@class,'ui-grid-cell-contents ng-binding ng-scope')])[2]"],
+        "resultRowContactID" : ["xpath", "(//div[contains(@class,'ui-grid-cell-contents ng-binding ng-scope')])[3]"],
+        "resultRowActive" : ["xpath", "(//div[contains(@class,'ui-grid-cell-contents ng-binding ng-scope')])[4]"],
+        "locationIDCancel" : ["xpath", "(//i[@class='ui-grid-icon-cancel'])[1]"],
+        "locationNameCancel" : ["xpath", "(//i[@class='ui-grid-icon-cancel'])[2]"],
+        "contactIDCancel" : ["xpath", "(//i[@class='ui-grid-icon-cancel'])[3]"],
+        "activeCancel" : ["xpath", "(//i[@class='ui-grid-icon-cancel'])[4]"],
+        "editContactHeader" : ["xpath", "//div[@class='widget-header']"],
+        "updateSuccessMessage" : ["xpath", "//div[@class='growl-message ng-binding']"]
+    
+    
+    }
+}

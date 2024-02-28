@@ -1,0 +1,10 @@
+steps:
+  - task: NuGetToolInstaller@1
+    displayName: 'install Nuget Tool Installer'
+    inputs:
+      versionSpec: 5.6.0
+
+  - task: NuGetCommand@2
+    displayName: 'NuGet restore $(build.sourcesDirectory)/DEV/Tower/Tower.sln'
+    inputs:
+      solution: '$(build.sourcesDirectory)/DEV/Tower/Tower.sln'

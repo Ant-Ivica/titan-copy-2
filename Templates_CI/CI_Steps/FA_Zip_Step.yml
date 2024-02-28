@@ -1,0 +1,8 @@
+steps:
+  - task: FAZipTask@1
+    displayName: 'First American - Zip Multiple Folders'
+    inputs:
+      sourcePath: '$(Build.ArtifactStagingDirectory)/'
+      targetPath: '$(Build.ArtifactStagingDirectory)'
+      zipName: '$(Build.BuildNumber).zip'
+      filter: '_PublishedApplications|_PublishedWebsites'

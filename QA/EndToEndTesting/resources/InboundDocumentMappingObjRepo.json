@@ -1,0 +1,24 @@
+
+{
+    "InboundDocumentMappingObjRepo":
+    {
+     "Mappings":["xpath","//div[@class='ps-noselect ng-binding'][contains(.,'Mapping Tables')]"],
+     "iBDM":["xpath","//div[@class='ps-noselect ng-binding'][contains(.,'Inbound Document Mapping')]"],
+     "iBGrid":["xpath","(//div[@class='ui-grid-row ng-scope'])[1]"],
+     "addNewInboundDocument":["xpath","//button[@ng-click='addNewInDocument()']"],
+     "cancelbtn":["xpath","(//button[@ng-click='$close()'])[2]"],
+     "Application":["xpath","//select[@ng-model='vindocmap.entity.ExternalApplication']"],
+     "edoctype":["xpath","//select[@ng-model='vindocmap.entity.ExternalDocumentType']"],
+     "appTxtBox":["xpath","(//input[@ng-model='colFilter.term'])[1]"],
+     "result":["xpath","(//div[contains(.,'Elite')])[15]"],
+     "confMsg1":["xpath","//div[@class='growl-message ng-binding'][contains(.,'Inbound Document Map info record cannot  deleted successfully')]"],
+     "yesbtn":["xpath","//button[@class='btn btn-success ng-binding'][contains(.,'Yes')]"],
+     "rowSelected":["xpath","//div[@class='ui-grid-cell-contents ng-binding ng-scope']"],
+     "deletebtn":["xpath","//button[@class='btn btn-danger']"],
+     "service":["xpath","//select[@ng-model='vindocmap.entity.Service']"],
+     "lvisdoctype":["xpath","//select[@ng-model='vindocmap.entity.InternalDocumentType']"],
+     "savebtn":["xpath","//button[@class='btn btn-success']"],
+     "confMsg":["xpath","(//div[contains(.,'Inbound Document info record was added successfully')])[10]"],
+     "customers_Header":["xpath","//div[@class='ps-noselect ng-binding ps-submenu-active-indicator'][contains(.,'Customers')]"]
+    }
+}   

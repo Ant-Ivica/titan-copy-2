@@ -1,0 +1,9 @@
+steps:
+  - task: VSBuild@1
+    displayName: 'Build solution $(build.sourcesDirectory)/DEV/Tower/Tower.sln'
+    inputs:
+      solution: '$(build.sourcesDirectory)/DEV/Tower/Tower.sln'
+      vsVersion: 15.0
+      msbuildArgs: '/p:OutDir=$(Build.ArtifactStagingDirectory)'
+      restoreNugetPackages: false
+      clean: true 

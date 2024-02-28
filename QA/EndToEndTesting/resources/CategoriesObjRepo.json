@@ -1,0 +1,240 @@
+{
+  "CategoriesObjRepo": {
+    "categories": [
+      "xpath",
+      "//div[contains(@class,'ps-noselect ng-binding ps-submenu-active-indicator')]"
+    ],
+    "categoryName_LBL": [
+      "xpath",
+      "//span[contains(.,'Category Name')]"
+    ],
+    "categoryName_TB": [
+      "xpath",
+      "(//input[contains(@type,'text')])[1]"
+    ],
+    "application_LBL": [
+      "xpath",
+      "//span[contains(.,'Application')]"
+    ],
+    "application_TB": [
+      "xpath",
+      "(//input[contains(@type,'text')])[2]"
+    ],
+    "tenant_Lbl": [
+      "xpath",
+      "//span[contains(.,'Tenant')]"
+    ],
+    "tenant_Tb": [
+      "xpath",
+      "(//input[@ng-model='colFilter.term'])[3]"
+    ],
+    "addNewCategory_Btn": [
+      "xpath",
+      "//button[@class='btn btn-sm'][contains(.,'Add New Category')]"
+    ],
+    "categoryName_Tb_Popup": [
+      "xpath",
+      "(//input[contains(@type,'text')])[3]"
+    ],
+    "addNewCategory_Header": [
+      "xpath",
+      "//h3[contains(.,'Add New Category')]"
+    ],
+    "categories_Table": [
+      "id",
+      "//div[@id=*\"serviceGroupGrid]"
+    ],
+    "customers_Header": [
+      "xpath",
+      "//div[@class='ps-noselect ng-binding ps-submenu-active-indicator'][contains(.,'Customers')]"
+    ],
+    "categories_button": [
+      "xpath",
+      "//div[@class='ps-noselect ng-binding'][contains(.,'Categories')]"
+    ],
+    "template": [
+      "xpath",
+      "//div[contains(text(),'KeyStone Template')]"
+    ],
+    "closeIcon1": [
+      "xpath",
+      "(//i[@class='ui-grid-icon-cancel'])[1]"
+    ],
+    "closeIcon2": [
+      "xpath",
+      "(//i[@class='ui-grid-icon-cancel'])[2]"
+    ],
+    "closeIcon3": [
+      "xpath",
+      "(//i[@class='ui-grid-icon-cancel'])[3]"
+    ],
+    "appName": [
+      "xpath",
+      "//div [contains(@class,'ui-grid-cell-contents ng-binding ng-scope') and contains(text(),'MortgageSolutions')]"
+    ],
+    "Mappings": [
+      "xpath",
+      "//div[@class='ps-noselect ng-binding'][contains(.,'Mapping Tables')]"
+    ],
+    "TenantName": [
+      "xpath",
+      "(//input[@type='text'])[3]"
+    ],
+    "save_btn": [
+      "xpath",
+      "//button[@class='btn btn-success'][contains(.,'Save')]"
+    ],
+    "createcategory": [
+      "xpath",
+      "//div[contains(@class,'ui-grid-cell-contents ng-binding ng-scope')]"
+    ],
+    "obdocIcon": [
+      "xpath",
+      "//a[contains(@ng-click,'grid.appScope.showgrpDocuments(row)')]"
+    ],
+    "subscripIcon": [
+      "xpath",
+      "(//a[contains(@ng-click,'grid.appScope.showSubscriptions(row)')])[1]"
+    ],
+    "addNewSubscriptionButton": [
+      "xpath",
+      "//button[@class='btn btn-sm'][contains(.,'Add Subscription')]"
+    ],
+    "Application_Sub": [
+      "xpath",
+      "//select[contains(@ng-model,'vsubscr.entity.Applicationid')]"
+    ],
+    "MessageType_Sub": [
+      "xpath",
+      "//select[contains(@ng-model,'vsubscr.entity.MessageTypeId')]"
+    ],
+    "Save_Subs": [
+      "xpath",
+      "//button[@class='btn btn-success'][contains(.,'Save')]"
+    ],
+    "confirmationMessage_subs": [
+      "xpath",
+      "(//div[contains(.,'Subscription Info record was added successfully')])[10]"
+    ],
+    "LVISDocumentType": [
+      "xpath",
+      "//select[@ng-model='voutdocmap.entity.InternalDocumentType']"
+    ],
+    "messageType_TB": [
+      "xpath",
+      "(//input[contains(@type,'text')])[1]"
+    ],
+    "messageTypedesc_TB": [
+      "xpath",
+      "(//input[contains(@type,'text')])[2]"
+    ],
+    "subsTenant_TB": [
+      "xpath",
+      "(//input[contains(@type,'text')])[3]"
+    ],
+    "Result": [
+      "xpath",
+      "(//div[contains(.,'OPENAPI-Comment')])[15]"
+    ],
+    "Result1": [
+      "xpath",
+      "(//div[contains(.,'LVIS')])[23]"
+    ],
+    "ConfMessage1": [
+      "xpath",
+      "(//div[contains(.,'Document Map Info record was added successfully')])[10]"
+    ],
+    "ConfMessage2": [
+      "xpath",
+      "(//div[contains(.,'Subscription Info was Deleted successfully')])[10]"
+    ],
+    "ExternalMessageType": [
+      "xpath",
+      "//select[contains(@ng-model,'voutdocmap.entity.ExternalMessageType')]"
+    ],
+    "AddSelectedMessageType": [
+      "xpath",
+      "//button[contains(.,'Add Selected MessageType')]"
+    ],
+    "Result3": [
+      "xpath",
+      "//td[contains(@class,'ng-binding')]"
+    ],
+    "Save1": [
+      "xpath",
+      "//button[@class='btn btn-success'][contains(.,'Save')]"
+    ],
+    "Application": [
+      "xpath",
+      "//select[contains(@ng-model,'voutdocmap.entity.ExternalApplication')]"
+    ],
+    "Service": [
+      "xpath",
+      "//select[contains(@ng-model,'voutdocmap.entity.Service')]"
+    ],
+    "ExternalDoctype": [
+      "xpath",
+      "//select[contains(@ng-model,'voutdocmap.entity.ExternalDocumentType')]"
+    ],
+    "addNewOBDButton": [
+      "xpath",
+      "//button[@class='btn btn-sm'][contains(.,'Add New Outbound Document')]"
+    ],
+    "Delete": [
+      "xpath",
+      "//button[contains(.,'Delete')]"
+    ],
+    "ok": [
+      "xpath",
+      "//button[contains(.,'OK')]"
+    ],
+    "question": [
+      "xpath",
+      "//div[@class='widget-content ng-binding ng-scope'][contains(.,'Proceed to delete this selection ?')]"
+    ],
+    "selectedRow1": [
+      "xpath",
+      "(//div[contains(@class,'ui-grid-cell-contents ng-binding ng-scope')])[1]"
+    ],
+    "serviceTB": [
+      "xpath",
+      "(//input[contains(@type,'text')])[3]"
+    ],
+    "NotdeleteMessage": [
+      "xpath",
+      "(//div[contains(.,'Outbound Document info record cannot be deleted because it is being used by another part of the Tower application.')])[4]"
+    ],
+    "selectedRow": [
+      "xpath",
+      "//div[@class='ui-grid-cell-contents ng-binding ng-scope'][contains(.,'Escrow')]"
+    ],
+    "defaultText": [
+      "xpath",
+      "//div[@class='widget-content ng-binding ng-scope'][contains(.,'Proceed to delete this selection ?')]"
+    ],
+    "confirmHeader": [
+      "xpath",
+      "(//h2[@class='ng-binding'][contains(.,'Confirm Delete')]"
+    ],
+    "confirmationMessage": [
+      "xpath",
+      "(//div[contains(.,'Category record was deleted successfully')])[10]"
+    ],
+    "yes": [
+      "xpath",
+      "//button[contains(.,'Yes')]"
+    ],
+    "addedValue": [
+      "xpath",
+      "(//input[contains(@type,'text')])[3]"
+    ],
+    "EditSubscriptionDesc": [
+      "xpath",
+      "//input[contains(@ng-model,'vsubscr.entity.MessageTypeDesc')]"
+    ],
+    "successMessage": [
+      "xpath",
+      "//div[contains(@class,'growl-message ng-binding')]"
+    ]
+  }
+}

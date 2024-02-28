@@ -1,0 +1,121 @@
+{
+    "businessExceptionQueuesObjRepo": {
+        "tEQTab": [
+            "xpath",
+            "//div[@class='ps-noselect ng-binding'][contains(.,'Technical Exception Queues')]"
+        ],
+        "bEQTab": [
+            "xpath",
+            "//div[@class='ps-noselect ng-binding ps-submenu-active-indicator'][contains(.,'Business Exception Queues')]"
+        ],
+        "bEQHeader": [
+            "xpath",
+            "//li[@class='ng-binding'][contains(.,'Business Exception Queues')]"
+        ],
+        "bEQFirstRecord": [
+            "xpath",
+            "(//div[@ng-click='treeButtonClick(row, $event)'])[1]"
+        ],
+        "filterByTextExceptionType": [
+            "xpath",
+            "(//input[@type='text'])[5]"
+        ],
+        "exceptionInfo": [
+            "xpath",
+            "//b[contains(.,'Exception Information')]"
+        ],
+        "messageInfo": [
+            "xpath",
+            "//b[contains(.,'Exception Information')]"
+        ],
+        "resubmitButton": [
+            "xpath",
+            "//button[contains(.,'RESUBMIT')]"
+        ],
+
+        "emailButton": [
+            "xpath",
+            "//button[contains(.,'EMAIL')]"
+        ],
+        "send": [
+            "xpath",
+            "//button[@class='btn btn-primary'][contains(.,'Send')]"
+        ],
+        "save": [
+            "xpath",
+            "(//button[@class='btn btn-success'][contains(.,'Save')])[1]"
+        ],
+        "confirmPopUp": [
+            "xpath",
+            "//h3[contains(.,'Confirm')]"
+        ],
+        "outboundEmailPopUp": [
+            "xpath",
+            "//h3[contains(.,'Outbound Email')]"
+        ],
+        "confirmOk": [
+            "xpath",
+            "//button[@class='btn btn-primary ng-binding'][contains(.,'OK')]"
+        ],
+        "statusResolved": [
+            "xpath",
+            "//div[contains(@title,'Resolved')]"
+        ],
+        "resubmitConfMsg": [
+            "xpath",
+            "//div[contains(@class,'growl-message ng-binding')]"
+        ],
+        "emailConfMsg": [
+            "xpath",
+            "//div[contains(@class,'growl-message ng-binding')]"
+        ],
+        "updateFASTInfo": [
+            "xpath",
+            "//button[@class='btn btn-danger'][contains(.,'Update FAST Info')]"
+        ],
+        "updateFASTInfoHeader": [
+            "xpath",
+            "//div[@class='widget-header ng-scope'][contains(.,'Update FAST Info')]"
+        ],
+        "update": [
+            "xpath",
+            "//button[contains(@ng-click,'vmBEQException.Update()')]"
+        ],
+        "updateSuccessMsg": [
+            "xpath",
+            "//div[@class='growl-message ng-binding']"
+        ],
+        "dateFilter": [
+            "xpath",
+            "//select[@ng-model='vmBEQException.FilterSection']"
+        ],
+        "search": [
+            "xpath",
+            "//i[@ng-click='vmBEQException.search()']"
+        ],
+        "spinner": [
+            "xpath",
+            "(//i[contains(@class,'fa fa-spinner')])"
+        ],
+        "reportingTab": [
+            "xpath",
+            "//div[@class='ps-noselect ng-binding'][contains(.,'Reporting')]"
+        ],
+        "intRefNumber": [
+            "xpath",
+            "//input[contains(@ng-model,'vmBEQException.entity.update.FileNumber')]"
+        ],
+        "cancel": [
+            "xpath",
+            "//button[@class='btn btn-primary'][contains(.,'Cancel')]"
+        ],
+        "cancelPop": [
+            "xpath",
+            "//button[@class='btn btn-info'][contains(.,'Cancel')]"
+        ],
+        "terminalLogTab": [
+            "xpath",
+            "//div[@class='ps-noselect ng-binding'][contains(.,'Terminal Log Information')]"
+        ]
+    }
+}

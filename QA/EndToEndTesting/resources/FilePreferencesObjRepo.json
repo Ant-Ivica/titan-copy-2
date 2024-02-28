@@ -1,0 +1,269 @@
+{
+    "filePagePreference": {
+        "filePreference": [
+            "xpath",
+            "//div[@class='ps-noselect ng-binding'][contains(.,'File Preferences')]"
+        ],
+        "addFastFilePrefernce": [
+            "xpath",
+            "//button[contains(@ng-click,'addRowSummary()')]"
+        ],
+        "columnGridMenu": [
+            "xpath", 
+            "//i[@class='ui-grid-icon-menu']"
+        ],
+        "SelectCustName": [
+            "xpath", 
+            "(//button[contains(.,'Customer Name')])[2]"
+        ],
+        "regionId": [
+            "xpath",
+            "//select[@class='select-lg ng-pristine ng-valid ng-empty ng-touched']"
+        ],
+        "state": [
+            "xpath",
+            "//select[@ng-change='vffmap.LoadCounty(vffmap.entity.StateFipsId)']"
+        ],
+        "county": [
+            "xpath",
+            "//select[@ng-change='vffmap.LoadCounty(vffmap.entity.StateFipsId)']"
+        ],
+        "loanAmount": [
+            "xpath",
+            "//input[@class = 'input ng-pristine ng-untouched ng-valid ng-not-empty"
+        ],
+        "name": [
+            "xpath",
+            "(//input[contains(@type,'text')])[2]"
+        ],
+        "programType": [
+            "xpath",
+            "(//input[contains(@type,'text')])[3]"
+        ],
+        "searchType": [
+            "xpath",
+            "(//input[contains(@type,'text')])[4]"
+        ],
+        "loanPurpose": [
+            "xpath",
+            "(//input[contains(@type,'text')])[5]"
+        ],
+        "customerLocation": [
+            "xpath",
+            "(//input[contains(@type,'text')])[6]"
+        ],
+        "txt_customerName": [
+            "xpath",
+            "(//input[contains(@type,'text')])[7]"
+        ],
+        "tenant": [
+            "xpath",
+            "(//input[contains(@type,'text')])[8]"
+        ],
+        "btn_namecancel": [
+            "xpath",
+            "(//i[@class='ui-grid-icon-cancel'])[1]"
+        ],
+        "btn_programTypecancel": [
+            "xpath",
+            "(//i[@class='ui-grid-icon-cancel'])[2]"
+        ],
+        "btn_searchTypeCancel": [
+            "xpath",
+            "(//i[@class='ui-grid-icon-cancel'])[3]"
+        ],
+        "btn_loanPurposeCancel": [
+            "xpath",
+            "(//i[@class='ui-grid-icon-cancel'])[4]"
+        ],
+        "btn_customerLocationCancel": [
+            "xpath",
+            "(//i[@class='ui-grid-icon-cancel'])[5]"
+        ],
+        "btn_tenantCancel": [
+            "xpath",
+            "(//i[@class='ui-grid-icon-cancel'])[6]"
+        ],
+        "xpathresultrow_Name": [
+            "xpath",
+            "(//div[@class='ui-grid-cell-contents ng-binding ng-scope'])[1]"
+        ],
+        "xpathresultrow_ProgramType": [
+            "xpath",
+            "(//div[@class='ui-grid-cell-contents ng-binding ng-scope'])[2]"
+        ],
+        "xpathresultrow_SearchType": [
+            "xpath",
+            "(//div[@class='ui-grid-cell-contents ng-binding ng-scope'])[3]"
+        ],
+        "xpathresultrow_LoanPurpose": [
+            "xpath",
+            "(//div[@class='ui-grid-cell-contents ng-binding ng-scope'])[4]"
+        ],
+        "xpathresultrow_CustomerLocation": [
+            "xpath",
+            "(//div[@class='ui-grid-cell-contents ng-binding ng-scope'])[5]"
+        ],
+        "xpathresultrow_CustomerName": [
+            "xpath", 
+            "(//div[@class='ui-grid-cell-contents ng-binding ng-scope'])[6]"
+        ],
+        "xpathresultrow_Tenant": [
+            "xpath",
+            "(//div[@class='ui-grid-cell-contents ng-binding ng-scope'])[7]"
+        ],
+        "lblFastFilePreference": [
+            "xpath",
+            "//li[contains(.,'FAST File Preferences')]"
+        ],
+        "producttype": [
+            "xpath",
+            "//label[@class='label-md'][contains(.,'Product Type')]"
+        ],
+        
+        "preferencegrid": [
+            "xpath",
+            "(//div[@class='ui-grid-cell-contents ng-binding ng-scope'])[1]"
+        ],
+        "addFilePreference": [
+            "xpath",
+            "(//button[contains(@class,'btn btn-sm')])[1]"
+        ],
+        "addFilePrefenceText": [
+            "xpath",
+            "//h3[contains(.,'Add New FAST File Preference')]"
+        ],
+        "xpath_addFileName": [
+            "xpath",
+            "//input[@ng-model='vffmap.entity.FASTPreferenceMapName']"
+        ],
+        "xpath_addLoanPurpose": [
+            "xpath",
+            "(//select[contains(@ng-options,'viewValue')])[1]"
+        ],
+        "xpath_addCustomer": [
+            "xpath",
+            "//select[@ng-model='vffmap.entity.CustomerId']"
+        ],
+        "xpath_addCustomerLocation": [
+            "xpath",
+            "//select[@ng-model='vffmap.entity.LocationDet']"
+        ],
+      "xpath_addProduct": [
+        "xpath",
+        "Need To Check"
+      ],
+        "xpath_addLoanAmount": [
+            "xpath",
+            "(//input[@ng-model='vffmap.entity.LoanAmount'])[1]"
+        ],
+        "xpath_addRegionID": [
+            "xpath",
+            "(//select[contains(@ng-model,'vffmap.entity.RegionId')])[1]"
+        ],
+        "xpath_addState": [
+            "xpath",
+            "//select[contains(@ng-model,'vffmap.State')]"
+        ],
+        "xpath_addCounty": [
+            "xpath",
+            "//select[contains(@ng-model,'vffmap.county')]"
+        ],
+        "xpath_addProgramType": [
+            "xpath",
+            "//select[contains(@ng-model,'vffmap.entity.FASTProgramTypeId')]"
+        ],
+        "xpath_addBusinessProgramType": [
+            "xpath",
+            "Need to be done"
+        ],
+        "xpath_addProductType": [
+            "xpath",
+            ""
+        ],
+        "xpath_addSearchType": [
+            "xpath",
+            "//select[@ng-model='vffmap.entity.FASTSearchTypeId']"
+        ],
+        "xpath_addSaveButton": [
+            "xpath",
+            "//button[contains(@ng-click,'vffmap.save()')]"
+        ],
+        "xpath_addCancelButton": [
+            "xpath",
+            "(//button[contains(@ng-click,'$close()')])[2]"
+        ],
+        "xpath_successAddFilePreference": [
+            "xpath",
+            "(//div[contains(.,'FAST File Preference Info record was added successfully')])[10]"
+        ],
+        "xpath_UpdateSuccess": [
+            "xpath",
+            "//div[contains(@ng-bind-html,'message.text')]"
+        ],
+        "xpath_RegionIdFilter": [
+            "xpath",
+            "//select[contains(@ng-model,'vffmap.entity.RegionId')]"
+        ],
+        "xpath_StateFilter": [
+            "xpath",
+            "//select[contains(@ng-model,'vffmap.entity.StateFipsId')]"
+        ],
+        "xpath_CountyFilter": [
+            "xpath",
+            "//select[contains(@ng-model,'vffmap.entity.CountyFipsId')]"
+        ],
+        "xpath_LoanAmount": [
+            "xpath",
+            "//input[contains(@ng-model,'vffmap.entity.LoanAmount')]"
+        ],
+        "xpath_Search": [
+            "xpath",
+            "//i[contains(@ng-click,'vffmap.search()')]"
+        ],
+        "xpath_ResetButton": [
+            "xpath",
+            "//button[contains(@ng-click,'vffmap.RefreshSearch()')]"
+        ],
+        "xpath_DeleteButton": [
+            "xpath",
+            "//button[@class='btn btn-danger'][contains(.,'Delete')]"
+        ],
+        "xpath_CancelButton": [
+            "xpath",
+            "//button[@class='btn btn-primary'][contains(.,'Cancel')]"
+        ],
+        "xpath_NextPage": [
+            "xpath",
+            "//button[@ng-click='pageNextPageClick()']"
+        ],
+        "xpath_confirmDeleteMessage": [
+            "xpath",
+            "//h2[contains(.,'Confirm Delete')]"
+        ],
+        "xpath_confirmDeleteYes": [
+            "xpath",
+            "//button[contains(@ng-click,'ok()')]"
+        ],
+        "xpath_confirmDeleteNo": [
+            "xpath",
+            "//button[contains(@ng-click,'cancel()')]"
+        ],
+        "xpath_addStateCounty": [
+            "xpath",
+            "//button[@class='btn btn-sm btn-link']"
+        ],
+        "xpath_addRemoveStateCounty": [
+            "xpath",
+            "//button[contains(@class,'btn btn-default btn-sm')]"
+        ],
+        "FirstRow": [
+            "xpath",
+            "//div[@class='ui-grid-cell-contents ng-binding ng-scope']"
+        ],
+        "DeleteSuccessMessage": [
+            "xpath",
+            "//div[contains(@class,'growl-message ng-binding')]"
+        ]
+    }
+}

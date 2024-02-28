@@ -1,0 +1,202 @@
+{
+  "ProcessTriggersObjRepo": {
+    "fastDropDown": [
+      "xpath",
+      "//li[@class ='dropdown ng-binding dropdown-toggle'][contains(.,'FAST')]"
+    ],
+    "processTriggersDropDown": [
+      "xpath",
+      "//div[@class ='ps-noselect ng-binding'][contains(.,'Process Triggers')]"
+    ],
+    "addNewFASTProcessTriggerBtn": ["xpath", "//button[@class ='btn btn-sm']"],
+    "serviceDropDown": [
+      "xpath",
+      "//label[contains(.,'Service')]//following::option[1]"
+    ],
+    "serviceDropDownEscrow": [
+      "xpath",
+      "//label[contains(.,'Service')]//following::option[contains(.,'Escrow')]"
+    ],
+    "messageTypeDropDown": [
+      "xpath",
+      "//label[contains(.,'Message Type')]//following::option[1]"
+    ],
+    "messageTypeDropDownAdditionalInfo": [
+      "xpath",
+      "//label[contains(.,'Message Type')]//following::option[contains(.,'AdditionalInfo')]"
+    ],
+
+    "saveNewProcessTriggerbtn": ["xpath", "//button[contains(.,'Save')]"],
+
+    "cancelNewProcessTriggerbtn": ["xpath", "//button[contains(.,'Cancel')]"],
+    "deleteNewProcessTriggerbtn": ["xpath", "//button[contains(.,'Delete')]"],
+
+    "messageTypeSearch": [
+      "xpath",
+      "//span[@class ='ui-grid-header-cell-label ng-binding'][contains(.,'Message Type')]//following::input[1]"
+    ],
+    "messageTypeSearchResult": [
+      "xpath",
+      "//div[@class ='ui-grid-cell-contents ng-binding ng-scope'][contains(.,'Comment')]"
+    ],
+    "messageTypeSearchResultCancelBtn": [
+      "xpath",
+      "//span[@class ='ui-grid-header-cell-label ng-binding'][contains(.,'Message Type')]//following::i[@class ='ui-grid-icon-cancel'][1]"
+    ],
+
+    "processEventIDSearch": [
+      "xpath",
+      "//span[@class ='ui-grid-header-cell-label ng-binding'][contains(.,'Process Event ID')]//following::input[1]"
+    ],
+    "processEventIDSearchResult": [
+      "xpath",
+      "//div[@class ='ui-grid-cell-contents ng-binding ng-scope'][contains(.,'LVIS Process - Loan Contact Update (3150)')]"
+    ],
+    "processEventIDSearchResultCancelBtn": [
+      "xpath",
+      "//span[@class ='ui-grid-header-cell-label ng-binding'][contains(.,'Process Event ID')]//following::i[@class ='ui-grid-icon-cancel'][1]"
+    ],
+
+    "taskEventIDSearch": [
+      "xpath",
+      "//span[@class ='ui-grid-header-cell-label ng-binding'][contains(.,'Task Event ID')]//following::input[1]"
+    ],
+    "taskEventIDSearchResult": [
+      "xpath",
+      "//div[@class ='ui-grid-cell-contents ng-binding ng-scope'][contains(.,'LVIS - Docs Recorded (2325)')]"
+    ],
+    "taskEventIDSearchResultCancelBtn": [
+      "xpath",
+      "//span[@class ='ui-grid-header-cell-label ng-binding'][contains(.,'Task Event ID')]//following::i[@class ='ui-grid-icon-cancel'][1]"
+    ],
+
+    "serviceSearch": [
+      "xpath",
+      "//span[@class ='ui-grid-header-cell-label ng-binding'][contains(.,'Service')]//following::input[1]"
+    ],
+
+    "serviceSearchResult": [
+      "xpath",
+      "//div[@class ='ui-grid-cell-contents ng-binding ng-scope'][contains(.,'Escrow')]"
+    ],
+
+    "serviceSearchResultCancelBtn": [
+      "xpath",
+      "//span[@class ='ui-grid-header-cell-label ng-binding'][contains(.,'Service')]//following::i[@class ='ui-grid-icon-cancel'][1]"
+    ],
+
+    "descriptionSearch": [
+      "xpath",
+      "//span[@class ='ui-grid-header-cell-label ng-binding'][contains(.,'Description')]//following::input[1]"
+    ],
+
+    "descriptionSearchResult": [
+      "xpath",
+      "//div[@class ='ui-grid-cell-contents ng-binding ng-scope'][contains(.,'LVIS - HUD Monitoring')]"
+    ],
+
+    "descriptionSearchResultCancelBtn": [
+      "xpath",
+      "//span[@class ='ui-grid-header-cell-label ng-binding'][contains(.,'Description')]//following::i[@class ='ui-grid-icon-cancel'][1]"
+    ],
+    "customerSearch": [
+      "xpath",
+      "//span[@class ='ui-grid-header-cell-label ng-binding'][contains(.,'Customer')]//following::input[1]"
+    ],
+    "customerSearchResult": [
+      "xpath",
+      "//div[@class ='ui-grid-cell-contents ng-binding ng-scope'][contains(.,'Any')]"
+    ],
+    "customerSearchResultCancelBtn": [
+      "xpath",
+      "//span[@class ='ui-grid-header-cell-label ng-binding'][contains(.,'Customer')]//following::i[@class ='ui-grid-icon-cancel'][1]"
+    ],
+
+    "tenantSearch": [
+      "xpath",
+      "//span[@class ='ui-grid-header-cell-label ng-binding'][contains(.,'Tenant')]//following::input[1]"
+    ],
+    "tenantSearchResult": [
+      "xpath",
+      "//div[@class ='ui-grid-cell-contents ng-binding ng-scope'][contains(.,'Air')]"
+    ],
+    "tenantSearchResultCancelBtn": [
+      "xpath",
+      "//span[@class ='ui-grid-header-cell-label ng-binding'][contains(.,'Tenant')]//following::i[@class ='ui-grid-icon-cancel'][1]"
+    ],
+
+    "taskEventIdDropDown": [
+      "xpath",
+      "//label[contains(.,'Task Event Id')]//following::option[1]"
+    ],
+    "taskEventIdLVIS1stMissingDoc": [
+      "xpath",
+      "//label[contains(.,'Task Event Id')]//following::option[contains(.,'LVIS - 1st Missing Doc Notification (3022)')]"
+    ],
+
+    "processEventIdDropDown": [
+      "xpath",
+      "//label[contains(.,'Process Event Id')]//following::option[1]"
+    ],
+    "processEventIdLVIS1stMissingDoc": [
+      "xpath",
+      "//label[contains(.,'Process Event Id')]//following::option[contains(.,'LVIS Process - 1st Missing Doc Notification (3020)')]"
+    ],
+    "taskStatusDropDownWaived": [
+      "xpath",
+      "//label[contains(.,'Task Status')]//following::option[contains(.,'Waived')]"
+    ],
+    "descriptionInputText": [
+      "xpath",
+      "//label[contains(.,'Description')]//following::input[1]"
+    ],
+    "addProcessTriggerSuccessMsg": [
+      "xpath",
+      "//div[@class='growl-message ng-binding'][contains(.,'FAST Process Trigger info was added successfully')]"
+    ],
+
+    "####################################": null,
+    "regionIdDropdown": [
+      "xpath",
+      "//label[contains(.,'Region ID')]//following::option[1]"
+    ],
+    "regionIdDropdownAffiliated": [
+      "xpath",
+      "//label[contains(.,'Region ID')]//following::option[contains(.,'Affiliated')]"
+    ],
+
+    "TestProcessTriggerAutomationGrid": [
+      "xpath",
+      "//div[@class='ui-grid-cell-contents ng-binding ng-scope'][contains(.,'TestProcessTriggerAutomation')]"
+    ],
+    "TestProcessTriggerAutomationGridFocused": [
+      "xpath",
+      "//div[@class='ui-grid-cell-contents ng-binding ng-scope ui-grid-cell-focus'][contains(.,'TestProcessTriggerAutomation')]"
+    ],
+    "testProcessTriggerAutomation": [
+      "xpath",
+      "//div[@class='ui-grid-cell-contents ng-binding ng-scope'][contains(.,'TestProcessTriggerAutomation')]"
+    ],
+    "testProcessTriggerAutomationFocused": [
+      "xpath",
+      "//div[@class='ui-grid-cell-contents ng-binding ng-scope ui-grid-cell-focus'][contains(.,'TestProcessTriggerAutomation')]"
+    ],
+
+    "mappingTableTab": ["xpath", "//i[@class='fa fa-cogs ps-menu-icon']"],
+
+    "editTaskmapSuccessMsg": [
+      "xpath",
+      "//div[@class='growl-message ng-binding'][contains(.,'FAST Task Map info was updated successfully')]"
+    ],
+    "deleteProcessTriggerSuccessMsg": [
+      "xpath",
+      "//div[@class='growl-message ng-binding'][contains(.,'FAST Process Trigger info record was deleted successfully')]"
+    ],
+
+    "successMsgCloseButton": ["xpath", "//button[@class='close']"],
+    "deleteConfirmationBtn": [
+      "xpath",
+      "//button[@class='btn btn-success ng-binding'][contains(.,'Yes')]"
+    ]
+  }
+}

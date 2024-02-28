@@ -1,0 +1,106 @@
+﻿<div antiforgerytoken></div>
+
+<div>
+    <div class="widget-header">
+        <button type="button" class="close" ng-click="$close()" aria-hidden="true">&times;</button>
+        <i class="fa fa-user-plus"></i>
+        <h3>Add New User</h3>
+    </div>
+    <div class="widget-content">
+        <div class="row">
+            <div class="col-lg-5">
+                <div>
+                    <div growl inline="true" limit-messages="1"></div>
+                    <label>Find user: </label>
+                    <!--uib-typeahead="Search as Search.Name for Search in vm.searchdata | filter:$viewValue | limitTo:3"-->
+                    <select name="SelectIdentity" id="singleIdentity" ng-model="vm.Identity">
+                        <option value="CORP">CORP</option>
+                        <option value="INTL">INTL</option>
+                    </select>
+                    <input ng-enter="vm.search()" class="input" type="text" ng-model="vm.txtUser" />
+                    <div style="display:inline-block;margin-left:0.5em;cursor:pointer" ng-show="!vm.Busy">
+                        <i class="fa fa-search" ng-click="vm.search()"></i>
+                    </div>
+                    <div style="display:inline-block; margin:0 auto;" ng-show="vm.Busy">
+                        <i class="fa fa-spinner fa-spin"></i>
+                    </div>
+                </div>
+                <br />
+                <div ng-show="vm.searchdata.length">
+                    <label>List of Matched users: </label>
+                    <select style="width: 100%;" size="7" ng-model="vm.currentItem" multiple
+                            ng-multiple="false"
+                            ng-options="opt as opt.Name for opt in vm.searchdata " ng-dblclick="vm.GetValue()"></select>
+                    <!--<input type="button" value="Get" ng-click="vm.GetValue()" />-->
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <form name="serviceAddForm" class="serviceForm">
+                    <div class="well well-sm">
+                        <b> User Profile</b>
+                    </div>
+                    <div class="form-group">
+                        <label>User Id</label>
+                        <input class="input" type="text" disabled value="{{vm.entity.UserName}}" />
+                    </div>
+                    <div class="form-group" ng-class="{ 'has-error' : serviceAddForm.UserName.$invalid}">
+                        <label>Name</label>
+                        <input class="input" type="text" name="UserName" disabled required ng-model="vm.entity.Name" />
+                        <input type="hidden" name="EmailId" ng-model="vm.entity.EmailId">
+                        <input type="hidden" name="Employeeid" ng-model="vm.entity.Employeeid">
+                    </div>
+                    <div class="form-group" ng-show="vm.ShowTenants">
+                        <label>Tenant</label>
+                        <select ng-disabled="!vm.MangeTenantAccess" ng-model="vm.entity.TenantId" ng-options="obj.TenantId as obj.TenantName for obj in vm.Tenants | orderBy:'TenantName'">
+                        </select>   
+                    </div>
+                    <div class="form-group">
+                        <label style="text-align:left; width:150px;vertical-align:top">Activity Rights </label>
+                        <div style="display:inline-block; margin:0 auto;" id="TadioButtonList" ng-init="vm.entity.Role='User'">
+                            <div ng-repeat="Rights in vm.ApplicationRoles">
+                                <label class="radio-inline">
+                                    <input type="radio" name="ActivityRadio"
+                                           ng-model="vm.entity.Role"
+                                           ng-value="Rights" />
+                                    {{Rights}}
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <label style="width:146px">
+                            Active
+                            <input class="input" type="checkbox" ng-model="vm.entity.IsActive" ng-true-value="true" ng-false-value="false">
+                        </label>
+                    </div>
+                  
+                    <div class="well well-sm" ng-show="vm.hasExceptionManageAccess">
+                        <b>User Rights</b>
+                    </div>
+                    <div class="form-group" ng-show="vm.hasExceptionManageAccess">
+                        <label class="label-lg">
+                            Manage TEQ
+                            <input type="checkbox" ng-model="vm.entity.ManageTEQ" ng-true-value="true" ng-false-value="false">
+                        </label>
+                    </div>
+                    <div class="form-group" ng-show="vm.hasExceptionManageAccess">
+                        <label class="label-lg">
+                            Manage BEQ
+                            <input class="input" type="checkbox" ng-model="vm.entity.ManageBEQ" ng-true-value="true" ng-false-value="false">
+                        </label>
+                    </div>  
+                    <div class="form-group" ng-show="vm.hasAccessrightAccess">
+                        <label class="label-lg">
+                            Manage Access Request
+                            <input class="input" type="checkbox" ng-model="vm.entity.ManageAccessREQ" ng-true-value="true" ng-false-value="false">
+                        </label>
+                    </div>                  
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-success" ng-click="vm.save()" ng-disabled="serviceAddForm.$invalid">Save</button>
+    <button class="btn btn-primary" ng-click="$close()">Cancel</button>
+</div>

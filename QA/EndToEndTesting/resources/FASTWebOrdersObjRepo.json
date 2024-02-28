@@ -1,0 +1,384 @@
+{
+  "fastWebOrdersObjRepo": {
+    "fastWebOrdersTab": [
+      "xpath",
+      "//div[@class='ps-noselect ng-binding'][contains(.,'FASTWeb Orders')]"
+    ],
+    "fastWebOrdersHeader": [
+      "xpath",
+      "//li[@class='ng-binding'][contains(.,'FASTWeb Orders')]"
+    ],
+    "orderSearchDropdown": [
+      "xpath",
+      "//select[contains(@ng-model,'vmFastWebOrders.SearchTypeSelection.value')]"
+    ],
+    "orderSearchValue": [
+      "xpath",
+      "//input[contains(@ng-model,'vmFastWebOrders.SearchText')]"
+    ],
+    "orderSearch": [
+      "xpath",
+      "//i[contains(@class,'fa fa-search')]"
+    ],
+    "fastWebOrderColumnHeader": [
+      "xpath",
+      "//div[@role='button']/span[contains(text(),'FASTWeb Order #')]"
+    ],
+    "customerRefColumnHeader": [
+      "xpath",
+      "//div[@role='button']/span[contains(text(),'Customer Ref #')]"
+    ],
+    "borrowerNameColumnHeader": [
+      "xpath",
+      "//div[@role='button']/span[contains(text(),'Borrower Name')]"
+    ],
+    "propertyAddressColumnHeader": [
+      "xpath",
+      "//div[@role='button']/span[contains(text(),'Property Address')]"
+    ],
+    "serviceColumnHeader": [
+      "xpath",
+      "//div[@role='button']/span[contains(text(),'Service')]"
+    ],
+    "portalOrderAlertColumnHeader": [
+      "xpath",
+      "//div[@role='button']/span[contains(text(),'Portal Order Alert')]"
+    ],
+    "orderDateColumnHeader": [
+      "xpath",
+      "//div[@role='button']/span[contains(text(),'Order Date')]"
+    ],
+    "orderDetailColumnHeader": [
+      "xpath",
+      "//div[@role='button']/span[contains(text(),'Order Detail')]"
+    ],
+    "addOfficeButton": [
+      "xpath",
+      "//button[contains(.,'Add Office')]"
+    ],
+    "orderDetailButton": [
+      "xpath",
+      "(//button[@class='btn btn-info btn-xs'])[1]"
+    ],
+    "orderSrch": [
+      "xpath",
+      "//select[@ng-model='vmFastWebOrders.SearchTypeSelection.value']"
+    ],
+    "xpath_Search": [
+      "xpath",
+      "//i[contains(@ng-click,'vmFastWebOrders.searchbyType()')]"
+    ],
+    "resultrow_Name": [
+      "xpath",
+      "(//div[@class='ui-grid-cell-contents ng-binding ng-scope'])[1]"
+    ],
+    "reload_Button": [
+      "xpath",
+      "//button[@class='btn btn-sm right'][contains(.,'Reload')]"
+    ]
+  },
+  "fastWebOrdersDataList": {
+    "firstRow": [
+      "xpath",
+      "(//div[@class='ui-grid-cell-contents ng-binding ng-scope'])[1]"
+    ],
+    "firstRowVerify": [
+      "xpath",
+      "(//div[@class='ui-grid-cell-contents ng-binding ng-scope'])[1]"
+    ],
+    "filterByTextServiceType": [
+      "xpath",
+      "(//input[@class='ui-grid-filter-input ui-grid-filter-input-0'])[5]"
+    ],
+    "filterByTextFastWebOrderInput": [
+      "xpath",
+      "(//input[@class='ui-grid-filter-input ui-grid-filter-input-0'])[1]"
+    ],
+    "clearServiceType": [
+      "xpath",
+      "(//i[@class='ui-grid-icon-cancel'])[5]"
+    ],
+    "firstIndex": [
+      "xpath",
+      "(//div[contains(@class,'ui-grid-cell-contents ng-binding ng-scope')])[1]"
+    ],
+    "plusSymbol": [
+      "xpath",
+      "(//i[@class='ui-grid-icon-plus-squared'])[1]"
+    ]
+  },
+  "fASTWebAddOfficeObjRepo": {
+    "addForwardToOffice": [
+      "xpath",
+      "//b[contains(.,'Add Forward To Office')]"
+    ],
+    "userId": [
+      "xpath",
+      "//input[@name='UserId' and @ng-model = 'vmFastWebOrders.entity.UserId']"
+    ],
+    "buid": [
+      "xpath",
+      "//input[@name = 'BUID']"
+    ],
+    "firstName": [
+      "xpath",
+      "//input[@name='FirstName' and @ng-model = 'vmFastWebOrders.entity.FirstName']"
+    ],
+    "lastName": [
+      "xpath",
+      "//input[@name='LastName' and @ng-model = 'vmFastWebOrders.entity.LastName']"
+    ],
+    "close": [
+      "xpath",
+      "//button[@class='btn btn-primary'][contains(.,'Close')]"
+    ],
+    "submit": [
+      "xpath",
+      "//button[@class='btn btn-danger'][contains(.,'Submit')]"
+    ],
+    "fwResp": [
+      "xpath",
+      "//div[contains(@class,'growl-message ng-binding')]"
+    ]
+  },
+  "fASTWebOrderDetailsObjRepo": {
+    "fastwebOrderDetailTab": [
+      "xpath",
+      "//h3[contains(.,'FASTWeb Order')]"
+    ],
+    "orderDetailsWindow": [
+      "xpath",
+      "//b[contains(.,'Order Details')]"
+    ],
+    "fASTWeb": [
+      "xpath",
+      "//input[contains(@ng-model,'vmFastWebOrders.entity.FWOrderNumber')]"
+    ],
+    "orderDate": [
+      "xpath",
+      "//input[contains(@ng-model,'vmFastWebOrders.entity.DateOpened')]"
+    ],
+    "customerRef": [
+      "xpath",
+      "//input[contains(@ng-model,'vmFastWebOrders.entity.CustomerRefNumber')]"
+    ],
+    "loanAmount": [
+      "xpath",
+      "//input[contains(@ng-model,'vmFastWebOrders.entity.LoanAmount')]"
+    ],
+    "salePrice": [
+      "xpath",
+      "//input[contains(@ng-model,'vmFastWebOrders.entity.SalePrice')]"
+    ],
+    "transactionType": [
+      "xpath",
+      "//input[contains(@ng-model,'vmFastWebOrders.entity.TransactionType')]"
+    ],
+    "propertyType": [
+      "xpath",
+      "//input[contains(@ng-model,'vmFastWebOrders.entity.PropertyType')]"
+    ],
+    "propertyUse": [
+      "xpath",
+      "(//input[contains(@class,'input ng-pristine ng-untouched ng-valid ng-empty')])[8]"
+    ],
+    "customerOffice": [
+      "xpath",
+      "(//input[contains(@class,'input ng-pristine ng-untouched ng-valid ng-empty')])[9]"
+    ],
+    "officeAddress": [
+      "xpath",
+      "(//input[contains(@class,'input ng-pristine ng-untouched ng-valid ng-empty')])[10]"
+    ],
+    "contact": [
+      "xpath",
+      "//input[contains(@ng-model,'vmFastWebOrders.entity.CustomerContact')]"
+    ],
+    "email": [
+      "xpath",
+      "//input[contains(@ng-model,'vmFastWebOrders.entity.Email')]"
+    ],
+    "phone": [
+      "xpath",
+      "//input[contains(@ng-model,'vmFastWebOrders.entity.Phone')]"
+    ],
+    "propertyAddress": [
+      "xpath",
+      "(//input[contains(@class,'input ng-pristine ng-untouched ng-valid ng-empty')])[15]"
+    ],
+    "APN": [
+      "xpath",
+      "//input[contains(@ng-model,'vmFastWebOrders.Entity.APN')]"
+    ],
+    "county": [
+      "xpath",
+      "//input[contains(@ng-model,'vmFastWebOrders.entity.County')]"
+    ],
+    "legalDescription": [
+      "xpath",
+      "//textarea[contains(@ng-model,'vmFastWebOrders.entity.LegalDescription')]"
+    ],
+    "borrowerEntityType": [
+      "xpath",
+      "//input[contains(@ng-model,'vmFastWebOrders.entity.EntityType')]"
+    ],
+    "maritalStatus": [
+      "xpath",
+      "//input[contains(@ng-model,'vmFastWebOrders.entity.MaritalStatus')]"
+    ],
+    "lastName": [
+      "xpath",
+      "//input[contains(@ng-model,'vmFastWebOrders.entity.LastName')]"
+    ],
+    "firstName": [
+      "xpath",
+      "//input[contains(@ng-model,'vmFastWebOrders.entity.FirstName')]"
+    ],
+    "currentAddress": [
+      "xpath",
+      "(//input[contains(@class,'input ng-pristine ng-untouched ng-valid ng-empty')])[23]"
+    ],
+    "spouseLastName": [
+      "xpath",
+      "//input[contains(@ng-model,'vmFastWebOrders.entity.SpouseLastName')]"
+    ],
+    "spouseFirstName": [
+      "xpath",
+      "//input[contains(@ng-model,'vmFastWebOrders.entity.SpouseFirstName')]"
+    ],
+    "serviceName": [
+      "xpath",
+      "//input[contains(@ng-model,'vmFastWebOrders.entity.ServiceName')]"
+    ],
+    "processor": [
+      "xpath",
+      "//input[contains(@ng-model,'vmFastWebOrders.entity.ProcessorName')]"
+    ],
+    "address": [
+      "xpath",
+      "(//input[contains(@class,'input ng-pristine ng-untouched ng-valid ng-empty')])[29]"
+    ],
+    "orderDeskType": [
+      "xpath",
+      "//input[contains(@ng-model,'vmFastWebOrders.entity.OrderDeskType')]"
+    ],
+    "contactName": [
+      "xpath",
+      "//input[contains(@ng-model,'vmFastWebOrders.entity.ContactName')]"
+    ],
+    "contactphone": [
+      "xpath",
+      "//input[contains(@ng-model,'vmFastWebOrders.entity.ContactNumber')]"
+    ],
+    "contactemail": [
+      "xpath",
+      "//input[contains(@ng-model,'vmFastWebOrders.entity.ContactEmail')]"
+    ],
+    "status": [
+      "xpath",
+      "//input[contains(@ng-model,'vmFastWebOrders.entity.OrderStatus')]"
+    ],
+    "fASTFile": [
+      "xpath",
+      "//input[contains(@ng-model,'vmFastWebOrders.entity.FASTFileNumber')]"
+    ],
+    "portalOrderAlert": [
+      "xpath",
+      "//input[contains(@ng-model,'vmFastWebOrders.entity.PortalOrderAlert')]"
+    ],
+    "comments": [
+      "xpath",
+      "//textarea[contains(@ng-model,'vmFastWebOrders.entity.Comments')]"
+    ],
+    "products": [
+      "xpath",
+      "//input[contains(@ng-model,'vmFastWebOrders.entity.ProductName')]"
+    ],
+    "cancel": [
+      "xpath",
+      "//button[@class='btn btn-primary'][contains(.,'Cancel')]"
+    ],
+    "fastWebOrderInputField": [
+      "xpath",
+      "//input[contains(@class,'ui-grid-filter-input ui-grid-filter-input-0 ng-dirty ng-touched ng-empty')]"
+    ]
+  },
+  "fastWebOrdersRowDetails": {
+    "firstRowFirstColumn": [
+      "xpath",
+      "//*[contains(@class, 'ui-grid-cell-contents ng-binding ng-scope ui-grid-cell-focus')]"
+    ],
+    "firstRowVerify": [
+      "xpath",
+      "(//div[@class='ui-grid-cell-contents ng-binding ng-scope'])[1]"
+    ],
+    "firstRowSecondColumn": [
+      "xpath",
+      "(//div[@class='ui-grid-cell-contents ng-binding ng-scope'])[2]"
+    ],
+    "firstRowThirdColumn": [
+      "xpath",
+      "(//div[@class='ui-grid-cell-contents ng-binding ng-scope'])[3]"
+    ],
+    "firstRowFourthColumn": [
+      "xpath",
+      "(//span[@class='ng-binding ng-scope'])[1]"
+    ],
+    "firstRowFifthColumn": [
+      "xpath",
+      "(//div[@class='ui-grid-cell-contents ng-binding ng-scope'])[5]"
+    ],
+    "firstRowSixthColumn": [
+      "xpath",
+      "(//div[@class='ui-grid-cell-contents ng-binding ng-scope'])[6]"
+    ],
+    "forwardToPage": [
+      "xpath",
+      "//b[contains(.,'Forward To')]"
+    ],
+    "forwardToPageFastWebNum": [
+      "xpath",
+      "//input[contains(@ng-model,'vmFastWebOrders.RowDetail.entity.FASTWebOrderNumber')]"
+    ],
+    "forwardToPageOrderDate": [
+      "xpath",
+      "(//input[contains(@type,'text')])[2]"
+    ],
+    "forwardToPageCustomerRefOrLoanNum": [
+      "xpath",
+      "(//input[contains(@type,'text')])[3]"
+    ],
+    "forwardToPageBorrowerName": [
+      "xpath",
+      "(//input[contains(@type,'text')])[4]"
+    ],
+    "forwardToPagePropertyAddressLine1": [
+      "xpath",
+      "(//input[contains(@type,'text')])[5]"
+    ],
+    "forwardToPagePropertyAddressLine2": [
+      "xpath",
+      "(//input[contains(@type,'text')])[6]"
+    ],
+    "forwardToPageServiceName": [
+      "xpath",
+      "(//input[contains(@type,'text')])[7]"
+    ],
+    "forwardToPagePortOrderAlert": [
+      "xpath",
+      "(//input[contains(@type,'text')])[8]"
+    ],
+    "forwardToPageDropDown": [
+      "xpath",
+      "//select[@ng-model='vmFastWebOrders.OfficeValue']"
+    ],
+    "forwardToPageSubmitButton": [
+      "xpath",
+      "//button[@ng-click='vmFastWebOrders.resubmit()']"
+    ],
+    "successMessage": [
+      "xpath",
+      "//div[contains(@class,'growl-message ng-binding')]"
+    ]
+  }
+}
