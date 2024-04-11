@@ -1,9 +1,0 @@
-EntityFramework*.*
-itextsharp.dll
-log4net.dll
-*test*
-Microsoft.*.*
-Newtonsoft.Json.dll
-System.*.*
-TIBCO.EMS.dll
-*Fakes*
