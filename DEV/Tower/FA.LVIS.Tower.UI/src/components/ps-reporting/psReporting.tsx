@@ -24,6 +24,7 @@ import {
     setError 
 } from './modules/psReportingActions'; 
 import reportingRowDetail from './reporting-row-detail.html'; 
+import PsReportingComponent from './ps-reporting/psReportingTemplate'; // Import the PsReportingComponent
 
 const ReportingComponent = () => { 
     const data = useSelector(state => state.data); 
@@ -117,6 +118,16 @@ const ReportingComponent = () => {
                 </ul> 
             )} 
             <button onClick={handleConfirm}>Confirm Action</button> 
+            <PsReportingComponent 
+                loggedTenant={loggedTenant} 
+                togglingTenant={togglingTenant} 
+                hasAccess={hasAccess} 
+                search={fetchData} 
+                searchbyReferenceNo={fetchData} // Assuming same function for simplicity
+                loadRFOrder={fetchData} // Assuming same function for simplicity
+                inValidateConfirm={handleConfirm} 
+                title="Reporting Dashboard" 
+            /> 
         </div> 
     ); 
 }; 
