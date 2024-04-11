@@ -1,4 +1,3 @@
- 
 import React, { useEffect, useState } from 'react'; 
 import Modal from 'react-modal'; 
 import { toast, ToastContainer } from 'react-toastify'; 
@@ -25,7 +24,6 @@ import {
 } from './modules/psReportingActions'; 
 import reportingRowDetail from './reporting-row-detail.html'; 
 import PsReportingComponent from './ps-reporting/psReportingTemplate'; // Import the PsReportingComponent
-
 const ReportingComponent = () => { 
     const data = useSelector(state => state.data); 
     const isLoading = useSelector(state => state.isLoading); 
@@ -43,7 +41,6 @@ const ReportingComponent = () => {
     const disableDate = useSelector(state => state.disableDate); 
     const dispatch = useDispatch(); 
     const cookies = new Cookies(); 
-
     useEffect(() => { 
         const fetchData = async () => { 
             dispatch(setBusy(true)); 
@@ -57,10 +54,8 @@ const ReportingComponent = () => {
             } 
             dispatch(setBusy(false)); 
         }; 
-
         fetchData(); 
     }, [dispatch]); 
-
     const invalidateOrders = async () => { 
         try { 
             const response = await psReportingService.invalidateOrderData(orderToInvalidate); 
@@ -71,7 +66,6 @@ const ReportingComponent = () => {
             toast.error('Failed to invalidate orders'); 
         } 
     }; 
-
     const fetchData = async () => { 
         dispatch(setBusy(true)); 
         try { 
@@ -85,7 +79,6 @@ const ReportingComponent = () => {
         } 
         dispatch(setBusy(false)); 
     }; 
-
     const handleConfirm = () => { 
         confirmAlert({ 
             title: 'Confirm to submit', 
@@ -102,7 +95,6 @@ const ReportingComponent = () => {
             ] 
         }); 
     }; 
-
     return ( 
         <div> 
             <ToastContainer /> 
@@ -131,5 +123,4 @@ const ReportingComponent = () => {
         </div> 
     ); 
 }; 
-
 export default ReportingComponent; 
