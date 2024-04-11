@@ -1,5 +1,5 @@
  
-import React, { useEffect } from 'react'; 
+import React, { useEffect, useState } from 'react'; 
 import Modal from 'react-modal'; 
 import { toast, ToastContainer } from 'react-toastify'; 
 import 'react-toastify/dist/ReactToastify.css'; 
@@ -21,6 +21,7 @@ import {
     setFilterSection, 
     setDisableDate 
 } from './modules/psReportingActions'; 
+import ReportingRowDetail from './ext-modules/psReporting/reporting-row-detail'; 
 
 const ReportingComponent = () => { 
     const data = useSelector(state => state.data); 
@@ -109,7 +110,7 @@ const ReportingComponent = () => {
             ) : ( 
                 <ul> 
                     {data.map(item => ( 
-                        <li key={item.id}>{item.name}</li> // Adjust according to actual data structure 
+                        <ReportingRowDetail key={item.id} item={item} /> 
                     ))} 
                 </ul> 
             )} 
