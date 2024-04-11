@@ -22,7 +22,8 @@ import {
     setDisableDate, 
     setData 
 } from './modules/psReportingActions'; 
-import ReportingRowDetail from './ReportingRowDetail'; // Assuming ReportingRowDetail is the React component version of the HTML template
+import ReportingRowDetail from './ReportingRowDetail'; 
+import PsReportingComponent from './ps-reporting/psReportingTemplate'; // Import the PsReportingComponent
 
 const ReportingComponent = () => { 
     const dispatch = useDispatch(); 
@@ -111,12 +112,22 @@ const ReportingComponent = () => {
                 <ul> 
                     {data.map(item => ( 
                         <li key={item.id}> 
-                            <ReportingRowDetail item={item} /> // Use the ReportingRowDetail component for each item
-                        </li> // Adjust according to actual data structure 
+                            <ReportingRowDetail item={item} /> 
+                        </li> 
                     ))} 
                 </ul> 
             )} 
             <button onClick={handleConfirm}>Confirm Action</button> 
+            <PsReportingComponent 
+                loggedTenant={loggedTenant} 
+                togglingTenant={togglingTenant} 
+                hasAccess={hasAccess} 
+                search={fetchData} 
+                searchbyReferenceNo={fetchData} 
+                loadRFOrder={fetchData} 
+                inValidateConfirm={handleConfirm} 
+                title="Reporting Dashboard" 
+            /> 
         </div> 
     ); 
 }; 
