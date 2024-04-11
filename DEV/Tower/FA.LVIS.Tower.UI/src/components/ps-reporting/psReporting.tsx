@@ -1,3 +1,4 @@
+ 
 import React, { useEffect, useState } from 'react'; 
 import Modal from 'react-modal'; 
 import { toast, ToastContainer } from 'react-toastify'; 
@@ -23,6 +24,7 @@ import {
     setError 
 } from './modules/psReportingActions'; 
 import ReportingRowDetail from './ReportingRowDetail'; // Assuming the moved HTML file is now a React component
+import PsReportingComponent from './ps-reporting/psReportingTemplate'; // Import the PsReportingComponent
 const ReportingComponent = () => { 
     const data = useSelector(state => state.data); 
     const isLoading = useSelector(state => state.isLoading); 
@@ -109,6 +111,16 @@ const ReportingComponent = () => {
                 </ul> 
             )} 
             <button onClick={handleConfirm}>Confirm Action</button> 
+            <PsReportingComponent 
+                loggedTenant={loggedTenant} 
+                togglingTenant={togglingTenant} 
+                hasAccess={hasAccess} 
+                search={fetchData} 
+                searchbyReferenceNo={fetchData} // Assuming the same function can be used for simplicity
+                loadRFOrder={fetchData} // Assuming the same function can be used for simplicity
+                inValidateConfirm={handleConfirm} 
+                title="Reporting Dashboard" 
+            /> 
         </div> 
     ); 
 }; 
