@@ -1,3 +1,4 @@
+ 
 import React, { useEffect, useState } from 'react';
 import Modal from 'react-modal';
 import { toast, ToastContainer } from 'react-toastify';
@@ -19,7 +20,8 @@ import {
     setBusy, 
     setFilterSection, 
     setDisableDate, 
-    setData 
+    setData, 
+    setError 
 } from '../modules/psReportingActions';
 import ReportingRowDetail from './modules/psReporting/reporting-row-detail';
 
@@ -42,19 +44,6 @@ const ReportingComponent = () => {
     const cookies = new Cookies();
 
     useEffect(() => {
-        const fetchData = async () => {
-            dispatch(setBusy(true));
-            try {
-                const response = await psReportingService.getTenant();
-                dispatch(setLoggedTenant(response.data));
-                dispatch(setTogglingTenant(response.data));
-            } catch (error) {
-                dispatch(setError(error.message));
-                toast.error(error.message);
-            }
-            dispatch(setBusy(false));
-        };
-
         fetchData();
     }, [dispatch]);
 
