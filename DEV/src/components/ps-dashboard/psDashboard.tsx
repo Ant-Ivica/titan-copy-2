@@ -1,5 +1,6 @@
+```
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import psDashboardService from '../services/psDashboard.service';
 
 function MyComponent() {
   const [data, setData] = useState(null);
@@ -10,13 +11,7 @@ function MyComponent() {
 
   const fetchData = async () => {
     try {
-      const response = await axios({
-        method: 'get',
-        url: 'https://api.example.com/data',
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      });
+      const response = await psDashboardService.getData();
       setData(response.data);
     } catch (error) {
       console.error('Error fetching data:', error);
