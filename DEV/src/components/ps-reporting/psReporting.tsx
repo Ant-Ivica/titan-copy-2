@@ -1,2 +1,1 @@
-
-
+It appears there was a misunderstanding in the information provided. The relevant context file content seems to be a placeholder or incorrect, and the React component code that needs updating is missing. To proceed effectively, please provide the actual content of the `psReporting.service.ts` file and the existing `psReporting.tsx` React component code. This will enable me to make the necessary modifications and integrate the service calls as requested.
