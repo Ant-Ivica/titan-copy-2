@@ -1,14 +1,11 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchData } from '../services/psAuditing.service';
-import { setScope, setRootScope } from './modules/psAuditingActions'; // Assuming action creators are named this way
+import { setScope } from './modules/psAuditingActions'; // Assuming action creators are named this way
 import ReportingRowDetail from './modules/psReporting/reporting-row-detail';
-
 function MyComponent() {
   const scope = useSelector(state => state.scope);
-  const rootScope = useSelector(state => state.rootScope);
   const dispatch = useDispatch();
-
   useEffect(() => {
     const getData = async () => {
       try {
@@ -18,10 +15,8 @@ function MyComponent() {
         console.error('Error fetching data:', error);
       }
     };
-
     getData(); // Call getData on component mount
   }, [dispatch]);
-
   return (
     <div>
       <ReportingRowDetail data={scope} />
@@ -30,5 +25,4 @@ function MyComponent() {
     </div>
   );
 }
-
 export default MyComponent;
