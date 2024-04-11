@@ -47,16 +47,6 @@ const ReportingComponent = () => {
 
     useEffect(() => { 
         dispatch(setBusy(true)); 
-        const fetchData = async () => { 
-            try { 
-                const response = await psReportingService.getTenant(); 
-                dispatch(setLoggedTenant(response.data)); 
-                dispatch(setTogglingTenant(response.data)); 
-            } catch (error) { 
-                toast.error(error.message); 
-            } 
-            dispatch(setBusy(false)); 
-        }; 
         fetchData(); 
     }, [dispatch]); 
 
