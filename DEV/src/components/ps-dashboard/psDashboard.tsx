@@ -1,8 +1,8 @@
- 
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { fetchData } from '../actions/psDashboardActions'; // Assuming actions are defined here
 import psDashboardService from '../services/psDashboard.service';
+import ReportingRowDetail from '../components/ps-reporting/modules/reporting-row-detail';
 
 function MyComponent({ data, fetchData }) {
   useEffect(() => {
@@ -11,7 +11,14 @@ function MyComponent({ data, fetchData }) {
 
   return (
     <div>
-      {data ? <p>Data loaded successfully!</p> : <p>Loading data...</p>}
+      {data ? (
+        <div>
+          <p>Data loaded successfully!</p>
+          <ReportingRowDetail data={data} />
+        </div>
+      ) : (
+        <p>Loading data...</p>
+      )}
     </div>
   );
 }
