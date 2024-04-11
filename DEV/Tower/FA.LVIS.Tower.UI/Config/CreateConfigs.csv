@@ -1,3 +1,0 @@
-TEMPLATEFILE,INPUTVALUESFILE,OUTPUTFILE
-Tower_Automation.config.template,QA_TowerAutomation.config.input.txt,QA\Web.config
-Tower_Automation.config.template,DEV_TowerAutomation.config.input.txt,DEV\Web.config
