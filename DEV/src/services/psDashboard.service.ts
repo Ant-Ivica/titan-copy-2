@@ -1,0 +1,1 @@
+It appears that you have not provided the AngularJS controller file that I need to scan for API endpoints. Please provide the code for the AngularJS controller, and I will be able to assist you in creating the corresponding TypeScript service file with Axios functions for all identified API endpoints.
