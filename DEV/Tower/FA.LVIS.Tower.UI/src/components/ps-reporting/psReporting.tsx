@@ -1,11 +1,12 @@
+ 
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import Modal from 'react-modal';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css';
 import Cookies from 'universal-cookie';
+import psReportingService from '../../services/psReporting.service';
 
 const ReportingComponent = () => {
     const [data, setData] = useState([]);
@@ -28,7 +29,7 @@ const ReportingComponent = () => {
         const fetchData = async () => {
             setIsLoading(true);
             try {
-                const response = await axios.get('/Security/GetTenant');
+                const response = await psReportingService.getTenant();
                 setLoggedTenant(response.data);
                 setTogglingTenant(response.data);
             } catch (error) {
@@ -43,7 +44,7 @@ const ReportingComponent = () => {
 
     const invalidateOrders = async () => {
         try {
-            const response = await axios.post('ReportingController/InvalidateOrderData', orderToInvalidate);
+            const response = await psReportingService.invalidateOrderData(orderToInvalidate);
             setOrderToInvalidate([]);
             toast.success('Orders invalidated successfully');
             fetchData();
@@ -55,10 +56,9 @@ const ReportingComponent = () => {
     const fetchData = async () => {
         setIsLoading(true);
         try {
-            const endpoint = filterSection === '1' ? 
-                `ReportingController/GetReportDetails/${togglingTenant}` : 
-                `ReportingController/GetReportDetailsFilter/${filterSection}/${togglingTenant}`;
-            const response = await axios.get(endpoint);
+            const response = filterSection === '1' ? 
+                await psReportingService.getReportDetails(togglingTenant, { Fromdate: fromDate, ThroughDate: throughDate }) : 
+                await psReportingService.getReportDetailsFilter(filterSection, togglingTenant);
             setData(response.data);
         } catch (error) {
             setError(error.message);
