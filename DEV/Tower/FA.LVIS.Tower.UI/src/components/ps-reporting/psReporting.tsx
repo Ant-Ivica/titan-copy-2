@@ -22,6 +22,7 @@ import {
     setFilterSection, 
     setDisableDate 
 } from './modules/psReportingActions'; 
+import PsReportingComponent from './ps-reporting/psReportingTemplate'; // Import the PsReportingComponent
 
 const ReportingComponent = () => { 
     const data = useSelector(state => state.data); 
@@ -97,6 +98,16 @@ const ReportingComponent = () => {
                     </tbody>
                 </table>
             )} 
+            <PsReportingComponent 
+                loggedTenant={cookies.get('loggedTenant')}
+                togglingTenant={cookies.get('togglingTenant')}
+                hasAccess={cookies.get('hasAccess')}
+                search={psReportingService.searchOrders}
+                searchbyReferenceNo={psReportingService.searchByReference}
+                loadRFOrder={psReportingService.loadRFOrders}
+                inValidateConfirm={confirmAlert}
+                title="Reporting Dashboard"
+            />
         </div> 
     ); 
 }; 
