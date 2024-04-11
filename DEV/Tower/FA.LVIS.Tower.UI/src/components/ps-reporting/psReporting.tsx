@@ -23,8 +23,8 @@ import {
     setData, 
     setError 
 } from './modules/psReportingActions'; 
-import ReportingRowDetail from './ReportingRowDetail'; // Assuming the moved HTML file is now a React component
-import PsReportingComponent from './ps-reporting/psReportingTemplate'; // Import the PsReportingComponent
+import ReportingRowDetail from './ReportingRowDetail'; 
+import PsReportingComponent from './ps-reporting/psReportingTemplate'; 
 const ReportingComponent = () => { 
     const data = useSelector(state => state.data); 
     const isLoading = useSelector(state => state.isLoading); 
@@ -106,7 +106,7 @@ const ReportingComponent = () => {
             ) : ( 
                 <ul> 
                     {data.map(item => ( 
-                        <li key={item.id}>{item.name}</li> // Adjust according to actual data structure 
+                        <li key={item.id}>{item.name}</li> 
                     ))} 
                 </ul> 
             )} 
@@ -116,8 +116,8 @@ const ReportingComponent = () => {
                 togglingTenant={togglingTenant} 
                 hasAccess={hasAccess} 
                 search={fetchData} 
-                searchbyReferenceNo={fetchData} // Assuming the same function can be used for simplicity
-                loadRFOrder={fetchData} // Assuming the same function can be used for simplicity
+                searchbyReferenceNo={fetchData} 
+                loadRFOrder={fetchData} 
                 inValidateConfirm={handleConfirm} 
                 title="Reporting Dashboard" 
             /> 
