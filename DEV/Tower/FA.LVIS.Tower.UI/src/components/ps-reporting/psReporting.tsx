@@ -1,5 +1,5 @@
  
-import React, { useEffect } from 'react'; 
+import React, { useEffect, useState } from 'react'; 
 import Modal from 'react-modal'; 
 import { toast, ToastContainer } from 'react-toastify'; 
 import 'react-toastify/dist/ReactToastify.css'; 
@@ -22,6 +22,7 @@ import {
     setDisableDate, 
     setData 
 } from './modules/psReportingActions'; 
+import ReportingRowDetail from './ReportingRowDetail'; // Assuming ReportingRowDetail is the React component version of the HTML template
 
 const ReportingComponent = () => { 
     const dispatch = useDispatch(); 
@@ -109,7 +110,9 @@ const ReportingComponent = () => {
             ) : ( 
                 <ul> 
                     {data.map(item => ( 
-                        <li key={item.id}>{item.name}</li> // Adjust according to actual data structure 
+                        <li key={item.id}> 
+                            <ReportingRowDetail item={item} /> // Use the ReportingRowDetail component for each item
+                        </li> // Adjust according to actual data structure 
                     ))} 
                 </ul> 
             )} 
