@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
 function MyComponent() {
-  const [state, setState] = useState(null);
+  const [scope, setScope] = useState(null);
+  const [rootScope, setRootScope] = useState(null);
 
   useEffect(() => {
     // Logic to run on component mount
@@ -15,3 +16,4 @@ function MyComponent() {
 }
 
 export default MyComponent;
+```
