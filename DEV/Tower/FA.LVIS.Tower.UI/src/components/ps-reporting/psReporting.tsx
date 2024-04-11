@@ -1,5 +1,6 @@
  
-import React, { useEffect } from 'react'; 
+import React, { useEffect, useMemo, useState } from 'react'; 
+import { useTable, useExpanded } from 'react-table'; 
 import Modal from 'react-modal'; 
 import { toast, ToastContainer } from 'react-toastify'; 
 import 'react-toastify/dist/ReactToastify.css'; 
@@ -26,78 +27,43 @@ const ReportingComponent = () => {
     const data = useSelector(state => state.data); 
     const isLoading = useSelector(state => state.isLoading); 
     const error = useSelector(state => state.error); 
-    const orderToInvalidate = useSelector(state => state.orderToInvalidate); 
-    const inValidBtnEnable = useSelector(state => state.inValidBtnEnable); 
-    const loggedTenant = useSelector(state => state.loggedTenant); 
-    const togglingTenant = useSelector(state => state.togglingTenant); 
-    const hasAccess = useSelector(state => state.hasAccess); 
-    const hasSuperAccess = useSelector(state => state.hasSuperAccess); 
-    const fromDate = useSelector(state => state.fromDate); 
-    const throughDate = useSelector(state => state.throughDate); 
-    const busy = useSelector(state => state.busy); 
-    const filterSection = useSelector(state => state.filterSection); 
-    const disableDate = useSelector(state => state.disableDate); 
     const dispatch = useDispatch(); 
     const cookies = new Cookies(); 
 
     useEffect(() => { 
-        const fetchData = async () => { 
-            dispatch(setBusy(true)); 
-            try { 
-                const response = await psReportingService.getTenant(); 
-                dispatch(setLoggedTenant(response.data)); 
-                dispatch(setTogglingTenant(response.data)); 
-            } catch (error) { 
-                dispatch(setError(error.message)); 
-                toast.error(error.message); 
-            } 
-            dispatch(setBusy(false)); 
-        }; 
-
         fetchData(); 
     }, [dispatch]); 
 
-    const invalidateOrders = async () => { 
-        try { 
-            const response = await psReportingService.invalidateOrderData(orderToInvalidate); 
-            dispatch(setOrderToInvalidate([])); 
-            toast.success('Orders invalidated successfully'); 
-            fetchData(); 
-        } catch (error) { 
-            toast.error('Failed to invalidate orders'); 
-        } 
-    }; 
+    const columns = useMemo(() => [
+        { 
+            Header: 'Name', 
+            accessor: 'name' 
+        }, 
+        { 
+            Header: 'Details', 
+            accessor: 'details', 
+            Cell: ({ row }) => (
+                <div>
+                    {row.isExpanded ? (
+                        <div>
+                            {/* Convert reporting-row-detail.html content to JSX here */}
+                            <p>Details for {row.original.name}</p>
+                        </div>
+                    ) : null}
+                </div>
+            )
+        }
+    ], []);
 
-    const fetchData = async () => { 
-        dispatch(setBusy(true)); 
-        try { 
-            const response = filterSection === '1' ? 
-                await psReportingService.getReportDetails(togglingTenant, { Fromdate: fromDate, ThroughDate: throughDate }) : 
-                await psReportingService.getReportDetailsFilter(filterSection, togglingTenant); 
-            dispatch(setData(response.data)); 
-        } catch (error) { 
-            dispatch(setError(error.message)); 
-            toast.error(error.message); 
-        } 
-        dispatch(setBusy(false)); 
-    }; 
-
-    const handleConfirm = () => { 
-        confirmAlert({ 
-            title: 'Confirm to submit', 
-            message: 'Are you sure to do this?', 
-            buttons: [ 
-                { 
-                    label: 'Yes', 
-                    onClick: () => invalidateOrders() 
-                }, 
-                { 
-                    label: 'No', 
-                    onClick: () => toast.info('Clicked No') 
-                } 
-            ] 
-        }); 
-    }; 
+    const {
+        getTableProps,
+        getTableBodyProps,
+        headerGroups,
+        rows,
+        prepareRow,
+        visibleColumns,
+        state: { expanded },
+    } = useTable({ columns, data }, useExpanded);
 
     return ( 
         <div> 
@@ -107,13 +73,30 @@ const ReportingComponent = () => {
             ) : error ? ( 
                 <p>Error: {error}</p> 
             ) : ( 
-                <ul> 
-                    {data.map(item => ( 
-                        <li key={item.id}>{item.name}</li> // Adjust according to actual data structure 
-                    ))} 
-                </ul> 
+                <table {...getTableProps()}>
+                    <thead>
+                        {headerGroups.map(headerGroup => (
+                            <tr {...headerGroup.getHeaderGroupProps()}>
+                                {headerGroup.headers.map(column => (
+                                    <th {...column.getHeaderProps()}>{column.render('Header')}</th>
+                                ))}
+                            </tr>
+                        ))}
+                    </thead>
+                    <tbody {...getTableBodyProps()}>
+                        {rows.map(row => {
+                            prepareRow(row);
+                            return (
+                                <tr {...row.getRowProps()}>
+                                    {row.cells.map(cell => {
+                                        return <td {...cell.getCellProps()}>{cell.render('Cell')}</td>;
+                                    })}
+                                </tr>
+                            );
+                        })}
+                    </tbody>
+                </table>
             )} 
-            <button onClick={handleConfirm}>Confirm Action</button> 
         </div> 
     ); 
 }; 
