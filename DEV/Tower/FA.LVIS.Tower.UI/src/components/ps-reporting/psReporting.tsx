@@ -1,3 +1,4 @@
+ 
 import React, { useState, useEffect } from 'react';
 import Modal from 'react-modal';
 import { toast, ToastContainer } from 'react-toastify';
@@ -10,6 +11,17 @@ const ReportingComponent = () => {
     const [data, setData] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
+    const [orderToInvalidate, setOrderToInvalidate] = useState([]);
+    const [inValidBtnEnable, setInValidBtnEnable] = useState(true);
+    const [loggedTenant, setLoggedTenant] = useState('');
+    const [togglingTenant, setTogglingTenant] = useState('');
+    const [hasAccess, setHasAccess] = useState(false);
+    const [hasSuperAccess, setHasSuperAccess] = useState(false);
+    const [fromDate, setFromDate] = useState('');
+    const [throughDate, setThroughDate] = useState('');
+    const [busy, setBusy] = useState(false);
+    const [filterSection, setFilterSection] = useState('7');
+    const [disableDate, setDisableDate] = useState(true);
     const cookies = new Cookies();
 
     useEffect(() => {
