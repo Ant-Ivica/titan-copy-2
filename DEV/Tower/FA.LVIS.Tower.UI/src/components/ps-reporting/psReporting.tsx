@@ -1,5 +1,4 @@
- 
-import React, { useEffect } from 'react'; 
+import React, { useEffect, useState } from 'react'; 
 import Modal from 'react-modal'; 
 import { toast, ToastContainer } from 'react-toastify'; 
 import 'react-toastify/dist/ReactToastify.css'; 
@@ -19,9 +18,11 @@ import {
     setThroughDate, 
     setBusy, 
     setFilterSection, 
-    setDisableDate 
+    setDisableDate, 
+    setData, 
+    setError 
 } from './modules/psReportingActions'; 
-
+import ReportingRowDetail from './ReportingRowDetail'; // Assuming the moved HTML file is now a React component
 const ReportingComponent = () => { 
     const data = useSelector(state => state.data); 
     const isLoading = useSelector(state => state.isLoading); 
@@ -39,7 +40,6 @@ const ReportingComponent = () => {
     const disableDate = useSelector(state => state.disableDate); 
     const dispatch = useDispatch(); 
     const cookies = new Cookies(); 
-
     useEffect(() => { 
         const fetchData = async () => { 
             dispatch(setBusy(true)); 
@@ -53,10 +53,8 @@ const ReportingComponent = () => {
             } 
             dispatch(setBusy(false)); 
         }; 
-
         fetchData(); 
     }, [dispatch]); 
-
     const invalidateOrders = async () => { 
         try { 
             const response = await psReportingService.invalidateOrderData(orderToInvalidate); 
@@ -67,7 +65,6 @@ const ReportingComponent = () => {
             toast.error('Failed to invalidate orders'); 
         } 
     }; 
-
     const fetchData = async () => { 
         dispatch(setBusy(true)); 
         try { 
@@ -81,7 +78,6 @@ const ReportingComponent = () => {
         } 
         dispatch(setBusy(false)); 
     }; 
-
     const handleConfirm = () => { 
         confirmAlert({ 
             title: 'Confirm to submit', 
@@ -98,7 +94,6 @@ const ReportingComponent = () => {
             ] 
         }); 
     }; 
-
     return ( 
         <div> 
             <ToastContainer /> 
@@ -117,5 +112,4 @@ const ReportingComponent = () => {
         </div> 
     ); 
 }; 
-
 export default ReportingComponent; 
