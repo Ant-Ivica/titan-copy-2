@@ -1,9 +1,0 @@
-EntityFramework*.*
-*test*
-Microsoft.*.*
-Newtonsoft.Json.dll
-System.*.*
-*Fakes*
-*.config
-*.txt
-*.xml
