@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <title>Tower v1.0</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,300" rel="stylesheet" type="text/css">
+
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/ui-grid.css" rel="stylesheet" />
+    <link href="Content/font-awesome.min.css" rel="stylesheet" />
+    <link href="towercss" rel="stylesheet" />
+
+    <script src="towerjqscripts" type="text/javascript"></script>
+    <script src="towerangularscripts" type="text/javascript"></script>
+    <script src="towerscripts" type="text/javascript"></script>
+    <script src="towersubmenuscripts" type="text/javascript"></script>
+
+</head>
+
+<body class="container-fluid" ng-controller="appController">
+    <div antiforgerytoken></div>
+    <div ng-show="errors.unauthorized">
+        <div class="alert alert-danger">
+            <div class="error"><i class="fa fa-lg fa-ban"> {{ errors.unauthorized }}</i></div>
+        </div>
+    </div>
+
+    <div ng-show="!errors.unauthorized">
+        <div>
+            <ps-framework icon-file="images/FirstAmericanLogo.png" currentuser="{{ currentuser }}" tenantname="{{ tenantname }}">
+                <ps-menu>
+                    <ps-menu-item label="Home" route="dashboard" icon="fa-dashboard"></ps-menu-item>
+                    <ps-menu-item label="Reporting" route="reporting" icon="fa-line-chart"></ps-menu-item>
+                    <ps-menu-item label="Mapping Tables" route="Customermappings" icon="fa-cogs"></ps-menu-item>
+                    <ps-menu-item label="Auditing" route="auditing" ng-show="(activityright === 'Admin') || (activityright === 'SuperAdmin')" icon="fa-bars"></ps-menu-item>
+                    <ps-menu-item label="Exceptions" route="businessexception" icon="fa-exclamation-triangle"></ps-menu-item>
+                    <ps-menu-item label="Security" route="security" ng-show="(activityright === 'Admin') || (activityright === 'SuperAdmin')" icon="fa-lock"></ps-menu-item>
+                    <ps-menu-item label="Utilities" route="confirmservicerequest" ng-show="(activityright === 'SuperAdmin') " icon="fa-wrench"></ps-menu-item>
+                    <ps-menu-item label="Access Request" route="AccessRequest" ng-show="canmanageaccessreq" icon="fa-key"></ps-menu-item>
+                    <ps-menu-item label="Help" route="help" icon="fa-info-circle" ng-click="OpenPopupWindow()"></ps-menu-item>
+                </ps-menu>
+            </ps-framework>
+        </div>
+    </div>
+</body>
+</html>
