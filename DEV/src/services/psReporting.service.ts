@@ -1,0 +1,3 @@
+Since you've mentioned that there is no provided code for the AngularJS controller file, I'm unable to scan through it to identify any API endpoints or their corresponding HTTP requests. To proceed, I would need the AngularJS controller code or specific details about the API endpoints you want to include in the TypeScript service file.
+
+Please provide the necessary code or details about the API endpoints, and I'll be happy to assist you in creating the TypeScript service file.
