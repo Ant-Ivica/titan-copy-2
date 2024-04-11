@@ -1,5 +1,5 @@
  
-import React, { useEffect } from 'react'; 
+import React, { useEffect, useState } from 'react'; 
 import Modal from 'react-modal'; 
 import { toast, ToastContainer } from 'react-toastify'; 
 import 'react-toastify/dist/ReactToastify.css'; 
@@ -19,8 +19,11 @@ import {
     setThroughDate, 
     setBusy, 
     setFilterSection, 
-    setDisableDate 
+    setDisableDate, 
+    setData, 
+    setError 
 } from './modules/psReportingActions'; 
+import ReportingRowDetail from '../reporting-row-detail'; 
 
 const ReportingComponent = () => { 
     const data = useSelector(state => state.data); 
@@ -114,6 +117,7 @@ const ReportingComponent = () => {
                 </ul> 
             )} 
             <button onClick={handleConfirm}>Confirm Action</button> 
+            <ReportingRowDetail /> 
         </div> 
     ); 
 }; 
