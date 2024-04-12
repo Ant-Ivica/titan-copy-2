@@ -1,7 +1,7 @@
  
 import React, { useState, useEffect } from 'react';
-import { Table, Button } from 'antd';
-import { Modal } from 'antd';
+import { Table, Button, Modal } from 'antd';
+import ReportingTemplate from './ps-reporting/psReportingTemplate'; // Import the ReportingTemplate component
 
 interface RowData {
     ServiceRequestId: string;
@@ -97,6 +97,7 @@ const ReportingComponent: React.FC<ReportingProps> = ({ rows, activeCustomerName
 
     return (
         <div>
+            <ReportingTemplate /> {/* Render the imported ReportingTemplate component */}
             <Table
                 onRow={(record) => ({
                     onDoubleClick: () => handleRowDoubleClick(record),
