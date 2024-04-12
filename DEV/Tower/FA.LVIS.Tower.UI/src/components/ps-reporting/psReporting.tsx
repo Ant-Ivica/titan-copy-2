@@ -1,6 +1,6 @@
  
-import React, { useState, useEffect } from 'react';
-import { Table, Button, Modal } from 'antd';
+import React, { useState } from 'react';
+import { Table, Modal } from 'antd';
 import ReportingTemplate from './ps-reporting/psReportingTemplate'; // Import the ReportingTemplate component
 
 interface RowData {
