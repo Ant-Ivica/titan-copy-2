@@ -1,6 +1,5 @@
- 
-import React, { useState, useEffect } from 'react';
-import { Button, DatePicker, Select, Spin, Icon } from 'antd';
+import React, { useState } from 'react';
+import { Button, DatePicker, Select, Icon } from 'antd';
 import 'antd/dist/antd.css';
 
 interface Props {
@@ -43,8 +42,6 @@ const ReportingComponent: React.FC<Props> = ({
     const [fromDate, setFromDate] = useState(null);
     const [throughDate, setThroughDate] = useState(null);
     const [referenceNo, setReferenceNo] = useState('');
-    const [busy, setBusy] = useState(false);
-    const [busyRef, setBusyRef] = useState(false);
 
     const handleDateChange = (value: any, dateString: string, key: 'fromDate' | 'throughDate') => {
         if (key === 'fromDate') {
