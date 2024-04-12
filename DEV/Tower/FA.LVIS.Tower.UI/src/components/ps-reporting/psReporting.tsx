@@ -1,6 +1,7 @@
  
 import React, { useState, useEffect } from 'react';
 import { Table, Button } from 'antd';
+import ReportingTemplate from './ps-reporting/psReportingTemplate'; // Import the ReportingTemplate component
 
 interface RowData {
     ServiceRequestId: string;
@@ -84,6 +85,7 @@ const ReportingComponent: React.FC<ReportingProps> = ({ rows, activeCustomerName
 
     return (
         <div>
+            <ReportingTemplate /> {/* Render the imported ReportingTemplate component */}
             <Table
                 rowSelection={rowSelection}
                 columns={columns}
