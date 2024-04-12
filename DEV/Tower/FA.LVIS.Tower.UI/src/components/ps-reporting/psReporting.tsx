@@ -1,6 +1,7 @@
  
 import React, { useState, useEffect } from 'react';
 import { Table, Button } from 'antd';
+import { Modal } from 'antd';
 
 interface RowData {
     ServiceRequestId: string;
@@ -22,10 +23,22 @@ interface ReportingProps {
 
 const ReportingComponent: React.FC<ReportingProps> = ({ rows, activeCustomerName, onRowSelectionChange }) => {
     const [selectedRowKeys, setSelectedRowKeys] = useState<React.Key[]>([]);
+    const [isModalVisible, setIsModalVisible] = useState(false);
+    const [modalContent, setModalContent] = useState<RowData | null>(null);
 
     const handleSelectChange = (selectedRowKeys: React.Key[], selectedRows: RowData[]) => {
         setSelectedRowKeys(selectedRowKeys);
         onRowSelectionChange(selectedRowKeys, selectedRows);
+    };
+
+    const handleRowDoubleClick = (record: RowData) => {
+        setModalContent(record);
+        setIsModalVisible(true);
+    };
+
+    const handleModalClose = () => {
+        setIsModalVisible(false);
+        setModalContent(null);
     };
 
     const columns = [
@@ -85,14 +98,36 @@ const ReportingComponent: React.FC<ReportingProps> = ({ rows, activeCustomerName
     return (
         <div>
             <Table
+                onRow={(record) => ({
+                    onDoubleClick: () => handleRowDoubleClick(record),
+                })}
                 rowSelection={rowSelection}
                 columns={columns}
                 dataSource={rows.filter(row => row.InternalRefNum === activeCustomerName)}
                 rowKey="ServiceRequestId"
             />
+            <Modal
+                title="Detail View"
+                visible={isModalVisible}
+                onCancel={handleModalClose}
+                footer={null}
+            >
+                {modalContent && (
+                    <div>
+                        <p>Service Request ID: {modalContent.ServiceRequestId}</p>
+                        <p>Order Date: {new Date(modalContent.createddate).toLocaleDateString('en-US')}</p>
+                        <p>Service Type: {modalContent.service}</p>
+                        <p>Application ID: {modalContent.ApplicationId}</p>
+                        <p>Customer ID: {modalContent.CustomerId}</p>
+                        <p>External Reference Number: {modalContent.ExternalRefNum}</p>
+                        <p>Customer Reference Number: {modalContent.CustomerRefNum}</p>
+                        <p>Internal Reference Number: {modalContent.InternalRefNum}</p>
+                        <p>Internal Reference ID: {modalContent.InternalRefId}</p>
+                    </div>
+                )}
+            </Modal>
         </div>
     );
 };
 
 export default ReportingComponent;
-
