@@ -1,9 +1,8 @@
  
 import React, { useState, useEffect } from 'react';
-import ReportingComponent from './reporting-row-detail'; // Import the ReportingComponent
 import Modal from './Modal'; // Assuming Modal component handles modal logic similar to AngularJS modalProvider
 
-const PsReporting = () => {
+const ReportingComponent = () => {
     const [data, setData] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
@@ -26,8 +25,10 @@ const PsReporting = () => {
         fetchData();
     }, []);
 
-    const handleRowSelectionChange = (selectedRowKeys, selectedRows) => {
-        setSelectedItem(selectedRows[0]); // Assuming we want to handle the first selected item
+    const handleRowDoubleClick = (item) => {
+        setSelectedItem(item);
+        // Open modal with selected item details
+        // This simulates the editReportRow functionality from AngularJS
     };
 
     return (
@@ -37,11 +38,13 @@ const PsReporting = () => {
             ) : error ? (
                 <p>Error: {error}</p>
             ) : (
-                <ReportingComponent
-                    rows={data}
-                    activeCustomerName={selectedItem ? selectedItem.CustomerId : ''}
-                    onRowSelectionChange={handleRowSelectionChange}
-                />
+                <ul>
+                    {data.map((item, index) => (
+                        <li key={index} onDoubleClick={() => handleRowDoubleClick(item)}>
+                            {item.name} // Adjust according to data structure
+                        </li>
+                    ))}
+                </ul>
             )}
             {selectedItem && (
                 <Modal item={selectedItem} onClose={() => setSelectedItem(null)} />
@@ -50,4 +53,5 @@ const PsReporting = () => {
     );
 };
 
-export default PsReporting;
+export default ReportingComponent;
+
