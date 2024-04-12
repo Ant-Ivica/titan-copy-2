@@ -1,4 +1,3 @@
- 
 import React, { useEffect } from 'react'; 
 import Modal from 'react-modal'; 
 import { toast, ToastContainer } from 'react-toastify'; 
