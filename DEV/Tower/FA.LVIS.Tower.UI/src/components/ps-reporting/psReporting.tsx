@@ -1,56 +1,39 @@
  
 import React, { useState, useEffect } from 'react';
-import Modal from './Modal'; // Assuming Modal component exists for handling modals similar to AngularJS modalProvider
+import { Table, Button } from 'antd';
+import ReportingComponent from './reporting-row-detail'; // Import the ReportingComponent
 
-const ReportingComponent = () => {
-    const [data, setData] = useState([]);
-    const [isLoading, setIsLoading] = useState(false);
-    const [error, setError] = useState(null);
-    const [selectedRow, setSelectedRow] = useState(null); // State to handle selected row
+interface RowData {
+    ServiceRequestId: string;
+    createddate: string;
+    service: string;
+    ApplicationId: string;
+    CustomerId: string;
+    ExternalRefNum: string;
+    CustomerRefNum: string;
+    InternalRefNum?: string;
+    InternalRefId?: string;
+}
 
-    useEffect(() => {
-        const fetchData = async () => {
-            setIsLoading(true);
-            try {
-                const response = await fetch('/api/data'); // Adjust API endpoint as needed
-                if (!response.ok) throw new Error('Network response was not ok');
-                const result = await response.json();
-                setData(result);
-            } catch (error) {
-                setError(error.message);
-            }
-            setIsLoading(false);
-        };
+interface ReportingProps {
+    rows: RowData[];
+    activeCustomerName: string;
+    onRowSelectionChange: (selectedRowKeys: React.Key[], selectedRows: RowData[]) => void;
+}
 
-        fetchData();
-    }, []);
-
-    const handleRowDoubleClick = (row) => {
-        setSelectedRow(row);
-        // Simulate opening a modal with row details, similar to AngularJS modalProvider
-        Modal.open({
-            content: <div>{row.details}</div>, // Assuming row.details contains the necessary details
-            onClose: () => setSelectedRow(null)
-        });
-    };
+const PsReporting: React.FC<ReportingProps> = ({ rows, activeCustomerName, onRowSelectionChange }) => {
+    // State and handlers can be managed here if needed for additional functionality
 
     return (
         <div>
-            {isLoading ? (
-                <p>Loading...</p>
-            ) : error ? (
-                <p>Error: {error}</p>
-            ) : (
-                <ul>
-                    {data.map((item, index) => (
-                        <li key={index} onDoubleClick={() => handleRowDoubleClick(item)}>
-                            {item.name} // Adjust according to data structure
-                        </li>
-                    ))}
-                </ul>
-            )}
+            {/* Utilize the imported ReportingComponent */}
+            <ReportingComponent
+                rows={rows}
+                activeCustomerName={activeCustomerName}
+                onRowSelectionChange={onRowSelectionChange}
+            />
         </div>
     );
 };
 
-export default ReportingComponent;
+export default PsReporting;
