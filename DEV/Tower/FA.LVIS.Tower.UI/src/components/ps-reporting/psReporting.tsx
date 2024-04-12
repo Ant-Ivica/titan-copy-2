@@ -1,12 +1,12 @@
  
 import React, { useState, useEffect } from 'react';
-import ReportingRowDetail from './ReportingRowDetail'; // Assuming the converted TSX file is named ReportingRowDetail
+import ReportingComponent from './reporting-row-detail'; // Import the ReportingRowDetail component
 
-const ReportingComponent = () => {
+const PsReporting = () => {
     const [data, setData] = useState([]);
+    const [selectedRowKeys, setSelectedRowKeys] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
-    const [selectedRow, setSelectedRow] = useState(null);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -25,8 +25,9 @@ const ReportingComponent = () => {
         fetchData();
     }, []);
 
-    const handleRowClick = (row) => {
-        setSelectedRow(row);
+    const handleRowSelectionChange = (selectedRowKeys, selectedRows) => {
+        setSelectedRowKeys(selectedRowKeys);
+        // Additional logic can be added here if needed
     };
 
     return (
@@ -36,19 +37,14 @@ const ReportingComponent = () => {
             ) : error ? (
                 <p>Error: {error}</p>
             ) : (
-                <ul>
-                    {data.map((item, index) => (
-                        <li key={index} onClick={() => handleRowClick(item)}>
-                            {item.name} // Adjust according to data structure
-                        </li>
-                    ))}
-                </ul>
-            )}
-            {selectedRow && (
-                <ReportingRowDetail row={selectedRow} />
+                <ReportingComponent
+                    rows={data}
+                    activeCustomerName="SpecificCustomerName" // Adjust as needed
+                    onRowSelectionChange={handleRowSelectionChange}
+                />
             )}
         </div>
     );
 };
 
-export default ReportingComponent;
+export default PsReporting;
