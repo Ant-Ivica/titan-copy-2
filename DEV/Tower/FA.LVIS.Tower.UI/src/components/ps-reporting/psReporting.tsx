@@ -1,6 +1,6 @@
  
 import React, { useState, useEffect } from 'react';
-import Modal from './Modal'; // Assuming Modal component handles the popup functionality
+import Modal from './Modal'; // Assuming Modal component handles modal logic similar to AngularJS modalProvider
 
 const ReportingComponent = () => {
     const [data, setData] = useState([]);
@@ -25,8 +25,10 @@ const ReportingComponent = () => {
         fetchData();
     }, []);
 
-    const handleRowClick = (item) => {
+    const handleRowDoubleClick = (item) => {
         setSelectedItem(item);
+        // Open modal with selected item details
+        // This simulates the editReportRow functionality from AngularJS
     };
 
     return (
@@ -38,7 +40,9 @@ const ReportingComponent = () => {
             ) : (
                 <ul>
                     {data.map((item, index) => (
-                        <li key={index} onClick={() => handleRowClick(item)}>{item.name}</li> // Adjust according to data structure
+                        <li key={index} onDoubleClick={() => handleRowDoubleClick(item)}>
+                            {item.name} // Adjust according to data structure
+                        </li>
                     ))}
                 </ul>
             )}
