@@ -1,19 +1,97 @@
-﻿<div antiforgerytoken></div><div class="row" ng-repeat-end="" ng-show="active==user.CustomerName" ng-class-odd="'alt'">
-    <br>
-    <div class="col-md-5">
-        <label>Service Request Id: </label> {{row.entity.ServiceRequestId}}<br>
-        <label>Order Date: </label> {{row.entity.createddate | date:'MM/dd/yyyy'}}<br>
-        <label>Service Type: </label> {{row.entity.service}}<br>
-        <label>Application: </label> {{row.entity.ApplicationId}}
-    </div>
-    <div class="col-md-4">
-        <label>Customer Id: </label> {{row.entity.CustomerId}} <br>
-        <label>External Reference Number: </label> {{row.entity.ExternalRefNum}} <br>
-        <label>Customer Reference Number: </label> {{row.entity.CustomerRefNum}}<br>
-    </div>
-    <div class="col-md-3">
-        <label>Internal Reference Number: </label> {{row.entity.InternalRefNum}}<br>
-        <label>Internal Reference Id: </label> {{row.entity.InternalRefId}}<br>
-    </div>    
-</div>
+ 
+import React, { useState, useEffect } from 'react';
+import { Table, Button } from 'antd';
 
+interface RowData {
+    ServiceRequestId: string;
+    createddate: string;
+    service: string;
+    ApplicationId: string;
+    CustomerId: string;
+    ExternalRefNum: string;
+    CustomerRefNum: string;
+    InternalRefNum?: string;
+    InternalRefId?: string;
+}
+
+interface ReportingProps {
+    rows: RowData[];
+    activeCustomerName: string;
+    onRowSelectionChange: (selectedRowKeys: React.Key[], selectedRows: RowData[]) => void;
+}
+
+const ReportingComponent: React.FC<ReportingProps> = ({ rows, activeCustomerName, onRowSelectionChange }) => {
+    const [selectedRowKeys, setSelectedRowKeys] = useState<React.Key[]>([]);
+
+    const handleSelectChange = (selectedRowKeys: React.Key[], selectedRows: RowData[]) => {
+        setSelectedRowKeys(selectedRowKeys);
+        onRowSelectionChange(selectedRowKeys, selectedRows);
+    };
+
+    const columns = [
+        {
+            title: 'Service Request Id',
+            dataIndex: 'ServiceRequestId',
+            key: 'ServiceRequestId',
+        },
+        {
+            title: 'Order Date',
+            dataIndex: 'createddate',
+            key: 'createddate',
+            render: (text: string) => new Date(text).toLocaleDateString('en-US'),
+        },
+        {
+            title: 'Service Type',
+            dataIndex: 'service',
+            key: 'service',
+        },
+        {
+            title: 'Application',
+            dataIndex: 'ApplicationId',
+            key: 'ApplicationId',
+        },
+        {
+            title: 'Customer Id',
+            dataIndex: 'CustomerId',
+            key: 'CustomerId',
+        },
+        {
+            title: 'External Reference Number',
+            dataIndex: 'ExternalRefNum',
+            key: 'ExternalRefNum',
+        },
+        {
+            title: 'Customer Reference Number',
+            dataIndex: 'CustomerRefNum',
+            key: 'CustomerRefNum',
+        },
+        {
+            title: 'Internal Reference Number',
+            dataIndex: 'InternalRefNum',
+            key: 'InternalRefNum',
+        },
+        {
+            title: 'Internal Reference Id',
+            dataIndex: 'InternalRefId',
+            key: 'InternalRefId',
+        },
+    ];
+
+    const rowSelection = {
+        selectedRowKeys,
+        onChange: handleSelectChange,
+    };
+
+    return (
+        <div>
+            <Table
+                rowSelection={rowSelection}
+                columns={columns}
+                dataSource={rows.filter(row => row.InternalRefNum === activeCustomerName)}
+                rowKey="ServiceRequestId"
+            />
+        </div>
+    );
+};
+
+export default ReportingComponent;
