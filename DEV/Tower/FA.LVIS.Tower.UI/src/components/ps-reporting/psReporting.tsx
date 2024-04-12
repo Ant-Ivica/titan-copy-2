@@ -1,9 +1,12 @@
+ 
 import React, { useState, useEffect } from 'react';
+import ReportingRowDetail from './ReportingRowDetail'; // Assuming the converted TSX file is named ReportingRowDetail.tsx
 
 const ReportingComponent = () => {
     const [data, setData] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
+    const [expandedRow, setExpandedRow] = useState(null); // State to manage expanded rows
 
     useEffect(() => {
         const fetchData = async () => {
@@ -22,6 +25,15 @@ const ReportingComponent = () => {
         fetchData();
     }, []);
 
+    const handleRowClick = (item) => {
+        // Toggle expand/collapse
+        if (expandedRow === item.id) {
+            setExpandedRow(null);
+        } else {
+            setExpandedRow(item.id);
+        }
+    };
+
     return (
         <div>
             {isLoading ? (
@@ -31,7 +43,10 @@ const ReportingComponent = () => {
             ) : (
                 <ul>
                     {data.map((item, index) => (
-                        <li key={index}>{item.name}</li> // Adjust according to data structure
+                        <li key={index} onClick={() => handleRowClick(item)}>
+                            {item.name} // Adjust according to data structure
+                            {expandedRow === item.id && <ReportingRowDetail item={item} />}
+                        </li>
                     ))}
                 </ul>
             )}
