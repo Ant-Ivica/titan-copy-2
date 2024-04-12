@@ -1,50 +1,97 @@
  
 import React, { useState, useEffect } from 'react';
-import ReportingComponent from './reporting-row-detail'; // Import the ReportingRowDetail component
+import { Table, Button } from 'antd';
 
-const PsReporting = () => {
-    const [data, setData] = useState([]);
-    const [selectedRowKeys, setSelectedRowKeys] = useState([]);
-    const [isLoading, setIsLoading] = useState(false);
-    const [error, setError] = useState(null);
+interface RowData {
+    ServiceRequestId: string;
+    createddate: string;
+    service: string;
+    ApplicationId: string;
+    CustomerId: string;
+    ExternalRefNum: string;
+    CustomerRefNum: string;
+    InternalRefNum?: string;
+    InternalRefId?: string;
+}
 
-    useEffect(() => {
-        const fetchData = async () => {
-            setIsLoading(true);
-            try {
-                const response = await fetch('/api/data'); // Adjust API endpoint as needed
-                if (!response.ok) throw new Error('Network response was not ok');
-                const result = await response.json();
-                setData(result);
-            } catch (error) {
-                setError(error.message);
-            }
-            setIsLoading(false);
-        };
+interface ReportingProps {
+    rows: RowData[];
+    activeCustomerName: string;
+    onRowSelectionChange: (selectedRowKeys: React.Key[], selectedRows: RowData[]) => void;
+}
 
-        fetchData();
-    }, []);
+const ReportingComponent: React.FC<ReportingProps> = ({ rows, activeCustomerName, onRowSelectionChange }) => {
+    const [selectedRowKeys, setSelectedRowKeys] = useState<React.Key[]>([]);
 
-    const handleRowSelectionChange = (selectedRowKeys, selectedRows) => {
+    const handleSelectChange = (selectedRowKeys: React.Key[], selectedRows: RowData[]) => {
         setSelectedRowKeys(selectedRowKeys);
-        // Additional logic can be added here if needed
+        onRowSelectionChange(selectedRowKeys, selectedRows);
+    };
+
+    const columns = [
+        {
+            title: 'Service Request Id',
+            dataIndex: 'ServiceRequestId',
+            key: 'ServiceRequestId',
+        },
+        {
+            title: 'Order Date',
+            dataIndex: 'createddate',
+            key: 'createddate',
+            render: (text: string) => new Date(text).toLocaleDateString('en-US'),
+        },
+        {
+            title: 'Service Type',
+            dataIndex: 'service',
+            key: 'service',
+        },
+        {
+            title: 'Application',
+            dataIndex: 'ApplicationId',
+            key: 'ApplicationId',
+        },
+        {
+            title: 'Customer Id',
+            dataIndex: 'CustomerId',
+            key: 'CustomerId',
+        },
+        {
+            title: 'External Reference Number',
+            dataIndex: 'ExternalRefNum',
+            key: 'ExternalRefNum',
+        },
+        {
+            title: 'Customer Reference Number',
+            dataIndex: 'CustomerRefNum',
+            key: 'CustomerRefNum',
+        },
+        {
+            title: 'Internal Reference Number',
+            dataIndex: 'InternalRefNum',
+            key: 'InternalRefNum',
+        },
+        {
+            title: 'Internal Reference Id',
+            dataIndex: 'InternalRefId',
+            key: 'InternalRefId',
+        },
+    ];
+
+    const rowSelection = {
+        selectedRowKeys,
+        onChange: handleSelectChange,
     };
 
     return (
         <div>
-            {isLoading ? (
-                <p>Loading...</p>
-            ) : error ? (
-                <p>Error: {error}</p>
-            ) : (
-                <ReportingComponent
-                    rows={data}
-                    activeCustomerName="SpecificCustomerName" // Adjust as needed
-                    onRowSelectionChange={handleRowSelectionChange}
-                />
-            )}
+            <Table
+                rowSelection={rowSelection}
+                columns={columns}
+                dataSource={rows.filter(row => row.InternalRefNum === activeCustomerName)}
+                rowKey="ServiceRequestId"
+            />
         </div>
     );
 };
 
-export default PsReporting;
+export default ReportingComponent;
