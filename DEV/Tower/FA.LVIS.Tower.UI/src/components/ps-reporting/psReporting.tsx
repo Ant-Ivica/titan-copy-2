@@ -1,39 +1,52 @@
  
 import React, { useState, useEffect } from 'react';
-import { Table, Button } from 'antd';
-import ReportingComponent from './reporting-row-detail'; // Import the ReportingComponent
+import Modal from './Modal'; // Assuming Modal component handles the popup functionality
 
-interface RowData {
-    ServiceRequestId: string;
-    createddate: string;
-    service: string;
-    ApplicationId: string;
-    CustomerId: string;
-    ExternalRefNum: string;
-    CustomerRefNum: string;
-    InternalRefNum?: string;
-    InternalRefId?: string;
-}
+const ReportingComponent = () => {
+    const [data, setData] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
+    const [error, setError] = useState(null);
+    const [selectedItem, setSelectedItem] = useState(null); // State to handle selected item for modal
 
-interface ReportingProps {
-    rows: RowData[];
-    activeCustomerName: string;
-    onRowSelectionChange: (selectedRowKeys: React.Key[], selectedRows: RowData[]) => void;
-}
+    useEffect(() => {
+        const fetchData = async () => {
+            setIsLoading(true);
+            try {
+                const response = await fetch('/api/data'); // Adjust API endpoint as needed
+                if (!response.ok) throw new Error('Network response was not ok');
+                const result = await response.json();
+                setData(result);
+            } catch (error) {
+                setError(error.message);
+            }
+            setIsLoading(false);
+        };
 
-const PsReporting: React.FC<ReportingProps> = ({ rows, activeCustomerName, onRowSelectionChange }) => {
-    // State and handlers can be managed here if needed for additional functionality
+        fetchData();
+    }, []);
+
+    const handleRowClick = (item) => {
+        setSelectedItem(item);
+    };
 
     return (
         <div>
-            {/* Utilize the imported ReportingComponent */}
-            <ReportingComponent
-                rows={rows}
-                activeCustomerName={activeCustomerName}
-                onRowSelectionChange={onRowSelectionChange}
-            />
+            {isLoading ? (
+                <p>Loading...</p>
+            ) : error ? (
+                <p>Error: {error}</p>
+            ) : (
+                <ul>
+                    {data.map((item, index) => (
+                        <li key={index} onClick={() => handleRowClick(item)}>{item.name}</li> // Adjust according to data structure
+                    ))}
+                </ul>
+            )}
+            {selectedItem && (
+                <Modal item={selectedItem} onClose={() => setSelectedItem(null)} />
+            )}
         </div>
     );
 };
 
-export default PsReporting;
+export default ReportingComponent;
