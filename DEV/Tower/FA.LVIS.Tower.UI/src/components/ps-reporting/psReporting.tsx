@@ -1,5 +1,5 @@
  
-import React, { useState, useEffect } from 'react'; 
+import React, { useEffect } from 'react'; 
 import Modal from 'react-modal'; 
 import { toast, ToastContainer } from 'react-toastify'; 
 import 'react-toastify/dist/ReactToastify.css'; 
@@ -7,45 +7,61 @@ import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css'; 
 import Cookies from 'universal-cookie'; 
 import psReportingService from '../../services/ps-reporting/psReporting.service'; 
+import { useDispatch, useSelector } from 'react-redux'; 
+import { 
+    setOrderToInvalidate, 
+    setInvalidBtnEnable, 
+    setLoggedTenant, 
+    setTogglingTenant, 
+    setHasAccess, 
+    setHasSuperAccess, 
+    setFromDate, 
+    setThroughDate, 
+    setBusy, 
+    setFilterSection, 
+    setDisableDate, 
+    setData 
+} from './modules/psReportingActions'; 
 
 const ReportingComponent = () => { 
-    const [data, setData] = useState([]); 
-    const [isLoading, setIsLoading] = useState(false); 
-    const [error, setError] = useState(null); 
-    const [orderToInvalidate, setOrderToInvalidate] = useState([]); 
-    const [inValidBtnEnable, setInValidBtnEnable] = useState(true); 
-    const [loggedTenant, setLoggedTenant] = useState(''); 
-    const [togglingTenant, setTogglingTenant] = useState(''); 
-    const [hasAccess, setHasAccess] = useState(false); 
-    const [hasSuperAccess, setHasSuperAccess] = useState(false); 
-    const [fromDate, setFromDate] = useState(''); 
-    const [throughDate, setThroughDate] = useState(''); 
-    const [busy, setBusy] = useState(false); 
-    const [filterSection, setFilterSection] = useState('7'); 
-    const [disableDate, setDisableDate] = useState(true); 
+    const dispatch = useDispatch(); 
+    const { 
+        data, 
+        isLoading, 
+        error, 
+        orderToInvalidate, 
+        inValidBtnEnable, 
+        loggedTenant, 
+        togglingTenant, 
+        hasAccess, 
+        hasSuperAccess, 
+        fromDate, 
+        throughDate, 
+        busy, 
+        filterSection, 
+        disableDate 
+    } = useSelector(state => state.reporting); 
     const cookies = new Cookies(); 
 
     useEffect(() => { 
+        dispatch(setBusy(true)); 
         const fetchData = async () => { 
-            setIsLoading(true); 
             try { 
                 const response = await psReportingService.getTenant(); 
-                setLoggedTenant(response.data); 
-                setTogglingTenant(response.data); 
+                dispatch(setLoggedTenant(response.data)); 
+                dispatch(setTogglingTenant(response.data)); 
             } catch (error) { 
-                setError(error.message); 
                 toast.error(error.message); 
             } 
-            setIsLoading(false); 
+            dispatch(setBusy(false)); 
         }; 
-
         fetchData(); 
-    }, []); 
+    }, [dispatch]); 
 
     const invalidateOrders = async () => { 
         try { 
             const response = await psReportingService.invalidateOrderData(orderToInvalidate); 
-            setOrderToInvalidate([]); 
+            dispatch(setOrderToInvalidate([])); 
             toast.success('Orders invalidated successfully'); 
             fetchData(); 
         } catch (error) { 
@@ -54,17 +70,16 @@ const ReportingComponent = () => {
     }; 
 
     const fetchData = async () => { 
-        setIsLoading(true); 
+        dispatch(setBusy(true)); 
         try { 
             const response = filterSection === '1' ? 
                 await psReportingService.getReportDetails(togglingTenant, { Fromdate: fromDate, ThroughDate: throughDate }) : 
                 await psReportingService.getReportDetailsFilter(filterSection, togglingTenant); 
-            setData(response.data); 
+            dispatch(setData(response.data)); 
         } catch (error) { 
-            setError(error.message); 
             toast.error(error.message); 
         } 
-        setIsLoading(false); 
+        dispatch(setBusy(false)); 
     }; 
 
     const handleConfirm = () => { 
