@@ -1,5 +1,5 @@
- 
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import Modal from 'react-modal';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -28,10 +28,9 @@ const ReportingComponent = () => {
         const fetchData = async () => {
             setIsLoading(true);
             try {
-                const response = await fetch('/api/data'); // Adjust API endpoint as needed
-                if (!response.ok) throw new Error('Network response was not ok');
-                const result = await response.json();
-                setData(result);
+                const response = await axios.get('/Security/GetTenant');
+                setLoggedTenant(response.data);
+                setTogglingTenant(response.data);
             } catch (error) {
                 setError(error.message);
                 toast.error(error.message);
@@ -40,7 +39,33 @@ const ReportingComponent = () => {
         };
 
         fetchData();
-    }, []); // Dependency array left empty to mimic componentDidMount behavior
+    }, []);
+
+    const invalidateOrders = async () => {
+        try {
+            const response = await axios.post('ReportingController/InvalidateOrderData', orderToInvalidate);
+            setOrderToInvalidate([]);
+            toast.success('Orders invalidated successfully');
+            fetchData();
+        } catch (error) {
+            toast.error('Failed to invalidate orders');
+        }
+    };
+
+    const fetchData = async () => {
+        setIsLoading(true);
+        try {
+            const endpoint = filterSection === '1' ? 
+                `ReportingController/GetReportDetails/${togglingTenant}` : 
+                `ReportingController/GetReportDetailsFilter/${filterSection}/${togglingTenant}`;
+            const response = await axios.get(endpoint);
+            setData(response.data);
+        } catch (error) {
+            setError(error.message);
+            toast.error(error.message);
+        }
+        setIsLoading(false);
+    };
 
     const handleConfirm = () => {
         confirmAlert({
@@ -49,7 +74,7 @@ const ReportingComponent = () => {
             buttons: [
                 {
                     label: 'Yes',
-                    onClick: () => toast.success('Clicked Yes')
+                    onClick: () => invalidateOrders()
                 },
                 {
                     label: 'No',
