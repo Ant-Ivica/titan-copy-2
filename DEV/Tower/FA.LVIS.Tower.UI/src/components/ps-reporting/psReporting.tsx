@@ -1,6 +1,7 @@
  
 import React, { useState, useEffect } from 'react';
 import { Table, Button } from 'antd';
+import ReportingComponent from './reporting-row-detail'; // Import the ReportingComponent from reporting-row-detail.tsx
 
 interface RowData {
     ServiceRequestId: string;
@@ -20,78 +21,13 @@ interface ReportingProps {
     onRowSelectionChange: (selectedRowKeys: React.Key[], selectedRows: RowData[]) => void;
 }
 
-const ReportingComponent: React.FC<ReportingProps> = ({ rows, activeCustomerName, onRowSelectionChange }) => {
-    const [selectedRowKeys, setSelectedRowKeys] = useState<React.Key[]>([]);
-
-    const handleSelectChange = (selectedRowKeys: React.Key[], selectedRows: RowData[]) => {
-        setSelectedRowKeys(selectedRowKeys);
-        onRowSelectionChange(selectedRowKeys, selectedRows);
-    };
-
-    const columns = [
-        {
-            title: 'Service Request Id',
-            dataIndex: 'ServiceRequestId',
-            key: 'ServiceRequestId',
-        },
-        {
-            title: 'Order Date',
-            dataIndex: 'createddate',
-            key: 'createddate',
-            render: (text: string) => new Date(text).toLocaleDateString('en-US'),
-        },
-        {
-            title: 'Service Type',
-            dataIndex: 'service',
-            key: 'service',
-        },
-        {
-            title: 'Application',
-            dataIndex: 'ApplicationId',
-            key: 'ApplicationId',
-        },
-        {
-            title: 'Customer Id',
-            dataIndex: 'CustomerId',
-            key: 'CustomerId',
-        },
-        {
-            title: 'External Reference Number',
-            dataIndex: 'ExternalRefNum',
-            key: 'ExternalRefNum',
-        },
-        {
-            title: 'Customer Reference Number',
-            dataIndex: 'CustomerRefNum',
-            key: 'CustomerRefNum',
-        },
-        {
-            title: 'Internal Reference Number',
-            dataIndex: 'InternalRefNum',
-            key: 'InternalRefNum',
-        },
-        {
-            title: 'Internal Reference Id',
-            dataIndex: 'InternalRefId',
-            key: 'InternalRefId',
-        },
-    ];
-
-    const rowSelection = {
-        selectedRowKeys,
-        onChange: handleSelectChange,
-    };
-
+const PsReporting: React.FC<ReportingProps> = ({ rows, activeCustomerName, onRowSelectionChange }) => {
+    // Use the imported ReportingComponent directly with the necessary props
     return (
         <div>
-            <Table
-                rowSelection={rowSelection}
-                columns={columns}
-                dataSource={rows.filter(row => row.InternalRefNum === activeCustomerName)}
-                rowKey="ServiceRequestId"
-            />
+            <ReportingComponent rows={rows} activeCustomerName={activeCustomerName} onRowSelectionChange={onRowSelectionChange} />
         </div>
     );
 };
 
-export default ReportingComponent;
+export default PsReporting;
