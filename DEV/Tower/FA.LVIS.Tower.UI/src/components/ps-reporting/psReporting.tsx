@@ -1,9 +1,12 @@
+ 
 import React, { useState, useEffect } from 'react';
+import Modal from './Modal'; // Assuming Modal component handles modal logic similar to AngularJS modalProvider
 
 const ReportingComponent = () => {
     const [data, setData] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
+    const [selectedItem, setSelectedItem] = useState(null); // State to handle selected item for modal
 
     useEffect(() => {
         const fetchData = async () => {
@@ -22,6 +25,12 @@ const ReportingComponent = () => {
         fetchData();
     }, []);
 
+    const handleRowDoubleClick = (item) => {
+        setSelectedItem(item);
+        // Open modal with selected item details
+        // This simulates the editReportRow functionality from AngularJS
+    };
+
     return (
         <div>
             {isLoading ? (
@@ -31,9 +40,14 @@ const ReportingComponent = () => {
             ) : (
                 <ul>
                     {data.map((item, index) => (
-                        <li key={index}>{item.name}</li> // Adjust according to data structure
+                        <li key={index} onDoubleClick={() => handleRowDoubleClick(item)}>
+                            {item.name} // Adjust according to data structure
+                        </li>
                     ))}
                 </ul>
+            )}
+            {selectedItem && (
+                <Modal item={selectedItem} onClose={() => setSelectedItem(null)} />
             )}
         </div>
     );
