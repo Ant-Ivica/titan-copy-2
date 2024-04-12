@@ -1,6 +1,7 @@
  
 import React, { useState, useEffect } from 'react';
 import Modal from './Modal'; // Assuming Modal component handles modal logic similar to AngularJS modalProvider
+import ReportingTemplate from './ps-reporting/psReportingTemplate'; // Import the ReportingTemplate component
 
 const ReportingComponent = () => {
     const [data, setData] = useState([]);
@@ -49,6 +50,7 @@ const ReportingComponent = () => {
             {selectedItem && (
                 <Modal item={selectedItem} onClose={() => setSelectedItem(null)} />
             )}
+            <ReportingTemplate loggedTenant="LVIS" togglingTenant="RF" title="Report Summary" hasAccess={true} inValidBtnEnable={false} orderToInvalidate={[]} activityright="admin" canmanageteq={true} canmanagebeq={true} getUser={() => {}} invalidateOrder={() => {}} search={() => {}} loadRFOrder={() => {}} searchbyReferenceNo={() => {}} />
         </div>
     );
 };
