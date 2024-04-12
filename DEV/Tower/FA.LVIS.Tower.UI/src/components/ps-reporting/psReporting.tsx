@@ -1,14 +1,13 @@
  
 import React, { useState, useEffect } from 'react';
+import ReportingComponent from './reporting-row-detail'; // Import the ReportingComponent
 import Modal from './Modal'; // Assuming Modal component handles modal logic similar to AngularJS modalProvider
-import ReportingComponent from './reporting-row-detail'; // Import the ReportingComponent from reporting-row-detail.tsx
 
 const PsReporting = () => {
     const [data, setData] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
     const [selectedItem, setSelectedItem] = useState(null); // State to handle selected item for modal
-    const [selectedRowKeys, setSelectedRowKeys] = useState([]); // State to handle row selection
 
     useEffect(() => {
         const fetchData = async () => {
@@ -27,15 +26,8 @@ const PsReporting = () => {
         fetchData();
     }, []);
 
-    const handleRowDoubleClick = (item) => {
-        setSelectedItem(item);
-        // Open modal with selected item details
-        // This simulates the editReportRow functionality from AngularJS
-    };
-
-    const handleRowSelectionChange = (selectedKeys, selectedRows) => {
-        setSelectedRowKeys(selectedKeys);
-        // Additional logic can be added here if needed
+    const handleRowSelectionChange = (selectedRowKeys, selectedRows) => {
+        setSelectedItem(selectedRows[0]); // Assuming we want to handle the first selected item
     };
 
     return (
@@ -47,7 +39,7 @@ const PsReporting = () => {
             ) : (
                 <ReportingComponent
                     rows={data}
-                    activeCustomerName="Active Customer Name" // This should be dynamic based on context
+                    activeCustomerName={selectedItem ? selectedItem.CustomerId : ''}
                     onRowSelectionChange={handleRowSelectionChange}
                 />
             )}
