@@ -1,4 +1,3 @@
- 
 import React, { useState, useEffect } from 'react';
 import Modal from './Modal'; // Assuming Modal component handles modal logic similar to AngularJS modalProvider
 import ReportingTemplate from './ps-reporting/psReportingTemplate'; // Import the ReportingTemplate component
