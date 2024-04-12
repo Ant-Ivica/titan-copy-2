@@ -54,3 +54,4 @@ const ReportingComponent = () => {
 };
 
 export default ReportingComponent;
+
