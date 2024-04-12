@@ -1,40 +1,95 @@
+ 
 import React, { useState, useEffect } from 'react';
+import { Table, Button } from 'antd';
 
-const ReportingComponent = () => {
-    const [data, setData] = useState([]);
-    const [isLoading, setIsLoading] = useState(false);
-    const [error, setError] = useState(null);
+interface RowData {
+    ServiceRequestId: string;
+    createddate: string;
+    service: string;
+    ApplicationId: string;
+    CustomerId: string;
+    ExternalRefNum: string;
+    CustomerRefNum: string;
+    InternalRefNum?: string;
+    InternalRefId?: string;
+}
 
-    useEffect(() => {
-        const fetchData = async () => {
-            setIsLoading(true);
-            try {
-                const response = await fetch('/api/data'); // Adjust API endpoint as needed
-                if (!response.ok) throw new Error('Network response was not ok');
-                const result = await response.json();
-                setData(result);
-            } catch (error) {
-                setError(error.message);
-            }
-            setIsLoading(false);
-        };
+interface ReportingProps {
+    rows: RowData[];
+    activeCustomerName: string;
+    onRowSelectionChange: (selectedRowKeys: React.Key[], selectedRows: RowData[]) => void;
+}
 
-        fetchData();
-    }, []);
+const ReportingComponent: React.FC<ReportingProps> = ({ rows, activeCustomerName, onRowSelectionChange }) => {
+    const [selectedRowKeys, setSelectedRowKeys] = useState<React.Key[]>([]);
+
+    const handleSelectChange = (selectedRowKeys: React.Key[], selectedRows: RowData[]) => {
+        setSelectedRowKeys(selectedRowKeys);
+        onRowSelectionChange(selectedRowKeys, selectedRows);
+    };
+
+    const columns = [
+        {
+            title: 'Service Request Id',
+            dataIndex: 'ServiceRequestId',
+            key: 'ServiceRequestId',
+        },
+        {
+            title: 'Order Date',
+            dataIndex: 'createddate',
+            key: 'createddate',
+            render: (text: string) => new Date(text).toLocaleDateString('en-US'),
+        },
+        {
+            title: 'Service Type',
+            dataIndex: 'service',
+            key: 'service',
+        },
+        {
+            title: 'Application',
+            dataIndex: 'ApplicationId',
+            key: 'ApplicationId',
+        },
+        {
+            title: 'Customer Id',
+            dataIndex: 'CustomerId',
+            key: 'CustomerId',
+        },
+        {
+            title: 'External Reference Number',
+            dataIndex: 'ExternalRefNum',
+            key: 'ExternalRefNum',
+        },
+        {
+            title: 'Customer Reference Number',
+            dataIndex: 'CustomerRefNum',
+            key: 'CustomerRefNum',
+        },
+        {
+            title: 'Internal Reference Number',
+            dataIndex: 'InternalRefNum',
+            key: 'InternalRefNum',
+        },
+        {
+            title: 'Internal Reference Id',
+            dataIndex: 'InternalRefId',
+            key: 'InternalRefId',
+        },
+    ];
+
+    const rowSelection = {
+        selectedRowKeys,
+        onChange: handleSelectChange,
+    };
 
     return (
         <div>
-            {isLoading ? (
-                <p>Loading...</p>
-            ) : error ? (
-                <p>Error: {error}</p>
-            ) : (
-                <ul>
-                    {data.map((item, index) => (
-                        <li key={index}>{item.name}</li> // Adjust according to data structure
-                    ))}
-                </ul>
-            )}
+            <Table
+                rowSelection={rowSelection}
+                columns={columns}
+                dataSource={rows.filter(row => row.InternalRefNum === activeCustomerName)}
+                rowKey="ServiceRequestId"
+            />
         </div>
     );
 };
